@@ -1,3 +1,0 @@
- # wlan provisionning
- /oem_config/wifi(/.*)?          u:object_r:wlan_prov_data_file:s0
- (/system)?/vendor/bin/wlan_prov       u:object_r:wlan_prov_exec:s0
