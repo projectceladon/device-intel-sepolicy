@@ -1,0 +1,6 @@
+#
+# hal
+#
+
+unix_socket_connect(vold, hal, hal)
+allow vold hal_mnt_pnt:dir search;

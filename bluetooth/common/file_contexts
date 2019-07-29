@@ -1,4 +1,4 @@
-/system/etc/bluetooth(/.*)?           u:object_r:bluetooth_config_file:s0
+# /system/etc/bluetooth(/.*)?           u:object_r:bluetooth_config_file:s0
 (/system)?/vendor/bin/bt_nvm_init.sh     u:object_r:init_bt_nvm_exec:s0
 /vendor/bin/hciattach       u:object_r:hci_attach_exec:s0
 /oem_config/bluetooth                  u:object_r:bluetooth_data_file:s0

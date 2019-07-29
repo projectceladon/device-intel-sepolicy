@@ -1,3 +1,8 @@
 userdebug_or_eng(`
-  allow kitchensink_app { textservices_service bluetooth_manager_service }:service_manager find;
+  allow kitchensink_app {
+        textservices_service
+        bluetooth_manager_service
+        media_session_service
+        activity_task_service
+  }:service_manager find;
 ')

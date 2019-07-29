@@ -1,0 +1,2 @@
+# usb role switch service
+/vendor/bin/usb_otg_switch.sh                                   					u:object_r:usb_roleswitch_exec:s0

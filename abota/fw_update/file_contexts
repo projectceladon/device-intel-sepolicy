@@ -1,0 +1,1 @@
+(/system)?/vendor/bin/fw_update.sh u:object_r:fw_update_exec:s0

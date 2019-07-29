@@ -1,0 +1,34 @@
+#
+# power_hal
+#
+
+# Rules for hardware/intel/power/helper
+type power_hal_helper, domain;
+type power_hal_helper_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(power_hal_helper)
+
+# allow to search through /proc/<pid>;
+# only allow those that we are interested in;
+allow power_hal_helper mediaserver:dir search;
+allow power_hal_helper mediaserver:file { open read };
+
+# no need to complain about denied access
+# as it will clutter the log when probing
+# all /proc/<pid> where it cannot search/open/read
+dontaudit power_hal_helper domain:dir search;
+
+# allow to set property ctl.power_hal.*
+set_prop(power_hal_helper, vendor_power_hal_prop)
+
+# allow to read and open the command for usermode helper
+# proc PID labels are labeled with context of process
+# we only grant this on native priveleged domains to prevent
+# an injection path to a priveleged process from appdomain.
+allow power_hal_helper { domain -appdomain } :file { read open };
+
+# ??? launch shell scripts as usermodehelpers
+allow power_hal_helper shell:file r_file_perms;
+
+userdebug_or_eng(`
+  allow power_hal_helper su:file r_file_perms;
+')

@@ -1,0 +1,19 @@
+# ipod2-service, Service which provides interface for iPod control/event based on Apple IAP/IAP2.
+type ipod2service_app_data_file, file_type, data_file_type;
+type ipod2service_app, domain;
+app_domain(ipod2service_app)
+net_domain(ipod2service_app)
+binder_service(ipod2service_app)
+
+set_prop(ipod2service_app, carplay_prop)
+
+allow ipod2service_app carplay-ipod-daemon-2:unix_stream_socket connectto;
+
+allow ipod2service_app ipod2service_app_data_file:dir create_file_perms;
+allow ipod2service_app ipod2service_app_data_file:file create_file_perms;
+allow ipod2service_app activity_service:service_manager find;
+allow ipod2service_app display_service:service_manager find;
+allow ipod2service_app network_management_service:service_manager find;
+allow ipod2service_app connectivity_service:service_manager find;
+allow ipod2service_app location_service:service_manager find;
+allow ipod2service_app usb_service:service_manager find;

@@ -11,10 +11,6 @@ userdebug_or_eng(`
   binder_service(crashreport_app)
 
 #============= crashreport_app ==============
-  module_only(`debug_crashlogd', `
-    allow crashreport_app crashlogd_prop:file r_file_perms;
-  ')
-
   allow crashreport_app crashreport_app_data_file:dir create_dir_perms;
   allow crashreport_app crashreport_app_data_file:file create_file_perms;
   allow crashreport_app crashreport_app_data_file:file r_file_perms;
@@ -25,6 +21,11 @@ userdebug_or_eng(`
 
   dontaudit crashreport_app property_socket:sock_file w_file_perms;
   dontaudit crashreport_app system_prop:property_service set;
+  dontaudit crashreport_app vendor_default_prop: property_service set;
+  dontaudit crashreport_app vendor_default_prop:file *;
+  dontaudit crashreport_app vendor_core_prop:file *;
+  dontaudit crashreport_app runtime_event_log_tags_file:file *;
+  dontaudit crashreport_app vendor_crashlogd_prop:file *;
 
 # any rules that violate neverallows can go here
   dontaudit crashreport_app serialno_prop:file r_file_perms;

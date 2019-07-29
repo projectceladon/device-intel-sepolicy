@@ -7,7 +7,6 @@ dontaudit {
 	lmkd
 	netd
 	perfprofd
-	postinstall_dexopt
 	recovery
 	sdcardd
 	tee

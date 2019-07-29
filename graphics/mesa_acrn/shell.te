@@ -1,0 +1,2 @@
+# XXX Audit me BEFORE COMMITING
+allow shell graphics_device:dir search;

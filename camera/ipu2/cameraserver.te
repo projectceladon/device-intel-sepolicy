@@ -1,0 +1,5 @@
+#
+# cameraserver
+#
+
+get_prop(cameraserver, vendor_cam_flash_thrtl_prop)

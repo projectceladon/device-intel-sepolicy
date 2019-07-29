@@ -1,0 +1,4 @@
+# m4 macro expands to mixin config of configured port
+bt_pulsar_port    u:object_r:hci_attach_dev:s0
+
+

@@ -1,0 +1,18 @@
+type check_lowmem, domain;
+type check_lowmem_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(check_lowmem)
+
+allow check_lowmem vendor_file:file rx_file_perms;
+allow check_lowmem proc_meminfo:file r_file_perms;
+# allow the check_lowmem domain to set prop sys.low_ram
+set_prop(check_lowmem, vendor_mem_prop)
+
+not_full_treble(`
+  allow check_lowmem system_file:file rx_file_perms;
+  allow check_lowmem shell_exec:file rx_file_perms;
+')
+full_treble_only(`
+  allow check_lowmem vendor_shell_exec:file rx_file_perms;
+  allow check_lowmem vendor_toolbox_exec:file rx_file_perms;
+')

@@ -1,0 +1,5 @@
+#
+# init
+#
+
+allow init hal_device:file getattr;

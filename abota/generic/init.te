@@ -1,0 +1,2 @@
+allow init system_file:system module_load;
+allow init tmpfs:file r_file_perms;

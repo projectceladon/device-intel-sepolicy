@@ -1,0 +1,2 @@
+/vendor/bin/psdapp          u:object_r:psdapp_exec:s0
+/vendor/bin/logwrapper      u:object_r:logwrapper_exec:s0

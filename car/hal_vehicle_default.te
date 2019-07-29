@@ -2,9 +2,10 @@
 # Default hal vehicle service
 # oao/hardware/interfaces/automotive/vehicle
 #
+
 binder_call(hal_audio_default, hal_vehicle_default)
 binder_call(hal_vehicle_default, hal_audio_default)
-allow hal_vehicle_default hal_audio_hwservice:hwservice_manager find;
+hal_client_domain(hal_vehicle_default, hal_audio)
 
 #
 # Allow hal_vehicle_default to create socket.
@@ -19,3 +20,6 @@ allowxperm hal_vehicle_default self:can_socket ioctl {
 };
 
 ignore_adb_debug(`hal_vehicle_default')
+
+allow hal_vehicle_default serial_device:chr_file rw_file_perms;
+allow hal_vehicle_default sysfs_power:file rw_file_perms;

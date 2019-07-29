@@ -40,4 +40,4 @@ define(`ignore_adb_debug', `
   ')
 ')
 
-define(`user_build_only', ifelse(target_build_variant, `user', $1, ))
+define(`not_recovery_only', ifelse(target_recovery, `true', , $1))

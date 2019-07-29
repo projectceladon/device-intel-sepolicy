@@ -1,0 +1,2 @@
+# /sys/devices/pci0000:00/0000:00:02.0/drm/card0/gfx_memtrack/3973
+allow hal_memtrack_default sysfs_app_readable:file r_file_perms;

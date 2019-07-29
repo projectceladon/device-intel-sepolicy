@@ -1,0 +1,8 @@
+type psdapp, domain;
+type psdapp_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(psdapp)
+
+allow psdapp sysfs:file r_file_perms;
+allow psdapp logwrapper:fd use;
+allow psdapp devpts:chr_file rw_file_perms;

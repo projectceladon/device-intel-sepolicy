@@ -1,0 +1,15 @@
+type load_iwlwifi_script, domain;
+type load_iwlwifi_script_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(load_iwlwifi_script)
+
+module_only(`thermal', `
+  allow load_iwlwifi_script sysfs_thermal_management:dir r_dir_perms;
+  allow load_iwlwifi_script sysfs_thermal_management:{file lnk_file} r_file_perms;
+')
+
+allow load_iwlwifi_script self:capability sys_module;
+allow load_iwlwifi_script kernel:key search;
+allow load_iwlwifi_script rootfs:file r_file_perms;
+allow load_iwlwifi_script vendor_shell_exec:file rx_file_perms;
+allow load_iwlwifi_script vendor_toolbox_exec:file rx_file_perms;

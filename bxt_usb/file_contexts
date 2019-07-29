@@ -1,0 +1,3 @@
+# reset_usb service WA
+/vendor/bin/reset_usb.sh                                u:object_r:reset_usb_script_exec:s0
+/sys/devices/pci0000:00/0000:00:15.1/intel-cht-otg.0(/.*)  u:object_r:sysfs_usb_writable:s0

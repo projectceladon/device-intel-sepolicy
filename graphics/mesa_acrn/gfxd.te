@@ -1,0 +1,44 @@
+#
+# gfxd
+#
+
+# Rules for vendor/intel/ufo
+type gfxd_exec, exec_type, vendor_file_type, file_type;
+
+userdebug_or_eng(`
+  type gfxd, domain;
+  init_daemon_domain(gfxd);
+
+  # Vendor apps are permited to use only stable public services.
+  # per domain.te in system/core
+  #binder_service(gfxd)
+  #binder_use(gfxd)
+
+  # Register the gfxd service with binder
+  dontaudit gfxd gfxd_service:service_manager add;
+
+  permissive gfxd;
+  dontaudit gfxd self:capability_class_set *;
+  dontaudit gfxd kernel:security *;
+  dontaudit gfxd kernel:system *;
+  dontaudit gfxd self:memprotect *;
+  dontaudit gfxd domain:process *;
+  dontaudit gfxd domain:fd *;
+  dontaudit gfxd domain:dir r_dir_perms;
+  dontaudit gfxd domain:lnk_file r_file_perms;
+  dontaudit gfxd domain:{ fifo_file file } rw_file_perms;
+  dontaudit gfxd domain:socket_class_set *;
+  dontaudit gfxd domain:ipc_class_set *;
+  dontaudit gfxd domain:key *;
+  dontaudit gfxd fs_type:filesystem *;
+  dontaudit gfxd {fs_type dev_type file_type}:{ dir blk_file lnk_file sock_file fifo_file } *;
+  dontaudit gfxd {fs_type dev_type file_type }:{ chr_file file } *;
+  dontaudit gfxd node_type:node *;
+  dontaudit gfxd node_type:{ tcp_socket udp_socket } node_bind;
+  dontaudit gfxd netif_type:netif *;
+  dontaudit gfxd port_type:socket_class_set name_bind;
+  dontaudit gfxd port_type:{ tcp_socket dccp_socket } name_connect;
+  dontaudit gfxd domain:peer recv;
+  dontaudit gfxd domain:binder { call transfer };
+  dontaudit gfxd property_type:property_service set;
+')

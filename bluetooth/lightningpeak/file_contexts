@@ -1,0 +1,4 @@
+# m4 macro expands to mixin config of configured port
+bt_lightning_peak_port	u:object_r:hci_attach_dev:s0
+/system/bin/bt_first_boot          u:object_r:bt_first_boot_exec:s0
+

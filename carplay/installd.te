@@ -1,0 +1,5 @@
+allow installd carplaycoreserver_app_data_file:dir create_dir_perms;
+allow installd carplaycoreserver_app_data_file:lnk_file create_file_perms;
+allow installd carplaycoreserver_app_data_file:dir relabelto;
+allow installd carplaycoreserver_app_data_file:file { create_file_perms relabelto };
+allow installd ipod2service_app_data_file:dir { create_dir_perms relabelto };

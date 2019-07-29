@@ -1,0 +1,4 @@
+# sysfs access
+# path="/sys/bus/platform/devices/intel-cht-otg.0/mux_state
+allow init sysfs:dir r_dir_perms;
+allow init sysfs:file r_file_perms;

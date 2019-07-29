@@ -1,0 +1,7 @@
+#
+# mediadrmserver
+#
+not_full_treble(`
+  allow mediadrmserver coreu_service:service_manager find;
+')
+allow mediadrmserver sysfs_app_readable:file r_file_perms;

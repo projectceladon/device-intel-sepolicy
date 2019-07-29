@@ -1,0 +1,1 @@
+allow ueventd tmpfs:lnk_file read;

@@ -1,0 +1,14 @@
+allow update_engine vendor_block_device:blk_file rw_file_perms;
+allow update_engine product_block_device:blk_file rw_file_perms;
+allow update_engine odm_block_device:blk_file rw_file_perms;
+allow update_engine acpi_block_device:blk_file rw_file_perms;
+allow update_engine acpio_block_device:blk_file rw_file_perms;
+allow update_engine tmpfs:dir r_dir_perms;
+allow update_engine tmpfs:file r_file_perms;
+allow update_engine tmpfs:lnk_file r_file_perms;
+
+allow update_engine platform_app:binder call;
+allow update_engine vfat:dir search;
+allow update_engine vfat:file r_file_perms;
+allow update_engine mnt_media_rw_file:file r_file_perms;
+allow update_engine mnt_media_rw_file:dir r_dir_perms;

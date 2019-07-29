@@ -1,0 +1,22 @@
+# Coreu
+# type coreu_data_file, file_type, data_file_type;
+# GFX
+# XXX Currently this file access was reverted in
+# commit 523d705d8ce68f40a111e851f5d9f65788e1807b
+# under the mixins directory.
+# It was marked as a revert, so we don't ditch
+# the sepolicy at this time.
+# Reviewed-on: https://android.intel.com:443/438133
+type sysfs_gfx, fs_type, sysfs_type;
+
+# i915 videostatus
+type sysfs_videostatus, fs_type, sysfs_type;
+
+# i915 related /proc/driver entry.
+type proc_graphics, fs_type, proc_type;
+
+type debugfs_graphics, fs_type, debugfs_type;
+
+type sysfs_app_readable, fs_type, sysfs_type;
+
+typeattribute hal_graphics_allocator_default_tmpfs mlstrustedobject;

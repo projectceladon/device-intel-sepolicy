@@ -1,0 +1,7 @@
+# HAL
+# Now that MLS is enabled on plat_app, we need to make the hal
+# socket an mlstrustedsubject.
+type hal_socket, file_type, mlstrustedobject;
+
+# Hal mounts a lot of filesystems, label the locations specifically
+type hal_mnt_pnt, file_type;

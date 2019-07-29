@@ -1,0 +1,5 @@
+
+# notify others we are ready through property
+
+# access gpio file to get reversing gear status
+allow system_app hal_automotive_evs_hwservice:hwservice_manager find;

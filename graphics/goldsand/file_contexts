@@ -1,0 +1,3 @@
+# devices
+/dev/dri/card0              u:object_r:gpu_device:s0
+/dev/sw_sync                u:object_r:graphics_device:s0

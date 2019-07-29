@@ -1,0 +1,1 @@
+allow netd untrusted_app:icmp_socket { read write getopt setopt getattr };

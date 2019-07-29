@@ -1,0 +1,2 @@
+allow radio hal:unix_stream_socket connectto;
+allow radio hal_socket:sock_file write;

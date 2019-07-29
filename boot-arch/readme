@@ -1,0 +1,5 @@
+"common" directory is used for Sofia devices.
+"generic" directory is used for all platforms unless Sofia.
+"xbl" directory is used for abl, sbl and vsbl platforms.
+other directories "abl", "sbl", "vsbl" and "efi", if present, are used only for the related platforms.
+"slotab_ota" directory is for platforms using slotab ota (it has generic, xbl and efi subdirectories).

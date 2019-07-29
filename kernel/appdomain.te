@@ -1,0 +1,1 @@
+allow appdomain app_fuse_file:file map;

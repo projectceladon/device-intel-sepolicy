@@ -1,0 +1,17 @@
+#
+# rfkill fdomain
+#
+# TODO: refactor with other rfkill domain
+
+# execs
+domain_auto_trans(hal, rfkill_exec, rfkill)
+domain_auto_trans(rfkill, hci_attach_exec, bluetooth)
+
+allow rfkill bluetooth:process sigkill;
+
+# devices
+allow rfkill rfkill_device:chr_file { read open };
+
+allow rfkill hal:fd use;
+allow rfkill hal:unix_stream_socket { read write };
+allow rfkill hal:file read;

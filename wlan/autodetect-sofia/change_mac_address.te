@@ -1,0 +1,7 @@
+#
+# change_mac_address
+#
+type change_mac_address, domain;
+type change_mac_address_exec, file_type, exec_type;
+
+init_daemon_domain(change_mac_address)

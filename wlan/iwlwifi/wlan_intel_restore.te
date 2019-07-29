@@ -1,0 +1,16 @@
+#
+# wlan_intel_restore - does what?
+#
+
+type wlan_intel_restore, domain, coredomain;
+type wlan_intel_restore_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(wlan_intel_restore)
+
+# Execute as a script and run toolbox and system commands
+allow wlan_intel_restore shell_exec:file rx_file_perms;
+allow wlan_intel_restore system_file:file rx_file_perms;
+allow wlan_intel_restore toolbox_exec:file rx_file_perms;
+
+allow wlan_intel_restore block_device:dir search;
+

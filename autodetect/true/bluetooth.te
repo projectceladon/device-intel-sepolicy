@@ -1,0 +1,6 @@
+allow bluetooth hal_socket:sock_file write;
+allow bluetooth hal:fd use;
+allow bluetooth hal:unix_stream_socket { connectto read write };
+allow bluetooth rfkill:fd use;
+allow bluetooth self:netlink_socket create_socket_perms;
+

@@ -1,0 +1,2 @@
+# /vendor/bin/config_cpuset.sh
+/vendor/bin/config_cpuset\.sh      u:object_r:config_cpuset_exec:s0

@@ -1,0 +1,17 @@
+# Service for Apple CP authenticate.
+type cpserver, domain;
+type cpserver_exec, exec_type, file_type;
+
+init_daemon_domain(cpserver)
+
+binder_use(cpserver)
+binder_service(cpserver)
+binder_call(cpserver, servicemanager)
+
+binder_use(cp_service)
+binder_call(cp_service, servicemanager)
+
+add_service(cpserver, cp_service)
+
+allow cpserver i2c_device:chr_file rw_file_perms;
+allow cp_service i2c_device:chr_file rw_file_perms;

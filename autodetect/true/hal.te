@@ -1,0 +1,127 @@
+# HAL domain
+type hal, domain;
+type hal_exec, exec_type, file_type;
+
+# hal owns the context of its unix socket
+# thus needs to be a trustedsubject for plat and
+# untrusted app access. See the MLS contraints
+# for how its enforced.
+typeattribute hal mlstrustedsubject;
+
+userdebug_or_eng(`
+  # https://jira01.devtools.intel.com/browse/OAM-31273
+  # https://jira01.devtools.intel.com/browse/OAM-31675
+  # https://jira01.devtools.intel.com/browse/OAM-33260
+  permissive hal;
+')
+
+init_daemon_domain(hal);
+
+# execs
+allow hal hal_exec:file rx_file_perms;
+allow hal shell_exec:file rx_file_perms;
+
+allow hal system_file:dir r_dir_perms;
+allow hal system_file:file rx_file_perms;
+
+# Capabilities
+allow hal self:capability { sys_module sys_admin chown fsetid net_admin fowner };
+
+# Device access
+allow hal gps_device:chr_file { getattr setattr };
+allow hal hal_device:file create_file_perms;
+allow hal device:dir create_dir_perms;
+allow hal device:lnk_file create;
+allow hal graphics_device:dir search;
+allow hal graphics_device:chr_file rw_file_perms;
+allow hal gpu_device:chr_file rw_file_perms;
+type_transition hal device:file hal_device;
+
+#sockets
+type_transition hal socket_device:sock_file hal_socket;
+allow hal hal_socket:sock_file create_file_perms;
+allow hal socket_device:dir { write remove_name add_name };
+allow hal self:netlink_kobject_uevent_socket { read bind create setopt };
+allowxperm hal self:netlink_kobject_uevent_socket ioctl SIOCETHTOOL;
+
+# sysfs
+allow hal sysfs:dir rw_dir_perms;
+allow hal sysfs:file rw_file_perms;
+
+allow hal sysfs_hwrandom:dir r_dir_perms;
+allow hal sysfs_hwrandom:file w_file_perms;
+
+allow hal sysfs_zram:dir r_dir_perms;
+allow hal sysfs_zram_uevent:file w_file_perms;
+
+#special fs
+allow hal proc:file write;
+
+# /proc/cmdline
+allow hal proc:file r_file_perms;
+
+allow hal proc_security:file { getattr open };
+allow hal sysfs_devices_system_cpu:file write;
+allow hal tmpfs:chr_file { open write };
+
+allow hal system_data_file:dir rw_dir_perms;
+allow hal apk_data_file:dir w_dir_perms;
+allow hal apk_data_file:file { unlink open };
+allow hal wpa:dir mounton;
+allow hal system_file:filesystem { relabelto mount unmount };
+
+allow hal kernel:key search;
+allow hal kernel:system module_request;
+
+# Allow calling setfscreatecon
+allow hal self:process setfscreate;
+
+# Set properties
+# hal is weird and needs getattr on the prop socket
+allow hal property_socket:sock_file getattr;
+set_prop(hal, hal_prop)
+set_prop(hal, sensor_prop)
+set_prop(hal, bluetooth_prop)
+set_prop(hal, audio_prop)
+set_prop(hal, lcd_prop)
+
+#Fuse-related
+allow hal hal_mnt_pnt:dir { create_dir_perms mounton };
+
+allow hal hal_mnt_pnt:file create_file_perms;
+
+allow hal labeledfs:filesystem unmount;
+
+allow hal hci_attach_dev:chr_file create_file_perms;
+allow hal hci_attach_exec:file rx_file_perms;
+
+allow hal rfkill_device:chr_file r_file_perms;
+
+allow hal oemfs:file r_file_perms;
+allow hal oemfs:dir r_dir_perms;
+
+allow hal dhcp_data_file:dir r_dir_perms;
+
+# Hal is creating a netlink socket for kernel events
+# allow it to do whatever on that socket
+allow hal self:netlink_route_socket *;
+
+module_only(`thermal', `
+  allow hal sysfs_thermal_management:dir r_dir_perms;
+  allow hal sysfs_thermal_management:file rw_file_perms;
+')
+
+allow hal wifi_data_file:dir rw_dir_perms;
+allow hal wifi_data_file:file create_file_perms;
+
+allow hal dhcp_data_file:dir setattr;
+allow hal efs_file:dir create_dir_perms;
+
+module_only(`efiprop', `
+  # HAL searches and uses possible efivarfs properties.
+  r_dir_file(hal, efivarfs)
+')
+
+# XXX Does hal really need this?
+# https://jira01.devtools.intel.com/browse/OAM-33149
+allow hal rootfs:file r_file_perms;

@@ -1,0 +1,16 @@
+type reset_usb_script, domain;
+type reset_usb_script_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(reset_usb_script)
+
+not_full_treble(`
+  allow reset_usb_script shell_exec:file rx_file_perms;
+  allow reset_usb_script toolbox_exec:file rx_file_perms;
+')
+full_treble_only(`
+  allow reset_usb_script vendor_shell_exec:file rx_file_perms;
+  allow reset_usb_script vendor_toolbox_exec:file rx_file_perms;
+')
+
+allow reset_usb_script sysfs_usb_writable:dir search;
+allow reset_usb_script sysfs_usb_writable:file rw_file_perms;

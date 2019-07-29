@@ -1,0 +1,13 @@
+#
+# cameraserver
+#
+
+get_prop(cameraserver, vendor_cam_flash_thrtl_prop)
+
+# avc: denied { write } for pid=28601 comm="Binder:28599_2" name="enable_concurrency" dev="sysfs" ino=21158 scontext=u:r:cameraserver:s0 tcontext=u:object0 tclass=file permissive=0
+allow cameraserver system_server:fifo_file write;
+allow cameraserver surfaceflinger:unix_stream_socket { read write };
+allow cameraserver untrusted_app_25:unix_stream_socket { read write };
+
+allow cameraserver sysfs_ipu:dir r_dir_perms;
+allow cameraserver sysfs_ipu:file r_file_perms;

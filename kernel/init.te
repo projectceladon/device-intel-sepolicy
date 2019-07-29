@@ -1,16 +1,22 @@
+#
+# init
+#
+
+# mixin kernel/init.rc write to /sys/kernel/debug/pstate_snb/setpoint
+allow init debugfs_pstate:file w_file_perms;
+
+#avc: denied { write } for pid=1 comm="init" name="psys_force_freq" dev="debugfs" ino=8600 scontext=u:r:init:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=0
 allow init debugfs:file write;
+
+# allow init insmod keyword
 allow init kernel:key search;
-allow init kernel:system module_request;
 allow init {
   rootfs
   vendor_file
 }:system module_load;
 
-allow init sysfs_devices_system_cpu:dir r_dir_perms;
-allow init sysfs_devices_system_cpu:file create_file_perms;
-allow init tmpfs:lnk_file create_file_perms;
-allow init configfs:{ file lnk_file } create_file_perms;
-allow init self:capability sys_module;
-allow init self:capability2 block_suspend;
+#avc: denied { dac_read_search } for pid=1 comm="init" capability=2 scontext=u:r:init:s0 tcontext=u:r:init:s0 tclass=capability permissive=0
+#allow init self:capability dac_read_search;
 
-dontaudit init cgroup:file create_file_perms;
+#allow init sysfs_devices_system_cpu:dir w_dir_perms;
+allow init sysfs_devices_system_cpu:file create;

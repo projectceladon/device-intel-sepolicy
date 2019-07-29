@@ -1,0 +1,41 @@
+#
+# cameraserver
+#
+
+allow cameraserver gpu_device:chr_file rw_file_perms;
+
+# Camera HAL uses sensor manager to get acceleration data
+# to determine device orientation
+allow cameraserver sensorservice_service:service_manager find;
+
+# Camera Acceleration Service (AccService) and Face Recognition
+# services are started by camera HAL
+# add_service(cameraserver, mediaserver_service)
+
+# Access to /system/vendor/etc/atomisp
+allow cameraserver system_file:dir r_dir_perms;
+allow cameraserver system_file:file r_file_perms;
+
+# path="socket:[217260]"
+allow cameraserver system_server:unix_stream_socket rw_socket_perms;
+#
+# XXX Narrow sysfs access
+#
+# path="/sys/devices/pci0000:00/0000:00:03.0/video4linux/video0/name"
+# path="/sys/bus/pci/drivers/i915"
+# path="/sys/devices/pci0000:00/0000:00:02.0/config"
+# path="/system/vendor/etc/atomisp"
+allow cameraserver sysfs:dir r_dir_perms;
+#cameraserver: type=1400 audit(0.0:16): avc: denied { read } for name="config" dev="sysfs" ino=21760 scontext=u:r:cameraserver:s0 tcontext=u:object_r:sysfs_app_readable:s0 tclass=file permissive=0
+
+#avc: denied { write } for name="cameraserver" dev="dm-0" ino=507927 scontext=u:r:cameraserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=0
+allow cameraserver system_data_file:dir { write add_name };
+allow cameraserver camera_data_file:file { read write };
+
+allow cameraserver hal_graphics_allocator_default_tmpfs:file rw_file_perms;
+allow cameraserver gpu_device:dir r_dir_perms;
+
+# Allow cameraserver to use fd from app,gralloc,and ashmem HAL
+allow cameraserver { appdomain -isolated_app }:fd use;
+allow cameraserver surfaceflinger:fd use;
+allow cameraserver hal_allocator_server:fd use;

@@ -1,0 +1,2 @@
+allow adbd hal_socket:sock_file write;
+allow adbd hal:unix_stream_socket connectto;

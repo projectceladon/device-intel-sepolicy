@@ -1,0 +1,1 @@
+allow vold sysfs_health2_0_management:file write;

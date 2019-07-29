@@ -1,0 +1,4 @@
+# Persistent Storage
+/dev/pstore                 u:object_r:pstore_device:s0
+/data/dontpanic(/.*)?       u:object_r:pstore-clean_data_file:s0
+(/system)?/vendor/bin/pstore-clean u:object_r:pstore-clean_exec:s0
