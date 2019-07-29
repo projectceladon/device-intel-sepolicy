@@ -1,0 +1,67 @@
+#
+# coreu
+#
+
+# Rules for vendor/intel/ufo
+type coreu, domain;
+type coreu_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(coreu);
+
+allow coreu self:capability { sys_admin sys_nice ipc_lock };
+
+# Need to use vendor binder
+vndbinder_use(coreu)
+not_full_treble(`
+  binder_service(coreu)
+  binder_call(coreu, surfaceflinger)
+')
+binder_call(coreu, msync)
+# Allow coreu to find the msync service
+allow coreu msync_service:service_manager find;
+# Find hwc.info service
+allow coreu hwc_info_service:service_manager find;
+# Register the coreu service with binder
+add_service(coreu, coreu_service)
+
+# /data/system/coreu data files are created by
+# coreu daemon, thus a dynamic relabel as well
+# as fc entry to catch relabels.
+allow coreu system_data_file:dir ra_dir_perms;
+allow coreu coreu_data_file:dir create_dir_perms;
+allow coreu coreu_data_file:file create_file_perms;
+type_transition coreu system_data_file:{ dir file } coreu_data_file;
+
+allow coreu self:netlink_kobject_uevent_socket create_socket_perms;
+allowxperm coreu self:netlink_kobject_uevent_socket ioctl SIOCETHTOOL;
+
+# character devices
+allow coreu gpu_device:chr_file rw_file_perms;
+
+module_only(`debug_mpm', `
+    allow coreu msr_device:chr_file rw_file_perms;
+')
+
+allow coreu sysfs:file write;
+
+# create temp dirs
+allow coreu tmpfs:dir w_dir_perms;
+
+# XXX Narrow sysfs access
+# path="/sys/bus/pci/devices"
+# path="/sys/devices/pci0000:00/0000:00:00.0/config"
+allow coreu sysfs:dir r_dir_perms;
+allow coreu sysfs:file rw_file_perms;
+allow coreu sysfs_app_readable:file r_file_perms;
+allow coreu tracing_shell_writable:file rw_file_perms;
+
+# gfx access
+allow coreu sysfs_gfx:file rw_file_perms;
+
+allow coreu proc_graphics:file r_file_perms;
+
+#debugfs
+allow coreu debugfs_tracing:file rw_file_perms;
+allow coreu debugfs_graphics:file rw_file_perms;
+
+# drm detecting
+allow coreu mediadrmserver:process signull;

@@ -1,0 +1,1 @@
+/sys/kernel/debug/pstate_snb/setpoint u:object_r:debugfs_pstate:s0

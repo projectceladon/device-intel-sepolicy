@@ -1,0 +1,1 @@
+allow domain sysfs_app_readable:dir search;

@@ -1,0 +1,14 @@
+recovery_only(`
+  # set sys.usb.ffs.ready prop
+  set_prop(recovery, ffs_prop)
+
+  # rules needed to access GPU
+  allow recovery gpu_device:chr_file rw_file_perms;
+
+  # rules for ota update from udisk
+  allow recovery rootfs:dir w_dir_perms;
+  allow recovery block_device:dir w_dir_perms;
+  allow recovery block_device:blk_file { create unlink };
+  allow recovery vfat:dir create_dir_perms;
+  allow recovery vfat:file create_file_perms;
+')

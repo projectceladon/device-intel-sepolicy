@@ -1,0 +1,2 @@
+binder_call(hal_drm_default, coreu)
+allow hal_drm_default coreu_service:service_manager find;

@@ -1,0 +1,7 @@
+type logwrapper, domain;
+type logwrapper_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(logwrapper)
+
+allow logwrapper devpts:chr_file rw_file_perms;
+domain_auto_trans(logwrapper, psdapp_exec, psdapp)

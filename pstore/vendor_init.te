@@ -1,0 +1,3 @@
+userdebug_or_eng(`
+  allow vendor_init pstore-clean_data_file:dir create_dir_perms;
+')

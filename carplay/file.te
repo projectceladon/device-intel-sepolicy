@@ -1,0 +1,1 @@
+type usb_role_switch, fs_type, debugfs_type;

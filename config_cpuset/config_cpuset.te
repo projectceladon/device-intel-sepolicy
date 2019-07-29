@@ -1,0 +1,10 @@
+type config_cpuset, domain;
+type config_cpuset_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(config_cpuset)
+
+not_full_treble(`allow config_cpuset shell_exec:file rx_file_perms;')
+not_full_treble(`allow config_cpuset toolbox_exec:file rx_file_perms;')
+allow config_cpuset vendor_shell_exec:file rx_file_perms;
+allow config_cpuset vendor_toolbox_exec:file rx_file_perms;
+allow config_cpuset cgroup:file r_file_perms;

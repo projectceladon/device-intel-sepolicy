@@ -1,0 +1,23 @@
+#
+# surfaceflinger
+#
+allow surfaceflinger device:dir r_dir_perms;
+
+type surfaceflinger_cache_file, data_file_type, file_type;
+
+not_full_treble(`
+  file_type_auto_trans(surfaceflinger, cache_file, surfaceflinger_cache_file);
+')
+
+allow surfaceflinger cache_file:dir remove_name;
+allow surfaceflinger cache_file:file create_file_perms;
+
+not_full_treble(`
+  binder_call(surfaceflinger, coreu)
+  allow surfaceflinger coreu_service:service_manager find;
+')
+
+allow surfaceflinger sysfs_videostatus:file { getattr w_file_perms };
+allow surfaceflinger sysfs_app_readable:file r_file_perms;
+
+allow surfaceflinger hal_graphics_allocator_default_tmpfs:file { read write };

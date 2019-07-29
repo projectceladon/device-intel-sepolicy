@@ -1,0 +1,22 @@
+type bt_first_boot, domain;
+type bt_first_boot_exec, exec_type, file_type;
+
+init_daemon_domain(bt_first_boot)
+
+allow bt_first_boot bluetooth_config_file:dir r_dir_perms;
+allow bt_first_boot bluetooth_config_file:file r_file_perms;
+
+allow bt_first_boot efs_file:dir create_dir_perms;
+allow bt_first_boot efs_file:file create_file_perms;
+
+allow bt_first_boot bluetooth_efs_file:dir w_dir_perms;
+allow bt_first_boot bluetooth_efs_file:file create_file_perms;
+
+allow bt_first_boot bt_first_boot_exec:file {x_file_perms entrypoint};
+
+allow bt_first_boot hci_attach_dev:chr_file rw_file_perms;
+
+allow bt_first_boot bluetooth_config_file:dir r_dir_perms;
+allow bt_first_boot bluetooth_config_file:file r_file_perms;
+
+allow bt_first_boot bt_first_boot:netlink_socket create_socket_perms;

@@ -1,0 +1,1 @@
+genfscon sysfs /devices/pci0000:00/0000:00:03.0/intel-ipu4-mmu0/intel-ipu4-isys0/video4linux/video37/name u:object_r:sysfs_ipu:s0

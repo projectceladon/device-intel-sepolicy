@@ -1,0 +1,5 @@
+/dev/ttyIAP20						u:object_r:iap2_device:s0
+/system/bin/carplay-ipod-daemon-2	u:object_r:carplay-ipod-daemon-2_exec:s0
+/system/bin/mdnsd_carplay			u:object_r:mdnsd_carplay_exec:s0
+/system/bin/cpserver				u:object_r:cpserver_exec:s0
+/sys/bus/platform/devices/intel-cht-otg.0/mux_state   u:object_r:usb_role_switch:s0

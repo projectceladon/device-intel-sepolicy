@@ -1,0 +1,6 @@
+allow vendor_init file_contexts_file:file map;
+allow vendor_init kernel:key search;
+userdebug_or_eng(`
+  allow vendor_init proc:file write;
+  allow vendor_init proc_hung_task:file write;
+')

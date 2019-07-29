@@ -1,0 +1,11 @@
+# mdnsd service for carplay, carplay uses bonjour protocol.
+type mdnsd_carplay, domain, mlstrustedsubject;
+type mdnsd_carplay_exec, exec_type, file_type;
+
+init_daemon_domain(mdnsd_carplay)
+net_domain(mdnsd_carplay)
+
+binder_call(mdnsd_carplay, carplaycoreserver_app)
+
+allow mdnsd_carplay proc_net:file r_file_perms;
+allow mdnsd_carplay carplaycoreserver_app:unix_stream_socket rw_socket_perms;

@@ -1,0 +1,10 @@
+# Rules for intel_prop (read Android props from fw)
+# Use ueventd.te as blueprint for this
+
+type intel_prop, domain;
+type intel_prop_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(intel_prop)
+
+# XXX /sys/firmware/dmi/entries/0-0/raw
+allow intel_prop sysfs:file r_file_perms;
+

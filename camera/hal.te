@@ -1,0 +1,3 @@
+module_only(`autodetect',
+  set_prop(hal, vendor_camera_prop)
+')

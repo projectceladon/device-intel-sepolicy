@@ -1,0 +1,1 @@
+# allow CarService to write /sys/power/state to enter deep sleep.

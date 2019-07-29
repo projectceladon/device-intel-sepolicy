@@ -1,0 +1,15 @@
+#
+# Kernel
+#
+
+# OCT Trace kernel thread opens a USB Gadget TTY to send
+# Modem trace information. This trace information is enabled
+# or disabled by the customer and requires a key to interact
+# with.
+# XXX We only allow this on userdebug or eng
+userdebug_or_eng(`
+  allow kernel serial_device:chr_file rw_file_perms;
+')
+# vnvm accesses
+allow kernel rpc_block_device:blk_file rw_file_perms;
+allow kernel rpc_block_device:dir search;

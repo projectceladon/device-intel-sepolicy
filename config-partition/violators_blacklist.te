@@ -1,0 +1,3 @@
+typeattribute vold data_between_core_and_vendor_violators;
+typeattribute ueventd data_between_core_and_vendor_violators;
+

@@ -1,0 +1,9 @@
+# HAL
+
+hal.              u:object_r:hal_prop:s0
+
+# LCD
+sf.               u:object_r:lcd_prop:s0
+
+# Sensor
+iio.              u:object_r:sensor_prop:s0

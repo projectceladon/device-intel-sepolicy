@@ -1,0 +1,17 @@
+#
+# Macros are defined in this file since they cannot be placed into
+# a file with any other name and be picked up by the build.
+#
+
+#####################################
+# fr_enabled(rules)
+# Allow rules only on fr enabled devices
+# controlled via mixins BoardConfig.mk to set
+# this variable.
+define(`fr_enabled', ifelse(camera_ipu2_enable_fr_service, `true', $1, ))
+define(`fr_enabled', ifelse(camera_ipu4_enable_fr_service, `true', $1, ))
+
+fr_enabled(`
+    media.camera.fr                           u:object_r:mediaserver_service:s0
+')
+

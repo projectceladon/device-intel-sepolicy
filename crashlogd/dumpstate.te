@@ -1,3 +1,13 @@
-allow dumpstate block_device:blk_file getattr;
-allow dumpstate debugfs_graphics_sync:dir r_dir_perms;
-allow dumpstate self:netlink_xfrm_socket create;
+#
+# dumpstate
+#
+dontaudit dumpstate log_file:file r_file_perms;
+
+userdebug_or_eng(`
+	allow dumpstate sysfs_zram:file r_file_perms;
+	allow dumpstate unlabeled:dir getattr;
+	allow dumpstate userdata_block_device:dir getattr;
+	allow dumpstate userdata_block_device:blk_file getattr;
+	allow dumpstate config_block_device:blk_file getattr;
+	binder_call(dumpstate, update_engine);
+')

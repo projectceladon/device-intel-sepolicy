@@ -33,7 +33,6 @@ userdebug_or_eng(`
   dontaudit crashlogd domain:binder *;
   dontaudit crashlogd property_type:property_service *;
   dontaudit crashlogd property_type:file *;
-  # dontaudit crashlogd domain:debuggerd *;
   dontaudit crashlogd service_manager_type:service_manager *;
   dontaudit crashlogd servicemanager: binder *;
 ')

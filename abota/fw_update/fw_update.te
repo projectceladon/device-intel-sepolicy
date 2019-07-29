@@ -1,0 +1,25 @@
+# seclabel is specified in init.rc
+type fw_update, domain;
+type fw_update_exec, exec_type, file_type, vendor_file_type;
+
+recovery_only(`
+  domain_trans(init, rootfs, fw_update)
+  allow fw_update rootfs:file rx_file_perms;
+')
+
+init_daemon_domain(fw_update)
+
+not_full_treble(`
+  binder_use(fw_update)
+  add_service(fw_update, fw_update_service)
+')
+
+allow fw_update proc:file r_file_perms;
+allow fw_update userdata_block_device:{ lnk_file blk_file } w_file_perms;
+allow fw_update vendor_toolbox_exec:file execute_no_trans;
+allow fw_update vendor_file:file execute_no_trans;
+allow fw_update block_device:dir search;
+allow fw_update boot_block_device:blk_file r_file_perms;
+allow fw_update tmpfs:dir w_dir_perms;
+allow fw_update tmpfs:file w_file_perms;
+allow fw_update proc_cmdline:file r_file_perms;

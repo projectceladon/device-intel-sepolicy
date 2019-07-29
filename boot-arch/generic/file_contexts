@@ -1,0 +1,23 @@
+#
+# Block Devices
+#
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/boot(_(a|b))?	u:object_r:boot_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/bootloader(_(a|b))?	u:object_r:boot_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/multiboot(_(a|b))?	u:object_r:boot_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/system(_(a|b))?	u:object_r:system_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/vendor(_(a|b))?	u:object_r:vendor_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/product(_(a|b))?	u:object_r:product_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/odm(_(a|b))?	u:object_r:odm_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/vbmeta(_(a|b))?	u:object_r:boot_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/tos(_(a|b))?		u:object_r:boot_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/persistent		u:object_r:frp_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/recovery		u:object_r:recovery_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/metadata		u:object_r:metadata_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/cache		u:object_r:cache_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/data			u:object_r:userdata_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/userdata			u:object_r:userdata_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/misc			u:object_r:misc_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/teedata		u:object_r:tee_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/acpi(_(a|b))?		u:object_r:acpi_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/acpio(_(a|b))?		u:object_r:acpio_block_device:s0
+/dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/super 		u:object_r:super_block_device:s0

@@ -1,0 +1,5 @@
+carplay.usb.configured u:object_r:carplay_prop:s0
+carplay.usb.mode u:object_r:carplay_prop:s0
+persist.sys.carplay u:object_r:carplay_prop:s0
+persist.sys.iap2 u:object_r:carplay_prop:s0
+ctl.mdnsd_carplay u:object_r:carplay_prop:s0

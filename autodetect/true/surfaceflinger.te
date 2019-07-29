@@ -1,0 +1,2 @@
+allow surfaceflinger hal:unix_stream_socket connectto;
+allow surfaceflinger hal_socket:sock_file write;

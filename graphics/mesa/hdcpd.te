@@ -1,0 +1,3 @@
+allow hdcpd proc_graphics:file r_file_perms;
+binder_call(hdcpd, hal_graphics_composer_default);
+

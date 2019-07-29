@@ -1,0 +1,4 @@
+/dev/ipu-psys0              u:object_r:video_device:s0
+
+/dev/intel_pipeline            u:object_r:video_device:s0
+/dev/intel_stream[0-9]+         u:object_r:video_device:s0

@@ -9,8 +9,6 @@ allow hal_neuralnetworks_default self:process execmem;
 
 allow hal_neuralnetworks_default vendor_data_file:file { read write };
 
-allow shell hal_neuralnetworks_hwservice:hwservice_manager find;
-
 # allow hal_neuralnetworks to access libusb
 allow hal_neuralnetworks_default usb_device:dir r_dir_perms;
 allow hal_neuralnetworks_default usb_device:chr_file rw_file_perms;
@@ -21,4 +19,4 @@ dontaudit hal_neuralnetworks_default self:capability { dac_read_search dac_overr
 allow hal_neuralnetworks_default sysfs:dir r_dir_perms;
 allow hal_neuralnetworks_default sysfs:file rw_file_perms;
 allow hal_neuralnetworks_default nn_vendor_data_file:dir rw_dir_perms;
-allow hal_neuralnetworks_default nn_vendor_data_file:file create_file_perms;
+allow hal_neuralnetworks_default nn_vendor_data_file:file create_file_perms; 

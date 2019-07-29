@@ -1,0 +1,12 @@
+# mali dev devices are system system 0666 thus we label as gpu device to accessable
+# to appdomain
+/dev/mali[0-9]*	u:object_r:gpu_device:s0
+
+# dcc is system system 0660 and as such is not accessable to all and it thus labeled
+# as graphics device
+/dev/dcc        u:object_r:graphics_device:s0
+
+# sw_sync is used by HW composer only, label as graphics device
+/dev/sw_sync    u:object_r:graphics_device:s0
+
+/sys/devices/virtual/mali/pm/max_freq_level u:object_r:sysfs_graphics_writable:s0

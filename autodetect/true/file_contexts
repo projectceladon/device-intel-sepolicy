@@ -1,0 +1,28 @@
+# Bluetooth
+/dev/ttyBT[0-9]             u:object_r:hci_attach_dev:s0
+
+#HAL
+/dev/socket/halbindings     u:object_r:hal_socket:s0
+
+/dev/hald.ready             u:object_r:hal_device:s0
+
+/system/bin/hald            u:object_r:hal_exec:s0
+/system/bin/hald_media_hook u:object_r:hal_exec:s0
+/system/bin/halctl          u:object_r:hal_exec:s0
+
+/system/rt/hal_mnt_pnt(/.*)?   u:object_r:hal_mnt_pnt:s0
+# hal mounts filesystems at:
+#  /system/etc/permissions
+#  /system/etc/atomisp
+#  /system/etc/modprobe.d
+/system/etc/permissions(/.*)?  u:object_r:hal_mnt_pnt:s0
+/system/etc/atomisp(/.*)?      u:object_r:hal_mnt_pnt:s0
+/system/etc/modprobe.d(/.*)?   u:object_r:hal_mnt_pnt:s0
+# dm device mounted here
+/system/rt/gfx                 u:object_r:hal_mnt_pnt:s0
+/system/rt/hal_fuse            u:object_r:hal_mnt_pnt:s0
+/system/rt/media               u:object_r:hal_mnt_pnt:s0
+/system/rt/wifi                u:object_r:hal_mnt_pnt:s0
+
+#rfkill
+(/system)?/vendor/bin/rfkillp         u:object_r:rfkill_exec:s0

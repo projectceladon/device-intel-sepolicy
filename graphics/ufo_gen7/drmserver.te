@@ -1,0 +1,2 @@
+# aaccess to /data/IntelCPHS.log
+allow drmserver system_data_file:dir { write add_name };

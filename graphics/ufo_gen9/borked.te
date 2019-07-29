@@ -1,0 +1,10 @@
+# ufo_gen9 also has a weird design where it setprops its version,
+# causing tons of weird setprops accross the system.
+#
+# https://jira01.devtools.intel.com/browse/OAM-33150
+#
+# When that is fixed, this needs to be corrected to be a get_prop() on a read
+# only property.
+set_prop(bootanim, system_prop)
+set_prop(platform_app, system_prop)
+set_prop(priv_app, system_prop)

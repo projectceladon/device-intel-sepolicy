@@ -1,0 +1,13 @@
+# Rules for vendor/intel/ufo
+type msync, domain;
+type msync_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(msync);
+
+# Need to use vendor binder
+vndbinder_use(msync)
+not_full_treble(`
+  binder_service(msync)
+')
+add_service(msync, msync_service)
+binder_call(msync, coreu)
+binder_call(msync, hdcpd)

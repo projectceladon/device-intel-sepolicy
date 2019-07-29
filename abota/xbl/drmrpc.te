@@ -1,0 +1,20 @@
+# Abl_user_cmd service, which is set the drmrpc service property,
+# would capsule the target slot info message and write it into
+# /dev/mei interface to notice ABL to update itself.
+#
+# There are two types of abl_user_cmd service, the one is under the
+# vendor partition in normal boot mode, and the another is under the
+# ramdisk in the recovery mode.
+
+type drmrpc, domain;
+
+not_recovery_only(`
+  type drmrpc_exec, exec_type, file_type, vendor_file_type;
+  init_daemon_domain(drmrpc)
+')
+
+recovery_only(`
+  typeattribute drmrpc coredomain;
+  domain_trans(init, rootfs, drmrpc)
+')
+allow drmrpc tee_device:chr_file rw_file_perms;

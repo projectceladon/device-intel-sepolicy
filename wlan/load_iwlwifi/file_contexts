@@ -1,0 +1,1 @@
+/vendor/bin/load_iwlwifi.sh    u:object_r:load_iwlwifi_script_exec:s0

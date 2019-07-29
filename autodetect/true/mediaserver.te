@@ -1,0 +1,10 @@
+#
+# mediaserver
+#
+
+unix_socket_connect(mediaserver, hal, hal)
+
+# Access various hal supplied configuration files, like:
+# /system/etc/atomisp/00ov8858.slti20mr6.aiqb
+allow mediaserver hal_mnt_pnt:dir r_dir_perms;
+allow mediaserver hal_mnt_pnt:file r_file_perms;

@@ -1,0 +1,5 @@
+#
+# system_server
+#
+
+r_dir_file(system_server, pstore-clean_data_file)

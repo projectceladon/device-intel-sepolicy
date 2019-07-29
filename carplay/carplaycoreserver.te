@@ -1,0 +1,37 @@
+# Carplay core server, Core service implemented for Apple Carplay
+# functionalities and interacted with carplay-ipod-daemon.
+
+define(`carplay_socket_perms', `{ bind create read setopt }')
+type carplaycoreserver_app_data_file, file_type, data_file_type;
+type carplaycoreserver_app, domain;
+
+app_domain(carplaycoreserver_app)
+net_domain(carplaycoreserver_app)
+binder_service(carplaycoreserver_app)
+
+allow carplaycoreserver_app mdnsd_carplay:unix_stream_socket connectto;
+allow carplaycoreserver_app carplaycoreserver_app_data_file:dir create_dir_perms;
+binder_call(carplaycoreserver_app, cpserver)
+
+set_prop(carplaycoreserver_app, system_prop)
+set_prop(carplaycoreserver_app, carplay_prop)
+
+allow carplaycoreserver_app proc_meminfo:file r_file_perms;
+allow carplaycoreserver_app proc_net:file r_file_perms;
+allow carplaycoreserver_app self:netlink_kobject_uevent_socket carplay_socket_perms;
+allowxperm carplaycoreserver self:netlink_kobject_uevent_socket ioctl SIOCETHTOOL;
+allow carplaycoreserver_app sysfs:dir r_dir_perms;
+allow carplaycoreserver_app sysfs:file r_file_perms;
+allow carplaycoreserver_app activity_service:service_manager find;
+allow carplaycoreserver_app display_service:service_manager find;
+allow carplaycoreserver_app network_management_service:service_manager find;
+allow carplaycoreserver_app connectivity_service:service_manager find;
+allow carplaycoreserver_app batterystats_service:service_manager find;
+allow carplaycoreserver_app mediacodec_service:service_manager find;
+allow carplaycoreserver_app mediaserver_service:service_manager find;
+allow carplaycoreserver_app surfaceflinger_service:service_manager find;
+allow carplaycoreserver_app audioserver_service:service_manager find;
+allow carplaycoreserver_app scheduling_policy_service:service_manager find;
+allow carplaycoreserver_app appops_service:service_manager find;
+allow carplaycoreserver_app cp_service:service_manager find;
+allow carplaycoreserver_app bluetooth_manager_service:service_manager find;

@@ -1,0 +1,2 @@
+# property for power HAL
+vendor.power_hal.          u:object_r:vendor_power_hal_prop:s0

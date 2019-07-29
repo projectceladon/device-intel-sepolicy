@@ -1,0 +1,3 @@
+user=system seinfo=platform name=com.windriver.carplaycoreserver domain=carplaycoreserver_app type=carplaycoreserver_app_data_file
+user=system seinfo=platform name=com.windriver.ipod.iap2.service domain=ipod2service_app type=ipod2service_app_data_file
+

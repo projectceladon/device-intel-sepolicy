@@ -1,0 +1,40 @@
+# carplay-ipod-daemon, Service which provides interface for
+# iPod control/event based on Apple IAP/IAP2.
+type carplay-ipod-daemon-2, domain;
+type carplay-ipod-daemon-2_exec, exec_type, file_type;
+
+init_daemon_domain(carplay-ipod-daemon-2)
+# carplay works via network connection, with using bonjour.
+allow carplay-ipod-daemon-2 self:capability { net_admin net_raw };
+net_domain(carplay-ipod-daemon-2)
+
+allow carplay-ipod-daemon-2 system_data_file:dir r_dir_perms;
+allow carplay-ipod-daemon-2 system_data_file:file r_file_perms;
+
+# grant set propoerty
+set_prop(carplay-ipod-daemon-2, carplay_prop)
+set_prop(carplay-ipod-daemon-2, ctl_mdnsd_prop)
+set_prop(carplay-ipod-daemon-2, system_prop)
+
+allow carplay-ipod-daemon-2 iap2_device:chr_file rw_file_perms;
+allow carplay-ipod-daemon-2 proc_net:file w_file_perms;
+allow carplay-ipod-daemon-2 self:netlink_kobject_uevent_socket create_socket_perms;
+allowxperm carplay-ipod-daemon-2 self:netlink_kobject_uevent_socket ioctl SIOCETHTOOL;
+
+binder_call(carplay-ipod-daemon-2, cpserver)
+binder_use(carplay-ipod-daemon-2)
+
+allow carplay-ipod-daemon-2 shell_exec:file rx_file_perms;
+
+# sysfs access
+# path="/sys/bus/platform/devices/intel-cht-otg.0/mux_state
+allow carplay-ipod-daemon-2 sysfs:dir r_dir_perms;
+allow carplay-ipod-daemon-2 sysfs:file r_file_perms;
+
+allow carplay-ipod-daemon-2 sysfs_usb_writable:dir r_dir_perms;
+allow carplay-ipod-daemon-2 sysfs_usb_writable:file rw_file_perms;
+allow carplay-ipod-daemon-2 usb_device:chr_file rw_file_perms;
+allow carplay-ipod-daemon-2 usb_device:dir r_dir_perms;
+allow carplay-ipod-daemon-2 usb_role_switch:dir r_dir_perms;
+allow carplay-ipod-daemon-2 usb_role_switch:file rw_file_perms;
+allow carplay-ipod-daemon-2 cp_service:service_manager find;

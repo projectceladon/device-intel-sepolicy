@@ -1,0 +1,1 @@
+genfscon proc /driver/i915rpm/i915_rpm_op u:object_r:proc_graphics:s0

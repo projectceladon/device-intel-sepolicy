@@ -1,0 +1,4 @@
+dontaudit dumpstate graphics_device:dir search;
+allow dumpstate debugfs_graphics_sync:dir r_dir_perms;
+allow dumpstate debugfs_mmc:dir r_dir_perms;
+allow dumpstate sysfs_zram:dir r_dir_perms;

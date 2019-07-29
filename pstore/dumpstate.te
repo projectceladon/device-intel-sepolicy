@@ -1,0 +1,5 @@
+#
+# dumpstate
+#
+
+dontaudit dumpstate pstore-clean_data_file:dir search;

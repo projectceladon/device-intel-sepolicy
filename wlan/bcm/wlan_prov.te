@@ -1,0 +1,18 @@
+#
+# wlan_prov.te
+#
+
+type wlan_prov, domain;
+type wlan_prov_exec, exec_type, file_type;
+init_daemon_domain(wlan_prov)
+
+module_only(`config_partition', `
+  allow wlan_prov config_file:dir search;
+')
+
+allow wlan_prov wlan_prov_data_file:dir create_dir_perms;
+allow wlan_prov wlan_prov_data_file:file create_file_perms;
+
+# rw access (including ioctl) is needed to access the /dev/mei partition where
+# the MAC address is stored.
+allow wlan_prov tee_device:chr_file rw_file_perms;

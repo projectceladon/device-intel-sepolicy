@@ -1,0 +1,6 @@
+#
+# kernel
+#
+
+# modprobe usermode helper
+allow kernel hal_mnt_pnt:dir r_dir_perms;

@@ -1,0 +1,2 @@
+genfscon proc /driver/i915rpm/i915_rpm_op u:object_r:proc_graphics:s0
+genfscon sysfs /devices/pci0000:00/0000:00:02.0/ u:object_r:sysfs_app_readable:s0

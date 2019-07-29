@@ -1,0 +1,8 @@
+#
+# surfaceflinger
+#
+
+# graphics buffer passed to applications for screencap and rendering
+#allow appdomain surfaceflinger_tmpfs:file { read write };
+allow appdomain hal_graphics_allocator_default_tmpfs:file { read write map };
+allow appdomain sysfs_app_readable:file r_file_perms;

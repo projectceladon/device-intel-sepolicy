@@ -1,0 +1,8 @@
+# configfs
+allow init configfs:dir create_dir_perms;
+allow init configfs:file create_file_perms;
+allow init configfs:file write;
+allow init configfs:lnk_file { create unlink };
+
+# Allow init to mount on /dev/usb-ffs/adb.
+allow init functionfs:dir mounton;

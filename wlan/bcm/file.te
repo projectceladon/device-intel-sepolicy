@@ -1,0 +1,2 @@
+# Wifi MAC address in /oem_config/wifi/
+type wlan_prov_data_file, file_type, data_file_type;

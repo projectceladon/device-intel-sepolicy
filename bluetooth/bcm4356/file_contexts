@@ -1,0 +1,2 @@
+/dev/ttyHSU0 u:object_r:hci_attach_dev:s0
+/system/bin/rfkill_bt.sh u:object_r:rfkill_exec:s0

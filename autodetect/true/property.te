@@ -1,0 +1,11 @@
+# HAL
+
+type hal_prop, property_type;
+
+# LCD
+type lcd_prop, property_type;
+
+# Sensors
+# XXX Why here? I only see access from hald in sepolicy,
+# but this should be in the proper mixin.
+type sensor_prop, property_type;

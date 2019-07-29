@@ -1,0 +1,3 @@
+# installd
+# avc: denied { dac_read_search } for pid=2182 comm="installd" capability=2 scontext=u:r:installd:s0 tcontext=u:r:installd:s0 tclass=capability permissive=0
+#allow installd self:capability dac_read_search;

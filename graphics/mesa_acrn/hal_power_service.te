@@ -1,0 +1,1 @@
+allow hal_power_service sysfs_app_readable:file rw_file_perms;

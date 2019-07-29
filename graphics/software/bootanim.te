@@ -1,0 +1,2 @@
+set_prop(bootanim, exported_system_prop)
+allow bootanim self:process execmem;
