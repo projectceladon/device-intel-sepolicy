@@ -1,9 +1,0 @@
-#telephony specific permissions for cg2k
-define(`cg2k_only', ifelse(sepolicy_module_gps, `cg2k', $1, ))
-
-cg2k_only(`
-  allow cg2k rpc_reg_socket:sock_file write;
-  allow cg2k rpc_recv_socket:sock_file write;
-  allow cg2k rpc_send_socket:sock_file write;
-  allow cg2k rpcdaemon:unix_stream_socket connectto;
-')

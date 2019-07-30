@@ -1,2 +1,0 @@
-set_prop(rpcServer, modem_prop)
-allow rpcServer rpc_block_device:blk_file { read open  };

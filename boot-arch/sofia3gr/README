@@ -1,3 +1,0 @@
-All of this was commented out since boot-arch cannot be leveraged. Bootarch is in sofia_lte policy
-for now, since that device is stable enough to bring up. Eventually, when sf3gr comes up, sofia LTE
-policy can be pulled back up into bootarch.

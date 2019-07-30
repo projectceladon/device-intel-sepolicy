@@ -1,6 +1,0 @@
-##
-## radio
-##
-#
-set_prop(radio, modem_prop)
-#

@@ -1,2 +1,0 @@
-allow bluetooth self:netlink_socket create_socket_perms;
-

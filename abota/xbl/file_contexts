@@ -1,2 +1,0 @@
-/vendor/bin/abl-user-cmd_vendor					u:object_r:drmrpc_exec:s0
-/vendor/bin/sbl-user-cmd_vendor					u:object_r:drmrpc_exec:s0
