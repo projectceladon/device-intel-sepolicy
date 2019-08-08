@@ -1,3 +1,2 @@
 allow system_server graphics_device:dir search;
 allow system_server graphics_device:chr_file rw_file_perms;
-allow system_server self:process execmem;
