@@ -1,0 +1,4 @@
+# Rules for aafd
+type aafd, domain;
+type aafd_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(aafd)
