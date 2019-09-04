@@ -17,10 +17,6 @@
 #    type hal_bluetooth_default_exec, exec_type, file_type;
 #    init_daemon_domain(hal_bluetooth_default)
 #
-#    # Logging for backward compatibility
-#    allow hal_bluetooth_default bluetooth_data_file:dir ra_dir_perms;
-#    allow hal_bluetooth_default bluetooth_data_file:file create_file_perms;
-#
 # Google allow vendor to write his own hal service, but do not suggest
 # directly modify the default hal service code. Google also give the reference
 # code(device/linaro/hikey/bluetooth) about how to write vendor's own hal
@@ -40,9 +36,6 @@ type hal_bluetooth_vbt_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(hal_bluetooth_vbt)
 
 set_prop(hal_bluetooth_vbt, vendor_bluetooth_prop)
-# Logging for backward compatibility
-allow hal_bluetooth_vbt bluetooth_data_file:dir ra_dir_perms;
-allow hal_bluetooth_vbt bluetooth_data_file:file create_file_perms;
 
 allow hal_bluetooth_vbt self:socket create_socket_perms;
 
