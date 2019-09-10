@@ -9,7 +9,3 @@
 allow tee self:capability sys_rawio;
 allow tee block_device:dir search;
 allow tee tee_device:blk_file rw_file_perms;
-allow tee vendor_shell_exec:file execute_no_trans;
-allow tee vendor_toolbox_exec:file execute_no_trans;
-allow tee system_data_file:file read;
-set_prop(tee, tee_service_prop);
