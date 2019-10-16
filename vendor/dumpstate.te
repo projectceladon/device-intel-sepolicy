@@ -1,0 +1,3 @@
+dontaudit dumpstate sysfs:file read;
+dontaudit dumpstate device:file write;
+dontaudit dumpstate unlabeled:file read;
