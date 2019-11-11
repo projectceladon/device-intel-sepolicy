@@ -1,0 +1,16 @@
+#rules for usb HAL
+type usb, domain;
+type usb_exec, exec_type, file_type, vendor_file_type;
+hal_server_domain(usb, hal_usb)
+hal_server_domain(usb, hal_usb_gadget)
+init_daemon_domain(usb)
+
+allow usb hal_usb_default_exec:file entrypoint;
+allow usb hwservicemanager:binder { transfer call };
+allow usb system_file:dir r_dir_perms;
+allow usb configfs:dir rw_dir_perms;
+allow usb configfs:file create_file_perms;
+allow usb self:netlink_kobject_uevent_socket { read bind create getopt setopt };
+get_prop(usb, vendor_usbconfig_prop)
+allow usb sysfs_usb_typec:dir r_dir_perms;
+allow usb sysfs_usb_typec:file rw_file_perms;
