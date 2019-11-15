@@ -1,0 +1,12 @@
+allow logwrapper vendor_shell_exec:file rx_file_perms;
+allow logwrapper vendor_toolbox_exec:file rx_file_perms;
+allow logwrapper vendor_file:file rx_file_perms;
+allow logwrapper sysfs:file r_file_perms;
+allow logwrapper proc:file r_file_perms;
+allow logwrapper kernel:system module_request;
+
+allow logwrapper self:bluetooth_socket create_socket_perms_no_ioctl;
+
+set_prop(logwrapper, vendor_graphics_hwcomposer_prop)
+set_prop(logwrapper, vendor_video_codec_prop)
+

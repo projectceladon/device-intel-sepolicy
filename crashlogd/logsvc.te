@@ -7,9 +7,6 @@ userdebug_or_eng(`
   allow logsvc self:capability { sys_nice };
   allow logsvc self:capability2 syslog;
 
-  allow logsvc log_file:file create_file_perms;
-  allow logsvc log_file:dir rw_dir_perms;
-
   allow logsvc logdr_socket:sock_file write;
   allow logsvc logd:unix_stream_socket connectto;
 
@@ -21,15 +18,20 @@ userdebug_or_eng(`
   set_prop(logsvc, vendor_elogs_prop)
   set_prop(logsvc, logpersistd_logging_prop)
 
-  allow logsvc cache_file:dir r_dir_perms;
-  allow logsvc cache_file:file r_file_perms;
-  allow logsvc log_file:lnk_file create_file_perms;
   allow logsvc misc_logd_file:file getattr;
   permissive logsvc;
 
   dontaudit logsvc self:capability *;
   dontaudit logsvc misc_logd_file:dir *;
   dontaudit logsvc sysfs:file *;
+  dontaudit logsvc cache_file:file *;
+  dontaudit logsvc cache_file:dir rw_dir_perms;
+  dontaudit logsvc cache_file:lnk_file create_file_perms;
+  dontaudit logsvc log_file:file create_file_perms;
+  dontaudit logsvc log_file:dir *;
+  dontaudit logsvc log_file:lnk_file create_file_perms;
+  dontaudit logsvc vendor_apklogfs_prop:file create_file_perms;
+  dontaudit logsvc vendor_aplogfs_prop:file create_file_perms;
 
   allow logsvc vendor_toolbox_exec:file execute_no_trans;
   allow logsvc logd_socket:sock_file write;

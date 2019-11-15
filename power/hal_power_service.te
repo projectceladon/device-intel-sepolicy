@@ -6,3 +6,4 @@ init_daemon_domain(hal_power_service)
 
 allow hal_power_service cgroup:file rw_file_perms;
 allow hal_power_service sysfs_devices_system_cpu:file rw_file_perms;
+allow hal_power_service sysfs_power:file r_file_perms;

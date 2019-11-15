@@ -1,0 +1,1 @@
+allow bootanim tmpfs:file { read write };

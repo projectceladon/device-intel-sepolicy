@@ -26,7 +26,12 @@ userdebug_or_eng(`
   dontaudit crashreport_app vendor_core_prop:file *;
   dontaudit crashreport_app runtime_event_log_tags_file:file *;
   dontaudit crashreport_app vendor_crashlogd_prop:file *;
+  dontaudit crashreport_app activity_service:service_manager find;
+  dontaudit crashreport_app autofill_service:service_manager find;
+  dontaudit crashreport_app dropbox_service:service_manager find;
+  dontaudit crashreport_app log_file:lnk_file create_file_perms;
 
 # any rules that violate neverallows can go here
   dontaudit crashreport_app serialno_prop:file r_file_perms;
+  dontaudit crashreport_app cgroup:file *;
 ')
