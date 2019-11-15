@@ -1,0 +1,2 @@
+allow adbd kernel:system module_request;
+set_prop(adbd, ctl_start_prop)

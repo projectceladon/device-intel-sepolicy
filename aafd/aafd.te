@@ -2,3 +2,32 @@
 type aafd, domain;
 type aafd_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(aafd)
+
+allow aafd proc_cmdline:file r_file_perms;
+allow aafd self:netlink_kobject_uevent_socket create_socket_perms;
+allowxperm aafd self:netlink_kobject_uevent_socket ioctl SIOCETHTOOL;
+
+allow aafd self:capability { net_admin sys_module };
+allow aafd sysfs:dir r_dir_perms;
+allow aafd sysfs:file rw_file_perms;
+allow aafd sysfs_app_readable:dir r_dir_perms;
+allow aafd sysfs_app_readable:file rw_file_perms;
+allow aafd sysfs_devices_system_cpu:file w_file_perms;
+allow aafd sysfs_dm:dir r_dir_perms;
+allow aafd sysfs_dm:file w_file_perms;
+allow aafd sysfs_dt_firmware_android:dir r_dir_perms;
+allow aafd sysfs_health2_0_management:dir r_dir_perms;
+allow aafd sysfs_health2_0_management:file w_file_perms;
+allow aafd sysfs_hwrandom:dir r_dir_perms;
+allow aafd sysfs_hwrandom:file w_file_perms;
+allow aafd sysfs_loop:dir r_dir_perms;
+allow aafd sysfs_loop:file w_file_perms;
+allow aafd sysfs_net:dir r_dir_perms;
+allow aafd sysfs_net:file w_file_perms;
+allow aafd sysfs_rtc:dir r_dir_perms;
+allow aafd sysfs_rtc:file w_file_perms;
+allow aafd sysfs_thermal_management:dir r_dir_perms;
+allow aafd sysfs_thermal_management:file w_file_perms;
+allow aafd sysfs_zram:dir r_dir_perms;
+allow aafd sysfs_zram_uevent:file w_file_perms;
+allow aafd vendor_file:system module_load;

@@ -1,0 +1,1 @@
+genfscon sysfs /devices/pci0000:00/0000:00:01.0/drm/card0/gt_act_freq_mhz u:object_r:sysfs_power:s0

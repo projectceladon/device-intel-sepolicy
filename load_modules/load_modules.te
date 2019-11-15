@@ -18,6 +18,12 @@ allow load_modules rootfs:file r_file_perms;
 allow load_modules system_data_file:dir getattr;
 allow load_modules system_lib_file:file rx_file_perms;
 allow load_modules vendor_file:file rx_file_perms;
+allow load_modules debugfs_wifi_tracing:dir search;
+
+# load_modules cannot set & get sys.usb.config now, it
+# would better move these operations to init.rc
+dontaudit load_modules exported_system_radio_prop:file *;
+dontaudit coredomain load_modules:key view;
 
 not_full_treble(`
     allow load_modules shell_exec:file rx_file_perms;
