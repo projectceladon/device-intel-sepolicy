@@ -22,9 +22,12 @@
 /(vendor|system/vendor)/lib(64)?/libskuwa\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/gralloc\.broxton\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/gralloc\.intel\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.minigbm\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libgrallocclient\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libglapi\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/dri/i965_dri\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/dri/virtio_gpu_dri\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/dri/gallium_dri\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/vulkan\.broxton\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libmd\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libdrm_intel_pri\.so u:object_r:same_process_hal_file:s0
