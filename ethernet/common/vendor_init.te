@@ -1,4 +1,1 @@
-
-userdebug_or_eng(`
 allow vendor_init shell_prop:property_service set;
-')
