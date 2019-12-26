@@ -23,3 +23,4 @@ allow surfaceflinger sysfs_videostatus:file { getattr w_file_perms };
 allow surfaceflinger hal_graphics_allocator_default_tmpfs:file { read write map };
 allow surfaceflinger gpu_device:dir r_dir_perms;
 allow surfaceflinger sysfs_app_readable:file r_file_perms;
+allow surfaceflinger self:process execmem;
