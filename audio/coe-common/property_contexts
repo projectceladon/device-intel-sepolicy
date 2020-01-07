@@ -1,0 +1,3 @@
+vendor.audiohal.            u:object_r:vendor_audiohal_prop:s0
+persist.vendor.audiohal.    u:object_r:vendor_audiohal_prop:s0
+persist.vendor.audio.routeConf u:object_r:vendor_audiohal_prop:s0

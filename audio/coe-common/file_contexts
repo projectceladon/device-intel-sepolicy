@@ -1,0 +1,2 @@
+/(vendor|system/vendor)/bin/hw/android\.hardware\.audio\.intel@2\.0-service          u:object_r:hal_audio_default_exec:s0
+/dev/snd/.*                 u:object_r:audio_device:s0
