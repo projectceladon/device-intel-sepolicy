@@ -5,3 +5,7 @@ allow init {
 }:lnk_file relabelto;
 allow init userdata_block_device:{ lnk_file blk_file } w_file_perms;
 allowxperm init metadata_block_device:blk_file ioctl { BLKDISCARD BLKSECDISCARD };
+
+allow init rootfs:file execute_no_trans;
+allow init self:packet_socket read;
+allow init self:udp_socket ioctl;
