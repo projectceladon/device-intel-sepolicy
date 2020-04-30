@@ -19,3 +19,6 @@ allowxperm hal_thermal_intel self:can_socket ioctl {
   SIOCSIFFLAGS
 };
 
+#For vsock communication with host thermal utility
+allow hal_thermal_intel self:{ socket vsock_socket } { create read write listen accept bind connect };
+allow hal_thermal_intel unlabeled:{ socket vsock_socket } { getopt read write shutdown };
