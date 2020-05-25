@@ -1,0 +1,4 @@
+recovery_only(`
+  allow recovery gpu_device:dir  search;
+  allow recovery sysfs_backlight_thermal:dir  search;
+')
