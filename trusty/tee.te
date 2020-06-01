@@ -5,7 +5,9 @@
 
 # storageproxyd requires sys_rawio permission to call ioctl to execute
 # read/write operations on /dev/rpmb*, which is in tee domain.
+type rpmb_virt_device, dev_type;
 
+allow tee rpmb_virt_device:chr_file { open read write };
 allow tee self:capability sys_rawio;
 allow tee block_device:dir search;
 allow tee tee_device:blk_file rw_file_perms;
