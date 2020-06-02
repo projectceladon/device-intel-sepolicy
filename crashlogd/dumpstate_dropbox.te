@@ -13,8 +13,6 @@ userdebug_or_eng(`
   # breaks treble, but its a permisisve debug domain so just dontaudit it.
   dontaudit dumpstate_dropbox dropbox_service:service_manager find;
 
-  set_prop(dumpstate_dropbox, ctl_dumpstate_prop)
-
   # Breaks treble, just ignore it.
   dontaudit dumpstate_dropbox dumpstate_socket:sock_file write;
   dontaudit dumpstate_dropbox dumpstate:unix_stream_socket connectto;
