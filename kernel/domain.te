@@ -3,10 +3,8 @@ dontaudit {
 	dumpstate
 	init
 	installd
-	install_recovery
 	lmkd
 	netd
-	perfprofd
 	recovery
 	sdcardd
 	tee

@@ -16,8 +16,6 @@ allow aafd sysfs_devices_system_cpu:file w_file_perms;
 allow aafd sysfs_dm:dir r_dir_perms;
 allow aafd sysfs_dm:file w_file_perms;
 allow aafd sysfs_dt_firmware_android:dir r_dir_perms;
-allow aafd sysfs_health2_0_management:dir r_dir_perms;
-allow aafd sysfs_health2_0_management:file w_file_perms;
 allow aafd sysfs_hwrandom:dir r_dir_perms;
 allow aafd sysfs_hwrandom:file w_file_perms;
 allow aafd sysfs_loop:dir r_dir_perms;
