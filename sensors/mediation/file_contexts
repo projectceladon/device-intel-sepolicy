@@ -1,0 +1,1 @@
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors\.intel@1\.0-service u:object_r:hal_sensors_default_exec:s0
