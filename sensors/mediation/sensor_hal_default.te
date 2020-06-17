@@ -4,6 +4,7 @@ allow hal_sensors_default serial_device:chr_file rw_file_perms;
 
 userdebug_or_eng(`
     permissive hal_sensors_default;
-    dontaudit hal_sensors_default default_prop:file read;
-    dontaudit hal_sensors_default hal_sensors_default:tcp_socket { create read write connect name_connect getopt setopt };
+    dontaudit hal_sensors_default default_prop:file { open read getattr map };
+    dontaudit hal_sensors_default port:tcp_socket { name_connect };
+    dontaudit hal_sensors_default self:tcp_socket { create read write connect name_connect getopt setopt };
 ')
