@@ -16,6 +16,7 @@
 /dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/cache		u:object_r:cache_block_device:s0
 /dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/data			u:object_r:userdata_block_device:s0
 /dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/userdata			u:object_r:userdata_block_device:s0
+/dev/block/vdb								u:object_r:userdata_block_device:s0
 /dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/misc			u:object_r:misc_block_device:s0
 /dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/teedata		u:object_r:tee_device:s0
 /dev/block/(pci|platform|vbd)(/.*)?/.*/by-name/acpi(_(a|b))?		u:object_r:acpi_block_device:s0
