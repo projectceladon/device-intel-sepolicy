@@ -1,1 +1,2 @@
 (/system)?/vendor/bin/aafd u:object_r:aafd_exec:s0
+/mnt/share(/.*)? u:object_r:mnt_share_config:s0
