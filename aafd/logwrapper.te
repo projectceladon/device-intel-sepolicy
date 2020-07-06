@@ -11,3 +11,6 @@ set_prop(logwrapper, vendor_graphics_hwcomposer_prop)
 set_prop(logwrapper, vendor_video_codec_prop)
 
 set_prop(logwrapper, vendor_hwcomposer_prop)
+
+allow logwrapper mnt_share_config:dir search;
+allow logwrapper mnt_share_config:file { getattr open read };
