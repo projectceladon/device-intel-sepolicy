@@ -11,3 +11,5 @@ set_prop(logwrapper, vendor_graphics_hwcomposer_prop)
 set_prop(logwrapper, vendor_video_codec_prop)
 
 set_prop(logwrapper, vendor_hwcomposer_prop)
+
+set_prop(logwrapper, vendor_usb_controller_prop)

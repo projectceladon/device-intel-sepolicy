@@ -2,3 +2,4 @@ vendor.intel.video.codec u:object_r:vendor_video_codec_prop:s0
 vendor.hwcomposer.set u:object_r:vendor_hwcomposer_prop:s0
 vendor.gralloc.set u:object_r:vendor_hwcomposer_prop:s0
 vendor.egl.set u:object_r:vendor_hwcomposer_prop:s0
+vendor.usb.controller u:object_r:vendor_usb_controller_prop:s0
