@@ -13,3 +13,8 @@ set_prop(logwrapper, vendor_video_codec_prop)
 set_prop(logwrapper, vendor_hwcomposer_prop)
 
 set_prop(logwrapper, vendor_usb_controller_prop)
+
+allow logwrapper p9fs:file r_file_perms;
+allow logwrapper p9fs:dir r_dir_perms;
+set_prop(logwrapper, vendor_suspend)
+set_prop(logwrapper, vendor_gpu_type)
