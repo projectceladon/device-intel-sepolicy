@@ -1,4 +1,6 @@
 set_prop(vendor_init, vendor_video_codec_prop)
+set_prop(vendor_init, vendor_suspend)
+set_prop(vendor_init, vendor_gpu_type)
 get_prop(vendor_init, vendor_hwcomposer_prop)
 set_prop(vendor_init, vendor_usb_controller_prop)
 
