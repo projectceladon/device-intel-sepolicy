@@ -19,7 +19,9 @@ dontaudit hal_neuralnetworks_default self:capability { dac_read_search dac_overr
 allow hal_neuralnetworks_default sysfs:dir r_dir_perms;
 allow hal_neuralnetworks_default sysfs:file rw_file_perms;
 allow hal_neuralnetworks_default nn_vendor_data_file:dir rw_dir_perms;
-allow hal_neuralnetworks_default nn_vendor_data_file:file create_file_perms; 
+allow hal_neuralnetworks_default nn_vendor_data_file:file create_file_perms;
+allow hal_neuralnetworks_default openvino_etc_file:file r_file_perms;
+
 allow hal_neuralnetworks_default gpu_device:dir { open read search };
 allow hal_neuralnetworks_default gpu_device:chr_file { open read write ioctl getattr map };
 allow hal_neuralnetworks_default sysfs_app_readable:file r_file_perms;
