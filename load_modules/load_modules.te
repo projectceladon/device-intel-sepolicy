@@ -19,6 +19,7 @@ allow load_modules system_data_file:dir getattr;
 allow load_modules system_lib_file:file rx_file_perms;
 allow load_modules vendor_file:file rx_file_perms;
 allow load_modules debugfs_wifi_tracing:dir search;
+allow load_modules debugfs_tracing_instances:dir search; 
 
 # load_modules cannot set & get sys.usb.config now, it
 # would better move these operations to init.rc
