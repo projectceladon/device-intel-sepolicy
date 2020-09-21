@@ -1,2 +1,3 @@
 allow adbd kernel:system module_request;
+allow adbd self:vsock_socket { accept bind listen };
 set_prop(adbd, ctl_start_prop)
