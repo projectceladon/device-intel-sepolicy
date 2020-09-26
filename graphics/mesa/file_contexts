@@ -20,6 +20,7 @@
 /(vendor|system/vendor)/lib(64)?/libdrm_intel\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libpciaccess\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libskuwa\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.intel\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/gralloc\.celadon\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/gralloc\.minigbm\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libgrallocclient\.so u:object_r:same_process_hal_file:s0
