@@ -1,3 +1,4 @@
 allow adbd kernel:system module_request;
 allow adbd self:vsock_socket { accept bind listen };
+allow adbd hal_graphics_allocator_default_tmpfs:file map;
 set_prop(adbd, ctl_start_prop)
