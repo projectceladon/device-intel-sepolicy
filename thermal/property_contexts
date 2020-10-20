@@ -1,1 +1,2 @@
-persist.thermal.    u:object_r:vendor_thermal_prop:s0
+persist.vendor.thermal.    u:object_r:vendor_thermal_prop:s0
+vendor.thermal.            u:object_r:vendor_thermal_prop:s0
