@@ -1,0 +1,1 @@
+allow shell checkavx_exec:file getattr;

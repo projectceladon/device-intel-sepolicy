@@ -1,0 +1,23 @@
+# Rules for avx
+type checkavx, domain;
+type checkavx_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(checkavx)
+
+allow checkavx proc_cmdline:file r_file_perms;
+allow checkavx proc:file r_file_perms;
+
+allow checkavx vendor_file:file rx_file_perms;
+allow checkavx proc_cpuinfo:file r_file_perms;
+allow checkavx vendor_toolbox_exec:file execute_no_trans;
+
+set_prop(checkavx, dalvik_vm_isa_x86_variant_prop)
+set_prop(checkavx, dalvik_vm_isa_x86_64_variant_prop)
+
+not_full_treble(`
+  allow checkavx system_file:file rx_file_perms;
+  allow checkavx shell_exec:file rx_file_perms;
+')
+full_treble_only(`
+  allow checkavx vendor_shell_exec:file rx_file_perms;
+  allow checkavx vendor_toolbox_exec:file rx_file_perms;
+')
