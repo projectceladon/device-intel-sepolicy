@@ -1,0 +1,17 @@
+type auto_detection, domain;
+type auto_detection_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(auto_detection)
+
+set_prop(auto_detection, vendor_hwcomposer_prop)
+set_prop(auto_detection, vendor_usb_controller_prop)
+set_prop(auto_detection, vendor_video_codec_prop)
+set_prop(auto_detection, vendor_thermal_prop)
+set_prop(auto_detection, vendor_graphics_hwcomposer_prop)
+
+allow auto_detection sysfs:file rw_file_perms;
+allow auto_detection vendor_shell_exec:file rx_file_perms;
+allow auto_detection vendor_toolbox_exec:file rx_file_perms;
+allow auto_detection proc:file { open read };
+allow auto_detection self:bluetooth_socket create;
+allow auto_detection vendor_file:file execute_no_trans;
