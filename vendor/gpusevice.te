@@ -1,0 +1,3 @@
+#============= gpuservice ==============
+allow gpuservice gpu_device:dir { open read search };
+allow gpuservice sysfs_app_readable:file { open read };
