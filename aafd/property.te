@@ -1,5 +1,4 @@
 type vendor_video_codec_prop, property_type;
 type vendor_hwcomposer_prop, property_type;
 type vendor_suspend, property_type;
-type vendor_gpu_type, property_type;
 type vendor_usb_controller_prop, property_type;
