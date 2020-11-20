@@ -4,7 +4,7 @@ type logsvc_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(logsvc);
 
 userdebug_or_eng(`
-  allow logsvc self:capability { sys_nice };
+  dontaudit logsvc self:capability{ sys_nice };
   allow logsvc self:capability2 syslog;
 
   allow logsvc logdr_socket:sock_file write;
