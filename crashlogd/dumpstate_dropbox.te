@@ -6,7 +6,7 @@ userdebug_or_eng(`
 
   permissive dumpstate_dropbox;
 
-  allow dumpstate_dropbox self:capability { chown };
+  dontaudit dumpstate_dropbox self:capability { chown };
 
   allow domain dumpstate_dropbox:fd use;
 
@@ -33,9 +33,6 @@ userdebug_or_eng(`
   dontaudit dumpstate_dropbox binder_device: chr_file *;
   dontaudit dumpstate_dropbox default_prop:file *;
   dontaudit dumpstate_dropbox {fs_type dev_type file_type}:dir_file_class_set *;
-
-  module_only(`debug_crashlogd', `
-    allow dumpstate_dropbox log_file:dir ra_dir_perms;
-    allow dumpstate_dropbox log_file:file create_file_perms;
-  ')
+  dontaudit dumpstate_dropbox log_file:dir ra_dir_perms;
+  dontaudit dumpstate_dropbox log_file:file create_file_perms;
 ')
