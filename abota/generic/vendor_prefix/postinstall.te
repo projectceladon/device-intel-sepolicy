@@ -1,2 +1,0 @@
-typeattribute postinstall system_writes_vendor_properties_violators;
-set_prop(postinstall, vendor_ota_prop)
