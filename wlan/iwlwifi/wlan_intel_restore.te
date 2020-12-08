@@ -14,3 +14,6 @@ allow wlan_intel_restore toolbox_exec:file rx_file_perms;
 
 allow wlan_intel_restore block_device:dir search;
 
+dontaudit hal_wifi_default kernel:system module_request;
+dontaudit hal_wifi_default self:capability sys_module;
+
