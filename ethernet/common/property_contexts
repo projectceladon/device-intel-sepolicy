@@ -1,1 +1,1 @@
-persist.adb.tcp.port    u:object_r:exported2_system_prop:s0
+persist.adb.tcp.port    u:object_r:vendor_exported2_system_prop:s0
