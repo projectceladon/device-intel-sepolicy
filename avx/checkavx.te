@@ -10,8 +10,8 @@ allow checkavx vendor_file:file rx_file_perms;
 allow checkavx proc_cpuinfo:file r_file_perms;
 allow checkavx vendor_toolbox_exec:file execute_no_trans;
 
-set_prop(checkavx, dalvik_vm_isa_x86_variant_prop)
-set_prop(checkavx, dalvik_vm_isa_x86_64_variant_prop)
+set_prop(checkavx, vendor_dalvik_vm_isa_x86_variant_prop)
+set_prop(checkavx, vendor_dalvik_vm_isa_x86_64_variant_prop)
 
 not_full_treble(`
   allow checkavx system_file:file rx_file_perms;
