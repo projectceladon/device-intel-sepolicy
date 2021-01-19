@@ -1,3 +1,5 @@
 dontaudit dumpstate sysfs:file read;
 dontaudit dumpstate device:file write;
 dontaudit dumpstate unlabeled:file read;
+allow dumpstate hal_power_default:binder call;
+allow dumpstate hal_light_default:binder call;
