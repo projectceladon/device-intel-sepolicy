@@ -1,1 +1,4 @@
 /sys/kernel/debug/pstate_snb/setpoint u:object_r:debugfs_pstate:s0
+# resume_from_disk
+/vendor/bin/resume_from_disk     u:object_r:resume_from_disk_exec:s0
+/dev/snapshot              u:object_r:s4_snapshot_device:s0

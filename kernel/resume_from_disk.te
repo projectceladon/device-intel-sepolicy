@@ -1,0 +1,15 @@
+type resume_from_disk, domain;
+
+init_daemon_domain(resume_from_disk)
+typeattribute resume_from_disk vendor_executes_system_violators;
+type resume_from_disk_exec, exec_type, file_type, vendor_file_type;
+
+allow resume_from_disk kmsg_device:chr_file { write open };
+allow resume_from_disk proc:file { getattr read write open };
+allow resume_from_disk mnt_vendor_file:dir { open search write remove_name };
+allow resume_from_disk mnt_vendor_file:file { read open unlink };
+allow resume_from_disk device:dir write;
+allow resume_from_disk self:capability { ipc_lock sys_admin };
+allow resume_from_disk s4_snapshot_device:chr_file { write open ioctl };
+allow resume_from_disk block_device:dir search;
+allow resume_from_disk userdata_block_device:blk_file { open read write };
