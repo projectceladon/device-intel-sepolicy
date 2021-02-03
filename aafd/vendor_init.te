@@ -2,6 +2,6 @@ set_prop(vendor_init, vendor_video_codec_prop)
 set_prop(vendor_init, vendor_suspend)
 get_prop(vendor_init, vendor_hwcomposer_prop)
 set_prop(vendor_init, vendor_usb_controller_prop)
-
+get_prop(vendor_init, vendor_fixed_perf_prop)
 #============= vendor_init ==============
 allow vendor_init tmpfs:dir { add_name create write };
