@@ -1,0 +1,1 @@
+/vendor/bin/ffs_mount.sh u:object_r:ffs_mount_exec:s0

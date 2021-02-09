@@ -1,0 +1,7 @@
+type ffs_mount, domain;
+type ffs_mount_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(ffs_mount)
+allow ffs_mount device:dir mounton;
+allow ffs_mount functionfs:filesystem mount;
+
