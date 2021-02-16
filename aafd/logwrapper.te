@@ -7,6 +7,7 @@ allow logwrapper kernel:system module_request;
 
 allow logwrapper self:bluetooth_socket create_socket_perms_no_ioctl;
 
+set_prop(logwrapper, vendor_mount_ep0_prop)
 set_prop(logwrapper, vendor_graphics_hwcomposer_prop)
 set_prop(logwrapper, vendor_video_codec_prop)
 set_prop(logwrapper, vendor_audio_default_prop)
