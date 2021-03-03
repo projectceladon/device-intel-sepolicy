@@ -10,6 +10,14 @@ allow hal_graphics_composer_default gpu_device:dir r_dir_perms;
 allow hal_graphics_composer_default self:capability sys_admin;
 
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket { read bind create setopt };
+allow hal_graphics_composer_default self:{tcp_socket udp_socket} { read write bind create setopt getattr getopt shutdown };
+
+permissive hal_graphics_composer_default;
+dontaudit hal_graphics_composer_default domain:socket_class_set *;
+dontaudit hal_graphics_composer_default node_type:{ tcp_socket udp_socket } node_bind;
+dontaudit hal_graphics_composer_default netif_type:netif *;
+dontaudit hal_graphics_composer_default port_type:socket_class_set name_bind;
+dontaudit hal_graphics_composer_default port_type:{ tcp_socket dccp_socket } name_connect;
 
 add_service(hal_graphics_composer_default, hwc_info_service)
 
