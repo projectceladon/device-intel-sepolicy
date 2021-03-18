@@ -23,7 +23,7 @@ allow load_modules debugfs_tracing_instances:dir search;
 
 # load_modules cannot set & get sys.usb.config now, it
 # would better move these operations to init.rc
-dontaudit load_modules exported_system_radio_prop:file *;
+dontaudit load_modules usb_control_prop:file *;
 dontaudit coredomain load_modules:key view;
 
 not_full_treble(`

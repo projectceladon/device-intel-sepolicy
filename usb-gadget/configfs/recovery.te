@@ -1,6 +1,6 @@
 recovery_only(`
   # set sys.usb.ffs.ready prop
-  set_prop(recovery, ffs_prop)
+  set_prop(recovery, ffs_control_prop)
 
   # rules needed to access GPU
   allow recovery gpu_device:chr_file rw_file_perms;
