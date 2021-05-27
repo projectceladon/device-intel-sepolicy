@@ -1,3 +1,1 @@
-type carplay_prop, property_type;
-
-allow system_server carplay_prop:file { getattr open read };
+vendor_public_prop(carplay_prop)

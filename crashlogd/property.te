@@ -1,5 +1,5 @@
-type vendor_crashlogd_prop, property_type;
-type vendor_core_prop, property_type;
-type vendor_apklogfs_prop, property_type;
-type vendor_aplogfs_prop, property_type;
-type vendor_elogs_prop, property_type;
+vendor_restricted_prop(vendor_crashlogd_prop)
+vendor_internal_prop(vendor_core_prop)
+vendor_internal_prop(vendor_apklogfs_prop)
+vendor_internal_prop(vendor_aplogfs_prop)
+vendor_internal_prop(vendor_elogs_prop)

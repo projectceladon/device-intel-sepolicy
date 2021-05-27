@@ -1,1 +1,1 @@
-type vendor_mem_prop, property_type;
+vendor_internal_prop(vendor_mem_prop)
