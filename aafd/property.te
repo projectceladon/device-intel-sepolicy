@@ -1,6 +1,6 @@
-type vendor_video_codec_prop, property_type;
-type vendor_hwcomposer_prop, property_type;
-type vendor_suspend, property_type;
-type vendor_usb_controller_prop, property_type;
-type vendor_fixed_perf_prop, property_type;
-type vendor_mount_ep0_prop, property_type;
+vendor_internal_prop(vendor_video_codec_prop)
+vendor_internal_prop(vendor_hwcomposer_prop)
+vendor_internal_prop(vendor_suspend_prop)
+vendor_internal_prop(vendor_usb_controller_prop)
+vendor_internal_prop(vendor_fixed_perf_prop)
+vendor_internal_prop(vendor_mount_ep0_prop)

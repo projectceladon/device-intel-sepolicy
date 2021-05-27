@@ -1,1 +1,1 @@
-type vendor_audio_default_prop, property_type;
+vendor_internal_prop(vendor_audio_default_prop)

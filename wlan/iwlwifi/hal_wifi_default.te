@@ -1,2 +1,2 @@
 # Write wlan driver/fw version into property
-set_prop(hal_wifi_default, vendor_wifi_version)
+set_prop(hal_wifi_default, vendor_wifi_version_prop)

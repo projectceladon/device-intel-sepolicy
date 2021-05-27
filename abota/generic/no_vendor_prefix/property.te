@@ -1,1 +1,1 @@
-type ota_prop, property_type;
+vendor_internal_prop(ota_prop)
