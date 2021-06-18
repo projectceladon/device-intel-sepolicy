@@ -1,0 +1,8 @@
+ro.vendor.remote.sf.fake_camera                 u:object_r:vendor_camera_default_prop:s0
+ro.vendor.camera.in_frame_format.h264 u:object_r:vendor_camera_default_prop:s0
+ro.vendor.camera.in_frame_format.i420 u:object_r:vendor_camera_default_prop:s0
+ro.vendor.camera.decode.vaapi         u:object_r:vendor_camera_default_prop:s0
+ro.vendor.remote.sf.back_camera_hal             u:object_r:vendor_camera_default_prop:s0
+ro.vendor.remote.sf.front_camera_hal            u:object_r:vendor_camera_default_prop:s0
+ro.vendor.camera.transference         u:object_r:vendor_camera_default_prop:s0 
+vendor.camera.external         u:object_r:vendor_camera_default_prop:s0 
