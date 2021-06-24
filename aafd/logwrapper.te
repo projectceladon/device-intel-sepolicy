@@ -4,6 +4,8 @@ allow logwrapper vendor_file:file rx_file_perms;
 allow logwrapper sysfs:file r_file_perms;
 allow logwrapper proc:file r_file_perms;
 allow logwrapper kernel:system module_request;
+allow logwrapper debugfs_graphics:file r_file_perms;
+allow logwrapper debugfs_graphics:dir r_dir_perms;
 
 allow logwrapper self:bluetooth_socket create_socket_perms_no_ioctl;
 
@@ -20,3 +22,4 @@ set_prop(logwrapper, vendor_fixed_perf_prop)
 allow logwrapper p9fs:file r_file_perms;
 allow logwrapper p9fs:dir r_dir_perms;
 set_prop(logwrapper, vendor_suspend_prop)
+set_prop(logwrapper, vendor_graphics_gles_prop)

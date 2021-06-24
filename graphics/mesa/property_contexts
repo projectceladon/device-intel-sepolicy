@@ -1,1 +1,2 @@
 vendor.hwcomposer.edid.    u:object_r:vendor_graphics_hwcomposer_prop:s0
+vendor.gles.         u:object_r:vendor_graphics_gles_prop:s0
