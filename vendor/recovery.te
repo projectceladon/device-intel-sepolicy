@@ -1,4 +1,8 @@
 recovery_only(`
   allow recovery gpu_device:dir  search;
   allow recovery sysfs_backlight_thermal:dir  search;
+  allow recovery recovery:vsock_socket create;
+  allow recovery recovery:vsock_socket connect;
+  allow recovery recovery:vsock_socket write;
+  allow recovery recovery:capability net_admin;
 ')
