@@ -23,3 +23,4 @@ allow logwrapper p9fs:file r_file_perms;
 allow logwrapper p9fs:dir r_dir_perms;
 set_prop(logwrapper, vendor_suspend_prop)
 set_prop(logwrapper, vendor_graphics_gles_prop)
+set_prop(logwrapper, vendor_media_target_prop)
