@@ -1,1 +1,3 @@
 type sysfs_virtio, sysfs_type, fs_type;
+type proc_swappiness, proc_type, fs_type;
+type proc_disk_based_swap, proc_type, fs_type;
