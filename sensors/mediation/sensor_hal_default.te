@@ -8,3 +8,7 @@ userdebug_or_eng(`
     dontaudit hal_sensors_default port:tcp_socket { name_connect };
     dontaudit hal_sensors_default self:tcp_socket { create read write connect name_connect getopt setopt };
 ')
+
+#============= hal_sensors_default ==============
+allow hal_sensors_default vendor_intel_ipaddr_prop:file read;
+
