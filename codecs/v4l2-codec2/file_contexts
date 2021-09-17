@@ -1,0 +1,2 @@
+/vendor/bin/hw/android\.hardware\.media\.c2@1\.0-service-v4l2   u:object_r:media_c2_v4l2_hal_exec:s0
+/dev/video[0-9] u:object_r:video_device:s0
