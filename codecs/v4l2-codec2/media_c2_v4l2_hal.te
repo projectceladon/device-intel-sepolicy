@@ -1,0 +1,34 @@
+type media_c2_v4l2_hal, domain;
+
+type media_c2_v4l2_hal_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(media_c2_v4l2_hal)
+
+vndbinder_use(media_c2_v4l2_hal)
+hal_client_domain(media_c2_v4l2_hal, hal_codec2)
+hal_server_domain(media_c2_v4l2_hal, hal_codec2)
+
+#allow media_c2_v4l2_hal hwservicemanager_prop:file { open read getattr map };
+get_prop(media_c2_v4l2_hal, hwservicemanager_prop)
+
+allow media_c2_v4l2_hal hwservicemanager:binder call;
+allow media_c2_v4l2_hal tombstoned_crash_socket:sock_file write;
+allow media_c2_v4l2_hal hal_codec2_hwservice:hwservice_manager { find add };
+
+allow media_c2_v4l2_hal hidl_base_hwservice:hwservice_manager add;
+
+#allow media_c2_v4l2_hal mediaserver:binder transfer;
+#allow mediaserver media_c2_v4l2_hal:binder call;
+binder_call(media_c2_v4l2_hal, mediaserver)
+binder_call(mediaserver, media_c2_v4l2_hal)
+
+allow media_c2_v4l2_hal cgroup_v2:dir search;
+allow media_c2_v4l2_hal video_device:chr_file { open read write ioctl };
+
+allow media_c2_v4l2_hal hal_graphics_mapper_hwservice:hwservice_manager find;
+hal_client_domain(media_c2_v4l2_hal, hal_graphics_allocator)
+
+allow media_c2_v4l2_hal hal_graphics_allocator_default_tmpfs:file { read write map };
+allow media_c2_v4l2_hal gpu_device:dir search;
+allow media_c2_v4l2_hal gpu_device:chr_file { open read write ioctl getattr map};
+
+crash_dump_fallback(media_c2_v4l2_hal)
