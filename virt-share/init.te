@@ -1,0 +1,4 @@
+allow init fuse:dir mounton;
+allow init media_rw_data_file:dir mounton;
+
+set_prop(init, vendor_mount_share_prop)
