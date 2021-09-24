@@ -1,0 +1,2 @@
+allow vendor_init fuse:dir create_dir_perms;
+allow vendor_init p9fs:dir create_dir_perms;

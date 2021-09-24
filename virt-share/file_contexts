@@ -1,0 +1,1 @@
+/vendor/bin/mount_share.sh  u:object_r:mount_share_exec:s0
