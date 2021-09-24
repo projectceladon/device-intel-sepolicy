@@ -1,4 +1,5 @@
 set_prop(vendor_init, vendor_video_codec_prop)
+get_prop(appdomain, vendor_video_codec_prop)
 set_prop(vendor_init, vendor_suspend_prop)
 set_prop(vendor_init, vendor_intel_ipaddr_prop)
 get_prop(vendor_init, vendor_hwcomposer_prop)
