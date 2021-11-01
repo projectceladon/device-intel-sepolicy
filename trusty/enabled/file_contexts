@@ -7,3 +7,8 @@
 /vendor/bin/keybox_provisioning     u:object_r:tee_exec:s0
 /data/vendor/securestorage(/.*)?    u:object_r:tee_data_file:s0
 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty   u:object_r:hal_gatekeeper_default_exec:s0
+
+# Trusty keymaste treble service
+/vendor/bin/hw/android.hardware.keymaster@3.0-service.trusty      u:object_r:hal_keymaster_default_exec:s0
+/vendor/bin/hw/android.hardware.keymaster@4.0-service.trusty      u:object_r:hal_keymaster_default_exec:s0
+/vendor/bin/hw/android.hardware.security.keymint-service.trusty      u:object_r:hal_keymint_default_exec:s0
