@@ -1,0 +1,15 @@
+#============= mount_share ==============
+type mount_share, domain, data_between_core_and_vendor_violators;
+type mount_share_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(mount_share)
+
+allow mount_share linkerconfig_file:dir getattr;
+allow mount_share metadata_file:dir getattr;
+allow mount_share mnt_user_file:dir getattr;
+allow mount_share mnt_vendor_file:dir { getattr search };
+allow mount_share overlayfs_file:dir getattr;
+allow mount_share system_data_file:dir getattr;
+allow mount_share user_profile_data_file:dir getattr;
+allow mount_share vendor_toolbox_exec:file execute_no_trans;
+
+set_prop(mount_share, vendor_mount_share_prop)

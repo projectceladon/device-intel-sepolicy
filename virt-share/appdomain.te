@@ -1,0 +1,2 @@
+allow {appdomain -isolated_app -ephemeral_app} p9fs:dir create_dir_perms;
+allow {appdomain -isolated_app -ephemeral_app} p9fs:file create_file_perms;
