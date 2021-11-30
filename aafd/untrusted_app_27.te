@@ -4,7 +4,6 @@ allow untrusted_app_27 sysfs_rtc:dir search;
 allow untrusted_app_27 sysfs_rtc:file read;
 allow untrusted_app_27 sysfs_rtc:file open;
 allow untrusted_app_27 sysfs_rtc:file getattr;
-allow untrusted_app_27 vendor_file:file execute;
 allow untrusted_app_27 su_exec:file getattr;
 allow untrusted_app_27 sysfs:dir read;
 allow untrusted_app_27 system_lib_file:file execmod;
