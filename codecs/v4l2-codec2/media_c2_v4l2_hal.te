@@ -18,5 +18,5 @@ allow media_c2_v4l2_hal hidl_base_hwservice:hwservice_manager add;
 allow media_c2_v4l2_hal mediaserver:binder transfer;
 allow mediaserver media_c2_v4l2_hal:binder call;
 
-allow media_c2_v4l2_hal cgroup_bpf:dir search;
+allow media_c2_v4l2_hal cgroup_v2:dir search;
 allow media_c2_v4l2_hal video_device:chr_file { open read write ioctl };
