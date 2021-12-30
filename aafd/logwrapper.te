@@ -21,6 +21,11 @@ set_prop(logwrapper, vendor_fixed_perf_prop)
 
 allow logwrapper p9fs2:file r_file_perms;
 allow logwrapper p9fs2:dir r_dir_perms;
+
+allow platform_app p9fs2:file r_file_perms;
+allow platform_app p9fs2:dir r_dir_perms;
+allow untrusted_app_29 p9fs2:file r_file_perms;
+
 set_prop(logwrapper, vendor_suspend_prop)
 set_prop(logwrapper, vendor_intel_ipaddr_prop)
 set_prop(logwrapper, vendor_graphics_gles_prop)
