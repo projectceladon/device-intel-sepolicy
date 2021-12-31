@@ -4,8 +4,4 @@ allow hal_sensors_default self:socket create_socket_perms;
 allowxperm hal_sensors_default self:socket ioctl unpriv_sock_ioctls;
 allow hal_sensors_default serial_device:chr_file rw_file_perms;
 
-allow hal_sensors_default self:tcp_socket { create read write connect name_connect getopt setopt };
-dontaudit hal_sensors_default default_prop:file { open read getattr map };
-allow hal_sensors_default port:tcp_socket { name_connect };
-
-get_prop(hal_sensors_default, vendor_intel_ipaddr_prop)
+allow hal_sensors_default self:vsock_socket { create read write connect getopt setopt };
