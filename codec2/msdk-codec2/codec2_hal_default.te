@@ -1,4 +1,4 @@
-type codec2_hal_default, domain;
+type codec2_hal_default, domain, mlstrustedsubject;
 
 type codec2_hal_default_exec, exec_type, file_type, vendor_file_type;
 
@@ -6,7 +6,49 @@ init_daemon_domain(codec2_hal_default)
 
 vndbinder_use(codec2_hal_default)
 
+hal_client_domain(codec2_hal_default, hal_codec2)
+hal_client_domain(codec2_hal_default, hal_omx)
+hal_client_domain(codec2_hal_default, hal_allocator)
+hal_client_domain(codec2_hal_default, hal_graphics_allocator)
+
+hal_server_domain(codec2_hal_default, hal_codec2)
+hal_server_domain(codec2_hal_default, hal_omx)
+
+binder_call(codec2_hal_default, coreu)
+binder_call(codec2_hal_default, appdomain)
+
 get_prop(codec2_hal_default, hwservicemanager_prop)
+
+module_only(`aafd', `
+   get_prop(codec2_hal_default, vendor_video_codec_prop)
+')
+
+allow codec2_hal_default coreu_service:service_manager find;
+allow codec2_hal_default cameraserver_service:service_manager find;
+allow codec2_hal_default media_session_service:service_manager find;
+allow codec2_hal_default hal_codec2_hwservice:hwservice_manager find;
+allow codec2_hal_default hal_graphics_mapper_hwservice:hwservice_manager find;
+allow codec2_hal_default hal_graphics_allocator_default:fd use;
+allow codec2_hal_default hal_graphics_composer_default:fd use;
+allow codec2_hal_default hal_camera:fd use;
+allow codec2_hal_default bufferhubd:fd use;
+allow codec2_hal_default { appdomain -isolated_app }:fd use;
+
+allow codec2_hal_default gpu_device:dir r_dir_perms;
+allow codec2_hal_default gpu_device:chr_file rw_file_perms;
+allow codec2_hal_default ion_device:chr_file rw_file_perms;
+allow codec2_hal_default system_file:dir r_dir_perms;
+allow codec2_hal_default graphics_device:chr_file rw_file_perms;
+allow codec2_hal_default graphics_device:dir r_dir_perms;
+allow codec2_hal_default dmabuf_system_heap_device:chr_file r_file_perms;
+allow codec2_hal_default hal_graphics_allocator_default_tmpfs:file { read write map };
+
+allow codec2_hal_default sysfs_app_readable:file r_file_perms;
+allow codec2_hal_default tmpfs:file { map read write };
+allow codec2_hal_default rootfs:dir r_dir_perms;
+allow codec2_hal_default proc_uptime:file { open read write getattr };
+allow codec2_hal_default logdr_socket:sock_file write;
+allow codec2_hal_default logd:unix_stream_socket connectto;
 
 allow codec2_hal_default hwservicemanager:binder call;
 allow codec2_hal_default tombstoned_crash_socket:sock_file write;
