@@ -1,0 +1,2 @@
+allow kernel vd_device:blk_file relabelto;
+allow kernel super_block_device:lnk_file relabelto;
