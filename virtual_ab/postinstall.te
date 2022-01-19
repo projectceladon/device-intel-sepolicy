@@ -1,0 +1,1 @@
+allowxperm postinstall boot_block_device:blk_file ioctl LOOP_CLR_FD;

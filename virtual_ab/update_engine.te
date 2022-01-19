@@ -1,0 +1,4 @@
+allow update_engine proc_bootconfig:file r_file_perms;
+allow update_engine vd_device:blk_file rw_file_perms;
+allowxperm update_engine vd_device:blk_file ioctl BLKROGET;
+allow update_engine dm_user_device:chr_file r_file_perms;

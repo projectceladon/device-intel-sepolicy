@@ -1,0 +1,1 @@
+allowxperm vold dm_device:blk_file ioctl { BLKPBSZGET BLKDISCARDZEROES BLKROGET };
