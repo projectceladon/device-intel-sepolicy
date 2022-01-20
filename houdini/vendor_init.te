@@ -1,5 +1,5 @@
-set_prop(vendor_init, vendor_houdini_prop)
-set_prop(vendor_init, exported_dalvik_prop)
-
+allow init proc:dir mounton;
+allow vendor_init default_prop:property_service set;
 allow vendor_init binfmt_miscfs:file write;
 allow vendor_init binfmt_miscfs:chr_file { create setattr unlink rw_file_perms };
+allow vendor_init default_prop:file read;
