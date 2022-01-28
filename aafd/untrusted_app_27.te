@@ -1,1 +1,16 @@
 get_prop(untrusted_app_27, vendor_video_codec_prop)
+
+#allow untrusted_app_27 exported_wifi_prop:file read;
+#allow untrusted_app_27 hal_memtrack_hwservice:hwservice_manager find;
+#allow untrusted_app_27 mnt_vendor_file:dir search;
+allow untrusted_app_27 overlayfs_file:dir getattr;
+#allow untrusted_app_27 proc_max_map_count:file read;
+#allow untrusted_app_27 proc_net:file read;
+#allow untrusted_app_27 proc_net_tcp_udp:file read;
+#allow untrusted_app_27 proc_tty_drivers:file read;
+#allow untrusted_app_27 proc_version:file read;
+#allow untrusted_app_27 serialno_prop:file read;
+allow untrusted_app_27 sysfs:dir read;
+allow untrusted_app_27 sysfs_net:dir search;
+allow untrusted_app_27 sysfs_rtc:dir search;
+#allow untrusted_app_27 system_lib_file:file execmod;
