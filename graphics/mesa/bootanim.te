@@ -5,3 +5,4 @@ allow bootanim tmpfs:file r_file_perms;
 allow bootanim graphics_device:chr_file { ioctl open read };
 allow bootanim graphics_device:dir search;
 allow bootanim self:process execmem;
+allow bootanim proc_graphics:file r_file_perms;
