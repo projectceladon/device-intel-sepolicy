@@ -1,0 +1,4 @@
+get_prop(recovery, aac_drc_prop)
+set_prop(recovery, boottime_prop)
+get_prop(recovery, adbd_config_prop)
+allow recovery devpts:chr_file rw_file_perms;
