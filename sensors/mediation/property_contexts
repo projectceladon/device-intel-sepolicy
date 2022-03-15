@@ -1,1 +1,2 @@
 vendor.intel.ipaddr u:object_r:vendor_intel_ipaddr_prop:s0
+vendor.intel.sensors_available u:object_r:vendor_intel_sensors_available_prop:s0

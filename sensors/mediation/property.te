@@ -1,1 +1,2 @@
 vendor_internal_prop(vendor_intel_ipaddr_prop)
+vendor_internal_prop(vendor_intel_sensors_available_prop)

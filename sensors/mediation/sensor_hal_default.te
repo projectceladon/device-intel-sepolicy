@@ -9,3 +9,4 @@ dontaudit hal_sensors_default default_prop:file { open read getattr map };
 allow hal_sensors_default port:tcp_socket { name_connect };
 
 get_prop(hal_sensors_default, vendor_intel_ipaddr_prop)
+get_prop(hal_sensors_default, vendor_intel_sensors_available_prop)
