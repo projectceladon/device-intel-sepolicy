@@ -7,4 +7,4 @@
 
 allow mediaswcodec hal_graphics_allocator_default_tmpfs:file { read write map };
 allow mediaswcodec gpu_device:dir search;
-allow mediaswcodec gpu_device:chr_file { open read write ioctl };
+allow mediaswcodec gpu_device:chr_file { open read write ioctl map };
