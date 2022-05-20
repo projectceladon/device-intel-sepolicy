@@ -1,0 +1,15 @@
+type civ_startup_notify, domain, coredomain;
+type civ_startup_notify_exec, exec_type, file_type, system_file_type;
+init_daemon_domain(civ_startup_notify)
+
+#============= civ_startup_notify ==============
+allow civ_startup_notify civ_startup_notify_exec:file rx_file_perms;
+allow civ_startup_notify shell_exec:file rx_file_perms;
+
+allow civ_startup_notify system_file:dir r_dir_perms;
+allow civ_startup_notify system_file:file rx_file_perms;
+
+allow civ_startup_notify self:{ socket vsock_socket tcp_socket} { getattr setattr getopt setopt create read write listen accept bind connect shutdown lock append };
+
+#============= shell ==============
+allow shell civ_startup_notify_exec:file rx_file_perms;
