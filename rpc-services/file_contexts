@@ -1,0 +1,3 @@
+/system/bin/civ_startup_notify u:object_r:civ_startup_notify_exec:s0
+/system/bin/civ_powerctl u:object_r:civ_powerctl_exec:s0
+/system/bin/civ_applauncher u:object_r:civ_applauncher_exec:s0
