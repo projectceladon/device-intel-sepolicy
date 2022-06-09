@@ -4,5 +4,5 @@ allow carservice_app sysfs_fs_ext4_features:dir r_dir_perms;
 
 # To allow carservice app to  access sys.usb.cfg
 module_only(`carservice_app', `
-  set_prop(carservice_app, exported_system_radio_prop)
+  set_prop(carservice_app, usb_control_prop)
 ')
