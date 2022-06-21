@@ -28,7 +28,8 @@
 /(vendor|system/vendor)/lib(64)?/dri/iris_dri\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/dri/virtio_gpu_dri\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/dri/gallium_dri\.so u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib(64)?/hw/vulkan\.celadon\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/vulkan\.intel\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/dri/libgallium_dri\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libmd\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/egl/libEGL_swiftshader\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/egl/libGLESv1_CM_swiftshader\.so u:object_r:same_process_hal_file:s0
