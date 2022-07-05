@@ -1,2 +1,2 @@
-genfscon 9p / u:object_r:p9fs:s0
+genfscon 9p / u:object_r:p9fs2:s0
 genfscon sysfs /class/udc u:object_r:sysfs_usb:s0
