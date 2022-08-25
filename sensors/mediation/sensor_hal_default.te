@@ -1,10 +1,7 @@
+#type hal_sensors_service_exec, exec_type, vendor_file_type, file_type;
+
 allow hal_sensors_default self:socket create_socket_perms;
 allowxperm hal_sensors_default self:socket ioctl unpriv_sock_ioctls;
 allow hal_sensors_default serial_device:chr_file rw_file_perms;
 
-userdebug_or_eng(`
-    permissive hal_sensors_default;
-    dontaudit hal_sensors_default default_prop:file { open read getattr map };
-    dontaudit hal_sensors_default port:tcp_socket { name_connect };
-    dontaudit hal_sensors_default self:tcp_socket { create read write connect name_connect getopt setopt };
-')
+allow hal_sensors_default self:vsock_socket { create read write connect getopt setopt };
