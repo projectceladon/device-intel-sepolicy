@@ -24,13 +24,11 @@ module_only(`aafd', `
 ')
 
 allow codec2_hal_default coreu_service:service_manager find;
-allow codec2_hal_default cameraserver_service:service_manager find;
 allow codec2_hal_default media_session_service:service_manager find;
 allow codec2_hal_default hal_codec2_hwservice:hwservice_manager find;
 allow codec2_hal_default hal_graphics_mapper_hwservice:hwservice_manager find;
 allow codec2_hal_default hal_graphics_allocator_default:fd use;
 allow codec2_hal_default hal_graphics_composer_default:fd use;
-allow codec2_hal_default hal_camera:fd use;
 allow codec2_hal_default bufferhubd:fd use;
 allow codec2_hal_default { appdomain -isolated_app }:fd use;
 
