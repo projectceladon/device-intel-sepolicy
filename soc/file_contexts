@@ -1,0 +1,1 @@
+(/system)?/vendor/bin/set_soc_prop.sh u:object_r:set_soc_prop_exec:s0
