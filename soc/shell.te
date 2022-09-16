@@ -1,0 +1,1 @@
+allow shell set_soc_prop_exec:file getattr;
