@@ -1,0 +1,18 @@
+# Rules for soc
+type set_soc_prop, domain;
+type set_soc_prop_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(set_soc_prop)
+
+allow set_soc_prop proc_cpuinfo:file r_file_perms;
+allow set_soc_prop vendor_toolbox_exec:file execute_no_trans;
+
+set_prop(set_soc_prop, vendor_cpu_model_name_prop)
+
+not_full_treble(`
+  allow set_soc_prop system_file:file rx_file_perms;
+  allow set_soc_prop shell_exec:file rx_file_perms;
+')
+full_treble_only(`
+  allow set_soc_prop vendor_shell_exec:file rx_file_perms;
+  allow set_soc_prop vendor_toolbox_exec:file rx_file_perms;
+')
