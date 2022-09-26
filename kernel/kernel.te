@@ -12,6 +12,3 @@ allow kernel kernel:capability sys_admin;
 # For loading /lib/modules/inet_diag.ko
 allow kernel rootfs:system module_load;
 allow kernel system_file:system module_load;
-
-# For adding mmc debugfs directory in the runtime
-allow kernel debugfs_mmc:dir search;
