@@ -2,12 +2,6 @@
 # init
 #
 
-# mixin kernel/init.rc write to /sys/kernel/debug/pstate_snb/setpoint
-allow init debugfs_pstate:file w_file_perms;
-
-#avc: denied { write } for pid=1 comm="init" name="psys_force_freq" dev="debugfs" ino=8600 scontext=u:r:init:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=0
-allow init debugfs:file write;
-
 # allow init insmod keyword
 allow init kernel:key search;
 allow init {
