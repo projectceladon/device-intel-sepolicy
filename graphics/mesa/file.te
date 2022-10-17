@@ -13,8 +13,6 @@ type sysfs_videostatus, fs_type, sysfs_type;
 # i915 related /proc/driver entry.
 type proc_graphics, fs_type, proc_type;
 
-type debugfs_graphics, fs_type, debugfs_type;
-
 type sysfs_app_readable, fs_type, sysfs_type;
 
 typeattribute hal_graphics_allocator_default_tmpfs mlstrustedobject;
