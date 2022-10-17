@@ -52,7 +52,6 @@ allow coreu proc_graphics:file r_file_perms;
 
 #debugfs
 allow coreu debugfs_tracing:file rw_file_perms;
-allow coreu debugfs_graphics:file rw_file_perms;
 
 # drm detecting
 allow coreu mediadrmserver:process signull;
