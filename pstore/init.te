@@ -1,5 +1,0 @@
-#
-# init
-#
-
-allow init pstore_device:dir mounton;

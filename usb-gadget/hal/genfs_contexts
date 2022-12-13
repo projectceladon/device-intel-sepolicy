@@ -1,1 +1,0 @@
-genfscon sysfs /class/typec u:object_r:sysfs_usb_typec:s0

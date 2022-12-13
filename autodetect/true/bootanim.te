@@ -1,6 +1,0 @@
-#
-# bootanim
-#
-
-# hal access
-unix_socket_connect(bootanim, hal, hal)

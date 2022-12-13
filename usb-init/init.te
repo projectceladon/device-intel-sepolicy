@@ -1,7 +1,0 @@
-#
-# init
-#
-
-# insmod dwc3.ko dwc3-pci.ko
-allow init self:global_capability_class_set sys_module;
-allow init kernel:key search;

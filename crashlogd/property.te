@@ -1,5 +1,0 @@
-vendor_restricted_prop(vendor_crashlogd_prop)
-vendor_internal_prop(vendor_core_prop)
-vendor_internal_prop(vendor_apklogfs_prop)
-vendor_internal_prop(vendor_aplogfs_prop)
-vendor_internal_prop(vendor_elogs_prop)

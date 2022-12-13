@@ -1,2 +1,0 @@
-# intel_prop executable
-(/system)?/vendor/bin/intel_prop u:object_r:intel_prop_exec:s0

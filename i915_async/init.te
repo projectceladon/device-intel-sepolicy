@@ -1,3 +1,0 @@
-recovery_only(`
-  allow init graphics_device:chr_file getattr;
-')

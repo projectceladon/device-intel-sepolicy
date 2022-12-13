@@ -1,6 +1,0 @@
-#
-# init
-#
-
-# insmod i2c:crlmodule
-allow init kernel:system module_request;

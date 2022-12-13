@@ -1,1 +1,0 @@
-dontaudit vendor_init hdcpd_data_file:dir create_dir_perms;

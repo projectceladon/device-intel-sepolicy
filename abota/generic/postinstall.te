@@ -1,4 +1,0 @@
-recovery_only(`
-  allow postinstall rootfs:file rx_file_perms;
-')
-

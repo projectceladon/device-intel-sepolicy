@@ -1,1 +1,0 @@
-allow kernel self:system module_request;

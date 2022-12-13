@@ -1,4 +1,0 @@
-#
-# mediadrmserver
-#
-allow mediadrmserver sysfs_app_readable:file r_file_perms;

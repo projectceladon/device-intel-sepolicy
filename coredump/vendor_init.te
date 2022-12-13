@@ -1,9 +1,0 @@
-userdebug_or_eng(`
-  dontaudit vendor_init coredump_log_file:dir create_dir_perms;
-
-  module_only(`debug_coredump', `
-    permissive vendor_init;
-    dontaudit vendor_init usermodehelper:file w_file_perms;
-  ')
-')
-

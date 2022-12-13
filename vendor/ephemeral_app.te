@@ -1,3 +1,0 @@
-#============= ephemeral_app ==============
-allow ephemeral_app toolbox_exec:file rx_file_perms;
-

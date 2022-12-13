@@ -1,2 +1,0 @@
-allow mediacodec proc_uptime:file { read write open };
-allow mediacodec logdr_socket:sock_file write;

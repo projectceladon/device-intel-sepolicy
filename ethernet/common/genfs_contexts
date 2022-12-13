@@ -1,6 +1,0 @@
-# /sys/class/net
-genfscon sysfs /devices/pci0000:00/0000:00:13.2/0000:03:00.0/net u:object_r:sysfs_net:s0
-genfscon sysfs /devices/pci0000:00/0000:00:13.1/0000:02:00.0/net u:object_r:sysfs_net:s0
-genfscon sysfs /devices/pci0000:00/0000:00:04.0/net u:object_r:sysfs_net:s0
-genfscon sysfs /devices/pci0000:00/0000:00:07.0/net u:object_r:sysfs_net:s0
-genfscon sysfs /devices/pci0000:00/0000:00:06.0/net u:object_r:sysfs_net:s0

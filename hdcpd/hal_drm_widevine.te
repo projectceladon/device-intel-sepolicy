@@ -1,2 +1,0 @@
-allow hal_drm_default hdcpd:unix_stream_socket connectto;
-allow hal_drm_default hdcpd_data_file:sock_file write;

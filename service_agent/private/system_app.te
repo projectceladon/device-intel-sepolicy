@@ -1,2 +1,0 @@
-add_service(system_app, serviceagent_service)
-binder_call(system_app, kernel);

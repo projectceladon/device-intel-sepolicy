@@ -1,5 +1,0 @@
-#
-# toolbox
-#
-
-allow toolbox hal_mnt_pnt:dir search;

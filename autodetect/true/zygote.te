@@ -1,2 +1,0 @@
-allow zygote hal:unix_stream_socket connectto;
-allow zygote hal_socket:sock_file write;

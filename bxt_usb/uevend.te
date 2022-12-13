@@ -1,2 +1,0 @@
-# Load firmware to chip
-allow ueventd sysfs_usb_writable:file w_file_perms;
