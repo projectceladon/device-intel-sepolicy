@@ -9,13 +9,18 @@ allow hal_neuralnetworks_default self:process execmem;
 
 allow hal_neuralnetworks_default vendor_data_file:file { open read write };
 allow hal_neuralnetworks_default vendor_data_file:dir rw_dir_perms;
+
 set_prop(hal_neuralnetworks_default, vendor_nnhal_prop)
+get_prop(hal_neuralnetworks_default, vendor_nnhal_prop)
 
 # allow hal_neuralnetworks to access libusb
 allow hal_neuralnetworks_default usb_device:dir r_dir_perms;
 allow hal_neuralnetworks_default usb_device:chr_file rw_file_perms;
 
 allow hal_neuralnetworks_default self:netlink_kobject_uevent_socket { read bind create setopt };
+
+# allow hal_neuralnetworks to use vsock
+allow hal_neuralnetworks_default self:vsock_socket { create read write connect getopt setopt };
 
 dontaudit hal_neuralnetworks_default self:capability { dac_read_search dac_override };
 allow hal_neuralnetworks_default sysfs:dir r_dir_perms;
