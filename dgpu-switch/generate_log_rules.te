@@ -1,0 +1,72 @@
+
+
+#============= bootanim ==============
+allow bootanim proc:file { getattr };
+
+#============= carpowerpolicyd ==============
+allow carpowerpolicyd hal_audiocontrol_default:binder call;
+
+#============= carservice_app ==============
+allow carservice_app system_data_file:dir search;
+allow carservice_app user_profile_root_file:dir search;
+
+#============= carwatchdogd ==============
+allow carwatchdogd system_car_data_file:dir search;
+
+#============= experimentalcarservice_app ==============
+allow experimentalcarservice_app content_capture_service:service_manager find;
+allow experimentalcarservice_app game_service:service_manager find;
+allow experimentalcarservice_app system_data_file:dir search;
+allow experimentalcarservice_app user_profile_root_file:dir search;
+
+#============= hal_audiocontrol_default ==============
+allow hal_audiocontrol_default carpowerpolicyd:binder { call transfer };
+allow hal_audiocontrol_default carpowerpolicyd_service:service_manager find;
+
+#============= hal_evs_default ==============
+#allow hal_evs_default automotive_display_service:binder call;
+allow hal_evs_default device:dir { open read };
+allow hal_evs_default self:netlink_kobject_uevent_socket { bind create read setopt };
+
+#============= intel_prop ==============
+#allow intel_prop system_prop:property_service set;
+
+#============= kernel ==============
+allow kernel device:chr_file { create setattr };
+allow kernel device:dir { add_name write };
+allow kernel self:capability mknod;
+
+#============= logsvc ==============
+allow logsvc file_contexts_file:file { getattr open read };
+allow logsvc vendor_data_file:dir { add_name write };
+allow logsvc vendor_data_file:lnk_file { create getattr };
+
+#============= mediaprovider_app ==============
+#allow mediaprovider_app media_rw_data_file:fifo_file { create getattr open read unlink };
+
+#============= platform_app ==============
+allow platform_app proc:file { getattr };
+
+#============= shell ==============
+allow shell dgpu-switch_exec:file { open read };
+allow shell fuse:fifo_file { create getattr unlink write };
+#allow shell self:capability dac_read_search;
+
+#============= surfaceflinger ==============
+allow surfaceflinger proc:file { getattr };
+
+#============= system_app ==============
+allow system_app proc:file { getattr };
+
+#============= system_server ==============
+allow system_server proc:file { getattr };
+
+#============= system_suspend ==============
+#allow system_suspend sysfs:dir { open read };
+#allow system_suspend sysfs:file { getattr };
+
+#============= thermal-daemon ==============
+allow thermal-daemon sysfs_app_readable:file { getattr open read };
+
+#============= vendor_init ==============
+#allow vendor_init self:lockdown integrity;
