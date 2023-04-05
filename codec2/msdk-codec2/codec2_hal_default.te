@@ -1,0 +1,12 @@
+type codec2_hal_default, domain;
+
+type codec2_hal_default_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(codec2_hal_default)
+
+vndbinder_use(codec2_hal_default)
+
+get_prop(codec2_hal_default, hwservicemanager_prop)
+
+allow codec2_hal_default hwservicemanager:binder call;
+allow codec2_hal_default tombstoned_crash_socket:sock_file write;
