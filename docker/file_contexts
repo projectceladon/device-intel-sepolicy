@@ -1,0 +1,2 @@
+# docker_manager executable
+(/system)?/vendor/bin/docker_manager u:object_r:docker_manager_exec:s0
