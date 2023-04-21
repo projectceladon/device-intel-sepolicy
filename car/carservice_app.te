@@ -1,6 +1,11 @@
 allow carservice_app sysfs:dir r_dir_perms;
 allow carservice_app sysfs_fs_f2fs:dir r_dir_perms;
 allow carservice_app sysfs_fs_ext4_features:dir r_dir_perms;
+allow carservice_app system_data_file:dir search;
+allow carservice_app user_profile_root_file:dir search;
+allow carservice_app content_capture_service:service_manager find;
+allow carservice_app game_service:service_manager find;
+allow carservice_app media_communication_service:service_manager find;
 
 # To allow carservice app to  access sys.usb.cfg
 module_only(`carservice_app', `
