@@ -8,8 +8,9 @@
 type rpmb_virt_device, dev_type;
 
 allow tee rpmb_virt_device:chr_file { open read write };
-allow tee self:capability sys_rawio;
+allow tee self:capability { sys_rawio setgid setuid };
 allow tee block_device:dir search;
 allow tee tee_device:blk_file rw_file_perms;
+allow tee tee_data_file:sock_file { write create };
 allow tee gsi_metadata_file:dir search;
 allow tee metadata_file:dir search;

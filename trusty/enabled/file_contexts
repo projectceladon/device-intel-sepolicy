@@ -4,6 +4,7 @@
 /dev/rpmb[01]           u:object_r:tee_device:s0
 /dev/vport0p1		u:object_r:rpmb_virt_device:s0
 /vendor/bin/storageproxyd    u:object_r:tee_exec:s0
+/vendor/bin/rpmb_dev u:object_r:tee_exec:s0
 /vendor/bin/keybox_provisioning     u:object_r:tee_exec:s0
 /data/vendor/securestorage(/.*)?    u:object_r:tee_data_file:s0
 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty   u:object_r:hal_gatekeeper_default_exec:s0
