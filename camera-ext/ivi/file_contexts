@@ -1,0 +1,2 @@
+/dev/media[0-9]+          u:object_r:video_device:s0
+/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.[0-9]-sample  u:object_r:hal_evs_default_exec:s0
