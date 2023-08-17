@@ -7,6 +7,7 @@ set_prop(vendor_init, vendor_usb_controller_prop)
 get_prop(vendor_init, vendor_fixed_perf_prop)
 get_prop(vendor_init, vendor_media_target_prop)
 set_prop(vendor_init, vendor_display_prop)
+set_prop(vendor_init, vendor_virtual_device_prop)
 #============= vendor_init ==============
 allow vendor_init tmpfs:dir { add_name create write };
 set_prop(vendor_init, vendor_mount_ep0_prop)
