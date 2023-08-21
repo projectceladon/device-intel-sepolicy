@@ -1,0 +1,36 @@
+#============= tee ==============
+allow tee vendor_data_file:dir create_dir_perms;
+allow tee vendor_data_file:file create_file_perms;
+
+allow tee tee_data_file:file create_file_perms;
+allow tee tee_data_file:dir create_dir_perms;
+
+allow tee self:capability { sys_rawio setgid setuid };
+allow tee block_device:dir search;
+allow tee tee_device:blk_file rw_file_perms;
+allow tee tee_data_file:sock_file { write create };
+allow tee gsi_metadata_file:dir search;
+allow tee metadata_file:dir search;
+
+#============= xtest ==============
+# For xtest 200x tests
+allow tee tee:tcp_socket { create connect read write getopt setopt };
+allow tee tee:udp_socket { create connect read write getopt getattr };
+allow tee tee:capability { net_raw };
+allow tee fwmarkd_socket:sock_file { write };
+allow tee port:tcp_socket { name_connect };
+
+# Rules on netd domain for optee xtest 200x tests
+allow netd tee:tcp_socket { read write getopt setopt };
+allow netd tee:udp_socket { read write getopt setopt };
+allow netd tee:fd { use };
+
+#============= init ==============
+allow init tee_data_file:dir mounton;
+
+#============= fsck ==============
+allow fsck tee_device:blk_file { ioctl open read write };
+
+#============= e2fs ==============
+allow e2fs tee_device:blk_file { open read write ioctl };
+allowxperm e2fs tee_device:blk_file ioctl { BLKSECDISCARD BLKDISCARD BLKPBSZGET BLKDISCARDZEROES BLKROGET };
