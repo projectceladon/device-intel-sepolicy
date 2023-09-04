@@ -1,0 +1,4 @@
+allow kernel device:chr_file getattr;
+allow kernel device:dir { add_name create write };
+allow kernel self:capability mknod;
+allow kernel vendor_file:file r_file_perms;
