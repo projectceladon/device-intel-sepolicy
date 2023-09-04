@@ -1,0 +1,3 @@
+hal_client_domain(carpowerpolicyd, hal_audiocontrol);
+get_prop(hal_audiocontrol_default, boot_status_prop);
+carpowerpolicy_callback_domain(hal_audiocontrol_default)

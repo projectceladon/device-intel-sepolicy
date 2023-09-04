@@ -24,6 +24,7 @@ allow thermal-daemon sysfs_leds:file rw_file_perms;
 allow thermal-daemon sysfs_backlight_thermal:dir r_dir_perms;
 allow thermal-daemon sysfs_backlight_thermal:file rw_file_perms;
 allow thermal-daemon sysfs_dmi_id:{ file lnk_file } rw_file_perms;
+allow thermal-daemon sysfs_app_readable:file rw_file_perms;
 allow thermal-daemon vendor_data_file:dir create_dir_perms;
 allow thermal-daemon vendor_data_file:dir rw_dir_perms;
 allow thermal-daemon thermal-daemon_run_dir:dir create_dir_perms;
