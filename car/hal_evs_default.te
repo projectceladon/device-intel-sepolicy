@@ -1,0 +1,14 @@
+allow hal_evs_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow hal_evs_default video_device:chr_file rw_file_perms;
+allow hal_evs_default sysfs_video:dir r_dir_perms;
+allow hal_evs_default device:dir r_dir_perms;
+allowxperm hal_evs_default video_device:chr_file ioctl {
+    VIDIOC_G_INPUT
+    MEDIA_IOC_DEVICE_INFO
+    MEDIA_IOC_ENUM_ENTITIES
+    VIDIOC_ENUM_FMT
+    MEDIA_IOC_ENUM_LINKS
+    VIDIOC_S_FMT
+    MEDIA_IOC_SETUP_LINK
+    VIDIOC_QUERYCAP
+};

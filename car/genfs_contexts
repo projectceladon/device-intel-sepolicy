@@ -9,3 +9,4 @@ genfscon sysfs /fs/ext4/loop5/lifetime_write_kbytes u:object_r:sysfs_fs_lifetime
 genfscon sysfs /fs/ext4/sda8/lifetime_write_kbytes u:object_r:sysfs_fs_lifetime_write:s0
 genfscon sysfs /fs/ext4/sda13/lifetime_write_kbytes u:object_r:sysfs_fs_lifetime_write:s0
 genfscon sysfs /fs/ext4/sda18/lifetime_write_kbytes u:object_r:sysfs_fs_lifetime_write:s0
+genfscon sysfs /class/video4linux u:object_r:sysfs_video:s0

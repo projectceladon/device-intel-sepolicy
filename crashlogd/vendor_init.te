@@ -13,5 +13,4 @@ userdebug_or_eng(`
   dontaudit vendor_init log_file:lnk_file create_file_perms;
   dontaudit vendor_init cache_file:dir { relabelfrom relabelto };
 # data_between_core_and_vendor_violators
-  dontaudit vendor_init system_data_file:dir create_dir_perms;
 ')

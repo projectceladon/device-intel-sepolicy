@@ -1,1 +1,2 @@
 allow system_app graphics_device:dir search;
+allow system_app proc_graphics:file r_file_perms;

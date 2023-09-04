@@ -1,1 +1,2 @@
 allow platform_app graphics_device:dir search;
+allow platform_app proc_graphics:file r_file_perms;
