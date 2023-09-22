@@ -1,0 +1,2 @@
+get_prop(system_server, vendor_intel_render_selection_prop)
+allow system_server vendor_intel_render_selection_prop:file read;
