@@ -1,0 +1,4 @@
+#
+# system_app
+#
+set_prop(system_app, vendor_intel_render_selection_prop)
