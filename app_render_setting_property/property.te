@@ -1,0 +1,2 @@
+vendor_public_prop(vendor_intel_render_selection_prop)
+typeattribute vendor_intel_render_selection_prop    extended_core_property_type;
