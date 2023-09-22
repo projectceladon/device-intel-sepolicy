@@ -1,0 +1,6 @@
+#
+# system_app
+#
+set_prop(system_app, vendor_intel_render_selection_prop)
+allow system_app vendor_intel_render_selection_prop:file { getattr map open };
+allow system_app vendor_intel_render_selection_prop:property_service set;
