@@ -1,4 +1,4 @@
-type hal_neuralnetworks_default, domain;
+type hal_neuralnetworks_default, domain, mlstrustedsubject;
 hal_server_domain(hal_neuralnetworks_default, hal_neuralnetworks)
 
 type hal_neuralnetworks_default_exec, exec_type, vendor_file_type, file_type;
@@ -12,6 +12,10 @@ allow hal_neuralnetworks_default vendor_data_file:dir rw_dir_perms;
 
 set_prop(hal_neuralnetworks_default, vendor_nnhal_prop)
 get_prop(hal_neuralnetworks_default, vendor_nnhal_prop)
+
+#allow hal_neuralnetworks to write to socket data path
+allow hal_neuralnetworks_default nn_vendor_data_file:sock_file { read write create };
+allow hal_neuralnetworks_default docker_manager:unix_stream_socket { connectto rw_socket_perms };
 
 # allow hal_neuralnetworks to access libusb
 allow hal_neuralnetworks_default usb_device:dir r_dir_perms;
