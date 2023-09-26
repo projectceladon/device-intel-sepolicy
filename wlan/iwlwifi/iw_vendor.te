@@ -1,0 +1,8 @@
+type iw_vendor, domain;
+type iw_vendor_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(iw_vendor)
+
+allow iw_vendor self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow iw_vendor self:global_capability_class_set { sys_admin net_admin };
+allow iw_vendor sysfs_net:file r_file_perms;
+allow iw_vendor sysfs_net:dir r_dir_perms;
