@@ -12,3 +12,6 @@ allow kernel kernel:capability sys_admin;
 # For loading /lib/modules/inet_diag.ko
 allow kernel rootfs:system module_load;
 allow kernel system_file:system module_load;
+
+# allow read permission for firmware file read from /vendor/firmware
+allow kernel vendor_file:file { open read getattr };
