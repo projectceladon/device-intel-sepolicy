@@ -4,3 +4,5 @@ allow platform_app carservice_service:service_manager find;
 #allow SystemUpdater app to call UpdateEngine
 allow platform_app update_engine:binder { call transfer };
 allow platform_app update_engine_service:service_manager find;
+allow platform_app hal_vehicle_default:binder call;
+hal_client_domain(platform_app, hal_vehicle)
