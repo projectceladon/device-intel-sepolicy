@@ -38,3 +38,4 @@ allow thermal-daemon vendor_file:dir read;
 
 # properties
 set_prop(thermal-daemon, powerctl_prop)
+allow thermal-daemon default_prop:file { getattr map open read };
