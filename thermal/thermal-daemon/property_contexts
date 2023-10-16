@@ -1,0 +1,2 @@
+persist.vendor.disable.thermal.logs u:object_r:vendor_disable_thermal_logs_prop:s0
+persist.vendor.thermal.daemon.supported    u:object_r:vendor_thermal_daemon_supported_prop:s0
