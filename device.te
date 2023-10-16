@@ -1,1 +1,1 @@
-type i2c_device, dev_type;
+#type i2c_device, dev_type;
