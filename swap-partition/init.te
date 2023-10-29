@@ -1,0 +1,3 @@
+# swapon() needs write access to swap device
+# system/core/fs_mgr/fs_mgr.c - fs_mgr_swapon_all
+allow init swap_block_device:blk_file rw_file_perms;
