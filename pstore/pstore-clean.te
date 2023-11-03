@@ -6,14 +6,6 @@ init_daemon_domain(pstore-clean);
 allow pstore-clean pstorefs:dir create_dir_perms;
 allow pstore-clean pstorefs:file create_file_perms;
 
-# Create directories and files for the panic dumps
-allow pstore-clean pstore-clean_data_file:dir create_dir_perms;
-allow pstore-clean pstore-clean_data_file:file create_file_perms;
-
-# Copied from KK
-allow pstore-clean cache_file:dir { add_name search write create };
-allow pstore-clean cache_file:file { create open write };
-
 # Read from pstore (required from kernel 3.18)
 allow pstore-clean self:capability2 syslog;
 allow pstore-clean kernel:system syslog_read;
