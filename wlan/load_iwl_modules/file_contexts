@@ -1,0 +1,1 @@
+/vendor/bin/load_iwl_modules.sh    u:object_r:load_iwl_modules_script_exec:s0
