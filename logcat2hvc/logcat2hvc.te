@@ -1,0 +1,34 @@
+type logcat2hvc, domain, coredomain;
+type logcat2hvc_exec, exec_type, file_type, system_file_type;
+
+init_daemon_domain(logcat2hvc)
+
+allow logcat2hvc logcat2hvc_exec:file rx_file_perms;
+allow logcat2hvc shell_exec:file rx_file_perms;
+
+allow logcat2hvc system_file:dir r_dir_perms;
+allow logcat2hvc system_file:file rx_file_perms;
+
+allow logcat2hvc device:dir r_dir_perms;
+allow logcat2hvc logcat_exec:file rx_file_perms;
+allow logcat2hvc logcat_exec:file { execute execute_no_trans getattr map open read };
+allow logcat2hvc serial_device:chr_file ra_file_perms;
+
+allow shell logcat2hvc_exec:file rx_file_perms;
+
+allow logsvc vendor_data_file:dir { add_name write };
+allow logsvc vendor_data_file:lnk_file create;
+allow logsvc file_contexts_file:file { getattr open read };
+allow logsvc vendor_apklogfs_prop:property_service set;
+
+allow logpersist device:dir { open read };
+allow logpersist kmsg_device:chr_file rw_file_perms;
+allow logpersist tmpfs:chr_file write;
+allow logpersist device:dir r_dir_perms;
+allow logpersist serial_device:chr_file ra_file_perms;
+
+allow init tmpfs:lnk_file create;
+allow init sysfs_app_readable:file { open write };
+
+allow init serial_device:chr_file { ioctl open read write };
+allow shell serial_device:chr_file { ioctl read write };
