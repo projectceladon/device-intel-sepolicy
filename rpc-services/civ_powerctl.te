@@ -1,0 +1,24 @@
+type civ_powerctl, domain, coredomain;
+type civ_powerctl_exec, exec_type, file_type, system_file_type;
+init_daemon_domain(civ_powerctl)
+
+#============= civ_powerctl ==============
+allow civ_powerctl self:{ socket vsock_socket tcp_socket} { getattr setattr getopt setopt create read write listen accept bind connect shutdown lock append };
+allow civ_powerctl proc_net:file { r_file_perms };
+allow civ_powerctl shell_exec:file { rx_file_perms };
+allow civ_powerctl system_file:file x_file_perms;
+allow civ_powerctl property_socket:sock_file rw_file_perms;
+allow civ_powerctl init:unix_stream_socket connectto;
+
+#============= prop ==============
+set_prop(civ_powerctl, powerctl_prop)
+
+#============= binder ==============
+binder_use(civ_powerctl)
+binder_call(civ_powerctl, system_server)
+
+#============= system_server ==============
+allow system_server civ_powerctl:binder call;
+
+#============= shell ==============
+allow shell civ_powerctl_exec:file rx_file_perms;
