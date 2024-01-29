@@ -1,0 +1,20 @@
+type diskswap, domain;
+type diskswap_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(diskswap)
+
+allow diskswap vendor_file:file rx_file_perms;
+allow diskswap proc_meminfo:file r_file_perms;
+
+# allow the diskswap domain to set prop sys.enable_swap
+# set_prop(diskswap, vendor_mem_prop)
+
+not_full_treble(`
+  allow diskswap system_file:file rx_file_perms;
+  allow diskswap shell_exec:file rx_file_perms;
+')
+
+full_treble_only(`
+  allow diskswap vendor_shell_exec:file rx_file_perms;
+  allow diskswap vendor_toolbox_exec:file rx_file_perms;
+')
