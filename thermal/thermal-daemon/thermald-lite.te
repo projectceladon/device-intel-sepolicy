@@ -1,0 +1,10 @@
+# thermald-lite seclabel is specified in init.<board>.rc
+type thermald-lite, domain;
+type thermald-lite_exec, system_file_type, exec_type, file_type;
+
+allow thermald-lite sysfs_thermal:dir search;
+allow thermald-lite sysfs_thermal:file { getattr open read };
+
+allow thermald-lite kmsg_device:chr_file rw_file_perms;
+allow thermald-lite rootfs:file entrypoint;
+set_prop(thermald-lite, powerctl_prop)
