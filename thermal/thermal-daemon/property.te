@@ -1,2 +1,3 @@
 vendor_internal_prop(vendor_disable_thermal_logs_prop)
 vendor_internal_prop(vendor_thermal_daemon_supported_prop)
+vendor_internal_prop(vendor_thermald_lite_logs_enabled_prop)

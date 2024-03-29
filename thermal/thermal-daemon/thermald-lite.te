@@ -4,7 +4,11 @@ type thermald-lite_exec, system_file_type, exec_type, file_type;
 
 allow thermald-lite sysfs_thermal:dir search;
 allow thermald-lite sysfs_thermal:file { getattr open read };
-
 allow thermald-lite kmsg_device:chr_file rw_file_perms;
 allow thermald-lite rootfs:file entrypoint;
+allow thermald-lite sysfs_thermal_management:dir search;
+allow thermald-lite vendor_thermal_prop:property_service set;
+
+get_prop(thermald-lite, vendor_thermald_lite_logs_enabled_prop)
+set_prop(thermald-lite, vendor_thermald_lite_logs_enabled_prop)
 set_prop(thermald-lite, powerctl_prop)
