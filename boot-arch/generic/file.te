@@ -1,0 +1,1 @@
+type sysfs_wmi_firmware, fs_type, sysfs_type;
