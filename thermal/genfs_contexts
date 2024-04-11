@@ -1,0 +1,152 @@
+genfscon sysfs /devices/virtual/powercap  												u:object_r:sysfs_powercap:s0
+genfscon sysfs /devices/platform/coretemp.0 											u:object_r:sysfs_thermal_management:s0
+
+genfscon sysfs /devices/system/cpu/cpu0/cpufreq/thermal_scaling_max_freq 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/system/cpu/cpu1/cpufreq/thermal_scaling_max_freq 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/system/cpu/cpu2/cpufreq/thermal_scaling_max_freq 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/system/cpu/cpu3/cpufreq/thermal_scaling_max_freq 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal     											u:object_r:sysfs_thermal_management:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_0_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_1_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_2_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_3_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_4_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_5_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_6_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_7_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_8_temp 				u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/trip_point_9_temp 				u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/policy 							u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/policy 							u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/policy 							u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/policy 							u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/policy 							u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/policy 							u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/policy 							u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/policy 							u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/policy 							u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/policy 							u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/temp 								u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone1/temp 								u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone2/temp 								u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone3/temp 								u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone4/temp 								u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone5/temp 								u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone6/temp 								u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone7/temp 								u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone8/temp 								u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone9/temp 								u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /devices/virtual/thermal/cooling_device0/cur_state 						u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/cooling_device1/cur_state 						u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/cooling_device2/cur_state 						u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/cooling_device3/cur_state 						u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/cooling_device4/cur_state 						u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/cooling_device5/cur_state 						u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/cooling_device6/cur_state 						u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/cooling_device7/cur_state 						u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/cooling_device8/cur_state 						u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/virtual/thermal/cooling_device9/cur_state 						u:object_r:sysfs_thermal:s0
