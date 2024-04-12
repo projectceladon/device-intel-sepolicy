@@ -27,9 +27,9 @@ userdebug_or_eng(`
   dontaudit logsvc cache_file:file *;
   dontaudit logsvc cache_file:dir rw_dir_perms;
   dontaudit logsvc cache_file:lnk_file create_file_perms;
-  dontaudit logsvc log_file:file create_file_perms;
-  dontaudit logsvc log_file:dir *;
-  dontaudit logsvc log_file:lnk_file create_file_perms;
+  allow logsvc log_file:file create_file_perms;
+  allow logsvc log_file:dir create_dir_perms;
+  allow logsvc log_file:lnk_file create_file_perms;
   dontaudit logsvc vendor_apklogfs_prop:file create_file_perms;
   dontaudit logsvc vendor_aplogfs_prop:file create_file_perms;
 
