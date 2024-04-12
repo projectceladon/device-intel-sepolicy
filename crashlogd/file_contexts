@@ -11,7 +11,7 @@
 /cache/cache/elogs(/.*)?                 u:object_r:log_file:s0
 
 # Logs
-/data/logs(/.*)?                   u:object_r:log_file:s0
+/data/vendor/logs(/.*)?                   u:object_r:log_file:s0
 
 # aplog
 /vendor/bin/aplog.sh               u:object_r:logsvc_exec:s0
