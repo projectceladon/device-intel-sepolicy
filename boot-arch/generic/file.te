@@ -1,1 +1,2 @@
 type sysfs_wmi_firmware, fs_type, sysfs_type;
+type sysfs_ec, fs_type, sysfs_type;
