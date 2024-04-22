@@ -1,0 +1,2 @@
+#Allow init to write discard_max_bytes
+allow init sysfs_health2_0_management:file w_file_perms;
