@@ -1,0 +1,1 @@
+allow dumpstate sysfs_health2_0_management:file r_file_perms;
