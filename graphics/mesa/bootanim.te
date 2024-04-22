@@ -1,9 +1,13 @@
 allow bootanim gpu_device:chr_file rw_file_perms;
 allow bootanim gpu_device:dir r_dir_perms;
 allow bootanim sysfs_app_readable:file r_file_perms;
+allow bootanim sysfs_gpu:dir r_dir_perms;
 allow bootanim tmpfs:file r_file_perms;
 allow bootanim graphics_device:chr_file { ioctl open read };
 allow bootanim graphics_device:dir search;
 allow bootanim self:process execmem;
 allow bootanim proc_graphics:file r_file_perms;
 allow bootanim hal_graphics_allocator_default_tmpfs:file { map read write };
+
+# Allow writing performance tracing data into the perfetto traced daemon.
+perfetto_producer(bootanim)

@@ -1,2 +1,4 @@
 genfscon 9p / u:object_r:p9fs2:s0
 genfscon sysfs /class/udc u:object_r:sysfs_usb:s0
+genfscon debugfs /dri/0/i915_sriov_info u:object_r:debugfs_graphics:s0
+genfscon debugfs /dri/0/name u:object_r:debugfs_graphics:s0

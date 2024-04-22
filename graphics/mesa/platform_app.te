@@ -1,1 +1,2 @@
 allow platform_app graphics_device:dir search;
+allow platform_app sysfs_gpu:dir r_dir_perms;
