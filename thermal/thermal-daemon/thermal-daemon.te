@@ -37,5 +37,7 @@ allow thermal-daemon vendor_file:dir read;
 
 # properties
 get_prop(thermal-daemon, vendor_disable_thermal_logs_prop)
+get_prop(thermal-daemon, vendor_thermal_daemon_supported_prop)
+set_prop(thermal-daemon, vendor_thermal_daemon_supported_prop)
 set_prop(thermal-daemon, powerctl_prop)
 allow thermal-daemon vendor_thermal_prop:property_service set;
