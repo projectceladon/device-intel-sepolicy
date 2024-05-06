@@ -1,0 +1,11 @@
+# vendor libraries
+
+/(vendor|system/vendor)/lib(64)?/libOpenCL\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libigdrcl\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libigdfcl\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libopencl-clang\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libigc\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgmm_umd\.so u:object_r:same_process_hal_file:s0
+
+#icd file permission
+/vendor/Khronos/OpenCL/vendors/intel\.icd u:object_r:vendor_app_file:s0
