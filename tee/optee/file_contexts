@@ -10,5 +10,6 @@
 
 # optee keymaster treble service
 /vendor/bin/hw/android.hardware.keymaster@3.0-service.optee       u:object_r:hal_keymaster_default_exec:s0
+/vendor/bin/hw/android.hardware.gatekeeper@1.0-service.optee      u:object_r:hal_gatekeeper_default_exec:s0
 
 /dev/block/by-name/tee(_(a|b))? u:object_r:boot_block_device:s0
