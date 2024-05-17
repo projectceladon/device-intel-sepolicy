@@ -1,4 +1,4 @@
-/dev/media[0-9]+          u:object_r:video_device:s0
+/dev/video[0-9]+          u:object_r:video_device:s0
 /(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.[0-9]-sample  u:object_r:hal_evs_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.vendor\.hardware\.camera\.provider@2\.[0-9]+-ivi-service       u:object_r:hal_camera_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.iacamera\.provider@2\.[0-9]+-ivi-service u:object_r:hal_camera_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.iacamera\.provider-ivi-service u:object_r:hal_camera_default_exec:s0
