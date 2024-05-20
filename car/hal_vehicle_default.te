@@ -23,3 +23,14 @@ ignore_adb_debug(`hal_vehicle_default')
 
 allow hal_vehicle_default serial_device:chr_file rw_file_perms;
 allow hal_vehicle_default sysfs_power:file rw_file_perms;
+allow hal_evs_default gpu_device:dir { read open};
+allow hal_evs_default sysfs_app_readable:file { read open getattr};
+allow hal_evs_default sysfs_gpu:dir search;
+get_prop(hal_evs_default, graphics_config_writable_prop)
+dontaudit hal_evs_default traced_producer_socket:sock_file write;
+dontaudit hal_evs_default traced:unix_stream_socket connectto;
+allow hal_evs_default hal_graphics_allocator_default_tmpfs:file { read write };
+allow hal_evs_default proc_graphics:file { getattr read open };
+allow hal_evs_default proc_meminfo:file { getattr open read };
+allow hal_evs_default sysfs_gpu:file { read open getattr};
+allow hal_evs_default device:chr_file getattr;
