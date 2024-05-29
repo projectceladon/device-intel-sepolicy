@@ -1,0 +1,176 @@
+type docker_manager, domain, mlstrustedsubject;
+type docker_manager_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(docker_manager)
+
+permissive docker_manager;
+
+allow docker_manager binderfs:dir r_dir_perms;
+allow docker_manager binderfs_logs:dir r_dir_perms;
+allow docker_manager binderfs_logs_proc:dir r_dir_perms;
+allow docker_manager block_device:dir r_dir_perms;
+allow docker_manager cgroup:dir r_dir_perms;
+allow docker_manager dm_user_device:dir r_dir_perms;
+allow docker_manager fscklogs:dir r_dir_perms;
+allow docker_manager graphics_device:dir r_dir_perms;
+allow docker_manager input_device:dir r_dir_perms;
+allow docker_manager proc_net:dir r_dir_perms;
+allow docker_manager properties_device:dir r_dir_perms;
+allow docker_manager self:capability sys_resource;
+allow docker_manager tmpfs:blk_file setattr;
+allow docker_manager sysfs_app_readable:dir r_dir_perms;
+allow docker_manager acpio_block_device:blk_file getattr;
+allow docker_manager config_block_device:blk_file getattr;
+allow docker_manager docker_block_device:blk_file getattr;
+
+allow docker_manager i2c_device:chr_file getattr;
+allow docker_manager nn_vendor_data_file:dir { add_name getattr mounton open read remove_name search setattr write };
+allow docker_manager nn_vendor_data_file:sock_file { create getattr setattr unlink };
+allow docker_manager proc_graphics:file { getattr open read };
+allow docker_manager rfkill_device:chr_file getattr;
+allow docker_manager sysfs_app_readable:file { getattr open read write };
+allow docker_manager sysfs_backlight_thermal:dir { open read search };
+allow docker_manager sysfs_powercap:dir search;
+allow docker_manager sysfs_powercap:file { getattr open read write };
+allow docker_manager sysfs_powercap:lnk_file read;
+allow docker_manager sysfs_thermal_management:dir search;
+allow docker_manager sysfs_thermal_management:file { getattr open read write };
+allow docker_manager sysfs_thermal_management:lnk_file read;
+allow docker_manager sysfs_video:dir { open read search };
+allow docker_manager sysfs_virtio:file write;
+allowxperm docker_manager self:fifo_file ioctl {
+    TIOCGWINSZ
+    TIOCGPGRP
+
+};
+allowxperm docker_manager self:udp_socket ioctl {
+    SIOCETHTOOL
+};
+
+allow docker_manager tmpfs:chr_file rw_file_perms;
+allowxperm docker_manager tmpfs:chr_file ioctl {
+    TCGETS
+    TIOCGWINSZ
+    EVIOCGVERSION
+    EVIOCGID
+    EVIOCSCLOCKID
+    EVIOCREVOKE
+    0x4520
+    0x4518
+    0x4506
+    0x4507
+    0x4508
+    0x4509
+    0x4519
+    0x451b
+    0x4521
+    0x4522
+    0x4523
+    0x4524
+    0x4525
+    0x4531
+    0x4532
+    0x4535
+    0x4540
+    0x4b3a
+    0x4b45
+    0x5500-0x5501
+    0x5510
+    0x5516
+    0x5602-0x5603
+    0x6400
+    0x6409
+    0x640c
+    0x642d
+    0x6446
+    0x645b
+    0x645f
+    0x6461
+    0x6463-0x6464
+    0x6466
+    0x6469
+    0x646c-0x646d
+    0x6471
+    0x6473-0x6475
+    0x6477-0x647a
+    0x647c
+    0x64c3
+    0x64bf-0x64c0
+};
+allow docker_manager audio_device:chr_file rw_file_perms;
+allow docker_manager audio_device:dir r_dir_perms;
+allowxperm docker_manager audio_device:chr_file ioctl {
+    SNDRV_CTL_IOCTL_CARD_INFO
+    SNDRV_CTL_IOCTL_PVERSION
+    SNDRV_CTL_IOCTL_ELEM_LIST
+    SNDRV_CTL_IOCTL_SUBSCRIBE_EVENTS
+};
+allow docker_manager gpu_device:dir r_dir_perms;
+allow docker_manager gpu_device:chr_file rw_file_perms;
+allowxperm docker_manager gpu_device:chr_file ioctl {
+    DRM_IOCTL_VERSION
+    DRM_IOCTL_GEM_CLOSE
+    DRM_IOCTL_GET_CAP
+    DRM_IOCTL_PRIME_HANDLE_TO_FD
+    DRM_IOCTL_I915_GETPARAM
+    DRM_IOCTL_I915_GEM_CREATE
+    DRM_IOCTL_I915_GEM_SET_DOMAIN
+    DRM_IOCTL_I915_GEM_SET_TILING
+    DRM_IOCTL_I915_GEM_GET_APERTURE
+    DRM_IOCTL_I915_GEM_MMAP_GTT
+    DRM_IOCTL_I915_GEM_MADVISE
+    DRM_IOCTL_I915_GEM_EXECBUFFER2
+    DRM_IOCTL_I915_GEM_WAIT
+    DRM_IOCTL_I915_GEM_CONTEXT_CREATE
+    DRM_IOCTL_I915_REG_READ
+    DRM_IOCTL_I915_GEM_USERPTR
+    0x6457
+    0x646e
+    0x6474
+    0x6475
+    0x6477
+    0x6478
+    0x6479
+    0x647a
+    0x647c
+    0x64bf
+    0x64c0
+    0x64c3
+};
+
+allow docker_manager tty_device:chr_file rw_file_perms;
+allowxperm docker_manager tty_device:chr_file ioctl {
+    DRM_IOCTL_VERSION
+    KDSETMODE
+    KDSKBMODE
+    VT_SETMODE
+    VT_GETSTATE
+};
+
+allow docker_manager devpts:chr_file rw_file_perms;
+allowxperm docker_manager devpts:chr_file ioctl {
+    TIOCSPTLCK
+    TIOCGPTN
+    TIOCSCTTY
+    TCGETS
+};
+
+allowxperm docker_manager docker_data_file:file ioctl {
+    FS_IOC_FIEMAP
+    BTRFS_IOC_CLONE
+    TIOCGPGRP
+    TIOCGWINSZ
+};
+allowxperm docker_manager { proc docker_manager sysfs }:file ioctl {
+    TCGETS
+};
+
+dontaudit docker_manager property_type:file *;
+dontaudit docker_manager {fs_type dev_type file_type}:dir_file_class_set *;
+dontaudit docker_manager domain:{ process process2 } *;
+dontaudit docker_manager domain:fd *;
+dontaudit docker_manager domain:dir *;
+dontaudit docker_manager domain:lnk_file *;
+dontaudit docker_manager domain:{ fifo_file file } *;
+dontaudit docker_manager domain:socket_class_set *;
+dontaudit docker_manager domain:ipc_class_set *;
+dontaudit docker_manager domain:key *;

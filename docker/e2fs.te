@@ -1,0 +1,6 @@
+allow e2fs docker_block_device:blk_file rw_file_perms;
+allowxperm e2fs docker_block_device:blk_file ioctl {
+  BLKSECDISCARD BLKDISCARD BLKPBSZGET BLKDISCARDZEROES BLKROGET
+};
+
+
