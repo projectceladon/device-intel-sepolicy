@@ -1,0 +1,2 @@
+allow mdnsd docker_data_file:dir search;
+allow mdnsd unlabeled:dir search;

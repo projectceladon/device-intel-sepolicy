@@ -1,0 +1,10 @@
+type lic_app, domain, coredomain;
+type lic_app_tmpfs, file_type;
+
+app_domain(lic_app)
+net_domain(lic_app)
+bluetooth_domain(lic_app)
+
+permissive lic_app;
+
+allow lic_app docker_manager:fd use;

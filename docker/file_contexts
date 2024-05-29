@@ -1,0 +1,11 @@
+# docker_manager executable
+(/system)?/vendor/bin/docker                    u:object_r:docker_manager_exec:s0
+(/system)?/vendor/bin/dockerd                   u:object_r:docker_manager_exec:s0
+(/system)?/vendor/bin/dockerd-dev               u:object_r:docker_manager_exec:s0
+(/system)?/vendor/bin/docker_manager            u:object_r:docker_manager_exec:s0
+(/system)?/vendor/bin/containerd                u:object_r:docker_manager_exec:s0
+(/system)?/vendor/bin/containerd-shim-runc-v2   u:object_r:docker_manager_exec:s0
+(/system)?/vendor/bin/lic_install.sh            u:object_r:docker_manager_exec:s0
+/mnt/share_data(/.*)?           u:object_r:docker_data_file:s0
+/dev/block/by-name/share_data	u:object_r:docker_block_device:s0
+/data/vendor/neuralnetworks(/.*)?    u:object_r:nn_vendor_data_file:s0
