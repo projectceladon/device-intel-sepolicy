@@ -8,8 +8,11 @@
 # optee secure storage using REE filesystem
 /persist(/.*)?                u:object_r:tee_data_file:s0
 
-# optee keymaster treble service
+# optee keymaster and gatekeeper treble service
 /vendor/bin/hw/android.hardware.keymaster@3.0-service.optee       u:object_r:hal_keymaster_default_exec:s0
 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.optee      u:object_r:hal_gatekeeper_default_exec:s0
+
+# only use for optee enabled with sw-gatekeeper
+/vendor/bin/hw/android.hardware.gatekeeper@1.0-service.software    u:object_r:hal_gatekeeper_default_exec:s0
 
 /dev/block/by-name/tee(_(a|b))? u:object_r:boot_block_device:s0
