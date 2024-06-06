@@ -1,3 +1,2 @@
 allow init proc:dir mounton;
-allow init system_file:file mounton;
 
