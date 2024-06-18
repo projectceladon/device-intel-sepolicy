@@ -5,7 +5,7 @@
 /dev/block/by-name/vendor_boot(_(a|b))? u:object_r:boot_block_device:s0
 /dev/block/by-name/bootloader(_(a|b))?	u:object_r:boot_block_device:s0
 /dev/block/by-name/multiboot(_(a|b))?	u:object_r:boot_block_device:s0
-/dev/block/by-name/system(_(a|b))?	u:object_r:system_block_device:s0
+#/dev/block/by-name/system(_(a|b))?	u:object_r:system_block_device:s0
 /dev/block/by-name/vendor(_(a|b))?	u:object_r:vendor_block_device:s0
 /dev/block/by-name/product(_(a|b))?	u:object_r:product_block_device:s0
 /dev/block/by-name/odm(_(a|b))?	u:object_r:odm_block_device:s0
