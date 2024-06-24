@@ -1,4 +1,5 @@
 vendor_public_prop(vendor_video_codec_prop)
+vendor_public_prop(vendor_media_platform_prop)
 vendor_internal_prop(vendor_hwcomposer_prop)
 vendor_internal_prop(vendor_suspend_prop)
 vendor_internal_prop(vendor_usb_controller_prop)
