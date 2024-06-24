@@ -21,6 +21,7 @@ get_prop(codec2_hal_default, hwservicemanager_prop)
 
 module_only(`aafd', `
    get_prop(codec2_hal_default, vendor_video_codec_prop)
+   get_prop(codec2_hal_default, vendor_media_platform_prop)
 ')
 
 allow codec2_hal_default coreu_service:service_manager find;
