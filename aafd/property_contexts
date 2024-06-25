@@ -1,4 +1,5 @@
 vendor.intel.video.codec u:object_r:vendor_video_codec_prop:s0
+ro.vendor.media.target_variant_platform u:object_r:vendor_media_platform_prop:s0
 vendor.hwcomposer.set u:object_r:vendor_hwcomposer_prop:s0
 vendor.gralloc.set u:object_r:vendor_hwcomposer_prop:s0
 vendor.egl.set u:object_r:vendor_hwcomposer_prop:s0
