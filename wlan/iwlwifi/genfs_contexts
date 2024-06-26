@@ -1,0 +1,2 @@
+genfscon sysfs /devices/pci0000:00/0000:00:06.0/ieee80211/phy0 u:object_r:sysfs_net:s0
+
