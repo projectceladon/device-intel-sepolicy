@@ -11,6 +11,7 @@ allow tee tee_device:blk_file rw_file_perms;
 allow tee tee_data_file:sock_file { write create };
 allow tee gsi_metadata_file:dir search;
 allow tee metadata_file:dir search;
+allow tee mnt_vendor_file:dir { getattr search };
 
 #============= xtest ==============
 # For xtest 200x tests

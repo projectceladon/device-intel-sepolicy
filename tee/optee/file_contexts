@@ -6,7 +6,7 @@
 /vendor/bin/tee-supplicant    u:object_r:tee_exec:s0
 
 # optee secure storage using REE filesystem
-/persist(/.*)?                u:object_r:tee_data_file:s0
+/mnt/vendor/persist(/.*)?                u:object_r:tee_data_file:s0
 
 # optee keymaster and gatekeeper treble service
 /vendor/bin/hw/android.hardware.keymaster@3.0-service             u:object_r:hal_keymaster_default_exec:s0
