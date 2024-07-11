@@ -1,7 +1,0 @@
-#neverallow check failed at out/target/product/gordon_peak/obj/ETC/plat_pub_versioned.cil_intermediates/plat_pub_versioned.cil:4264
-#  (neverallow base_typeattr_110_10000_0 base_typeattr_112_10000_0 (dir (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton add_name remove_name reparent search rmdir open audit_access execmod)))
-#    <root>
-#    allow at out/target/product/gordon_peak/obj/ETC/vendor_sepolicy.cil_intermediates/vendor_sepolicy.cil:1310
-#      (allow netd_10000_0 coredump_log_file (dir (ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open)))
-typeattribute netd data_between_core_and_vendor_violators;
-
