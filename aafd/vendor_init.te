@@ -5,7 +5,6 @@ set_prop(vendor_init, vendor_intel_ipaddr_prop)
 get_prop(vendor_init, vendor_hwcomposer_prop)
 set_prop(vendor_init, vendor_usb_controller_prop)
 get_prop(vendor_init, vendor_fixed_perf_prop)
-get_prop(vendor_init, vendor_media_target_prop)
 set_prop(vendor_init, vendor_display_prop)
 #============= vendor_init ==============
 allow vendor_init tmpfs:dir { add_name create write };

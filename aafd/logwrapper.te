@@ -25,5 +25,4 @@ allow logwrapper p9fs2:dir r_dir_perms;
 set_prop(logwrapper, vendor_suspend_prop)
 set_prop(logwrapper, vendor_intel_ipaddr_prop)
 set_prop(logwrapper, vendor_graphics_gles_prop)
-set_prop(logwrapper, vendor_media_target_prop)
 set_prop(logwrapper, vendor_display_prop)
