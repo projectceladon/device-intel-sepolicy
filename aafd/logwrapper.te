@@ -1,6 +1,10 @@
 allow logwrapper vendor_shell_exec:file rx_file_perms;
 allow logwrapper vendor_toolbox_exec:file rx_file_perms;
 allow logwrapper vendor_file:file rx_file_perms;
+allow logwrapper sysfs:dir { open read };
+allow logwrapper sysfs_app_readable:file { getattr open read };
+allow logwrapper sysfs_gpu:dir search;
+allow logwrapper sysfs_gpu:file { getattr open read };
 allow logwrapper sysfs:file r_file_perms;
 allow logwrapper proc:file r_file_perms;
 allow logwrapper kernel:system module_request;
