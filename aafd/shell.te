@@ -1,0 +1,1 @@
+allow shell vendor_media_platform_prop:file { getattr open read map };
