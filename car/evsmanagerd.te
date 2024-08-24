@@ -1,2 +1,5 @@
 allow evsmanagerd hal_graphics_allocator_default_tmpfs:file rw_file_perms;
 allow evsmanagerd { appdomain -isolated_app_all }:fd use;
+binder_call(evs_intel_app, evsmanagerd)
+binder_call(evsmanagerd, evs_intel_app)
+
