@@ -1,0 +1,36 @@
+# evs app
+type evs_intel_app, domain, coredomain;
+hal_client_domain(evs_intel_app, hal_evs)
+hal_client_domain(evs_intel_app, hal_vehicle)
+hal_client_domain(evs_intel_app, hal_configstore)
+hal_client_domain(evs_intel_app, hal_graphics_allocator)
+
+# allow init to launch processes in this context
+type evs_intel_app_exec, exec_type, file_type, system_file_type;
+init_daemon_domain(evs_intel_app)
+
+# gets access to its own files on disk
+type evs_intel_app_files, file_type, system_file_type;
+allow evs_intel_app evs_intel_app_files:file { getattr open read };
+allow evs_intel_app evs_intel_app_files:dir search;
+
+# Allow use of gralloc buffers and EGL
+allow evs_intel_app gpu_device:chr_file rw_file_perms;
+allow evs_intel_app ion_device:chr_file r_file_perms;
+allow evs_intel_app system_file:dir r_dir_perms;
+allow evs_intel_app gpu_device:dir search;
+allow evs_intel_app self:process execmem;
+
+# Allow use of binder and find surfaceflinger
+binder_use(evs_intel_app);
+allow evs_intel_app surfaceflinger_service:service_manager find;
+
+# Allow get a list of available services
+allow evs_intel_app servicemanager:service_manager list;
+
+# Allow find evsmanagerd service
+allow evs_intel_app evsmanagerd_service:service_manager find;
+
+allow evs_intel_app gpu_device:dir { read open};
+allow evs_intel_app sysfs_app_readable:file { read open getattr};
+allow evs_intel_app sysfs_gpu:dir { search read };
