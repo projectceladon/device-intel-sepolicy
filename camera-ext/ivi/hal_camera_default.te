@@ -7,4 +7,8 @@ allow hal_camera_default hal_graphics_allocator_default_tmpfs:file { map read wr
 allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
 allow hal_camera_default hal_graphics_composer_default:fd use;
 allow hal_camera_default self:{ socket vsock_socket } { create read write listen accept bind };
+allow hal_camera_default self:netlink_socket create_socket_perms_no_ioctl;
+allow hal_camera_default sysfs_video:dir r_dir_perms;
+allow hal_camera_default sysfs_video:file rw_file_perms;
+allow hal_camera_default hal_camera_default:capability net_admin;
 set_prop(hal_camera_default, vendor_camera_default_prop)
