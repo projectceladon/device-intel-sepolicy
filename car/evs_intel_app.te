@@ -12,7 +12,7 @@ init_daemon_domain(evs_intel_app)
 # gets access to its own files on disk
 type evs_intel_app_files, file_type, system_file_type;
 allow evs_intel_app evs_intel_app_files:file { getattr open read };
-allow evs_intel_app evs_intel_app_files:dir search;
+allow evs_intel_app evs_intel_app_files:dir { getattr search read };
 
 # Allow use of gralloc buffers and EGL
 allow evs_intel_app gpu_device:chr_file rw_file_perms;
