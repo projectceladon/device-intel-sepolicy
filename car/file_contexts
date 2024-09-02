@@ -3,3 +3,7 @@
 
 /vendor/bin/hw/android.hardware.broadcastradio@intel-service u:object_r:hal_broadcastradio_default_exec:s0
 /vendor/bin/hw/android.hardware.automotive.audiocontrol@1.0-service.intel u:object_r:hal_audiocontrol_default_exec:s0
+
+/system/bin/evs_intel_app                                             u:object_r:evs_intel_app_exec:s0
+/system/bin/evs_app_support_lib                                 u:object_r:evs_intel_app_exec:s0
+/system/etc/automotive/evs(/.*)?                                u:object_r:evs_intel_app_files:s0
