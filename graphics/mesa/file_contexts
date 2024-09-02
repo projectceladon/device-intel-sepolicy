@@ -3,9 +3,7 @@
 /dev/sw_sync                u:object_r:graphics_device:s0
 
 # system or vendor binaries
-(/system)?/vendor/bin/coreu    u:object_r:coreu_exec:s0
 (/system)?/vendor/bin/gfxd     u:object_r:gfxd_exec:s0
-(/system)?/vendor/bin/msync    u:object_r:msync_exec:s0
 
 # GFX
 /sys/devices/pci0000\:00/0000\:00\:02.0/resource0 u:object_r:sysfs_gfx:s0
@@ -25,6 +23,3 @@
 /(vendor|system/vendor)/lib(64)?/libmd\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/vulkan\.pastel\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/dri(/.*)?     u:object_r:same_process_hal_file:s0
-
-#coreu /data/vendor permission
-/data/vendor/coreu(/.*)?       u:object_r:coreu_data_file:s0
