@@ -1,3 +1,0 @@
-# to allow CTS/XTS screen capture through method getScreenshot.
-allow adbd graphics_device:dir search;
-allow adbd graphics_device:chr_file { read open };

@@ -14,7 +14,6 @@ hal_client_domain(codec2_hal_default, hal_graphics_allocator)
 hal_server_domain(codec2_hal_default, hal_codec2)
 hal_server_domain(codec2_hal_default, hal_omx)
 
-binder_call(codec2_hal_default, coreu)
 binder_call(codec2_hal_default, appdomain)
 
 get_prop(codec2_hal_default, hwservicemanager_prop)
@@ -24,7 +23,6 @@ module_only(`aafd', `
    get_prop(codec2_hal_default, vendor_media_platform_prop)
 ')
 
-allow codec2_hal_default coreu_service:service_manager find;
 allow codec2_hal_default cameraserver_service:service_manager find;
 allow codec2_hal_default media_session_service:service_manager find;
 allow codec2_hal_default hal_codec2_hwservice:hwservice_manager find;

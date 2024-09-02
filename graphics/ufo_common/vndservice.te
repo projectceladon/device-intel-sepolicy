@@ -1,4 +1,0 @@
-type hwc_info_service,         vndservice_manager_type;
-type coreu_service,            vndservice_manager_type;
-type msync_service,            vndservice_manager_type;
-type gfxd_service,             vndservice_manager_type;
