@@ -1,0 +1,6 @@
+# mediatranscoding - daemon for transcoding video and image.
+allow mediatranscoding surfaceflinger_service:service_manager find;
+allow mediatranscoding gpu_device:dir { open read search };
+allow mediatranscoding gpu_device:chr_file { getattr ioctl map open read write };
+allow mediatranscoding graphics_device:chr_file { getattr };
+
