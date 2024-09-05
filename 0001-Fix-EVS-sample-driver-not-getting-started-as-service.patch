@@ -1,0 +1,46 @@
+From ae58b9cd6771e2c7673f98ab5507ff97f47e70bb Mon Sep 17 00:00:00 2001
+From: "Pillai, Venkatesh" <venkatesh.pillai@intel.com>
+Date: Fri, 21 Apr 2023 14:20:06 +0530
+Subject: [PATCH] Fix EVS sample driver not getting started as service
+
+EVS sample driver not getting started as service due to missing
+sepolicies
+
+Changes done to fix the issue:
+- Allow carservice_app with service find rights
+- Allow carservice_app with open, read and search access for sysfs dir
+- Allow carservice_app with search access for data folder
+
+Tracked-On: OAM-108929
+Signed-off-by: Pillai, Venkatesh <venkatesh.pillai@intel.com>
+---
+ camera-ext/ext-camera-only/file_contexts | 1 +
+ car/carservice_app.te                    | 5 +++++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/camera-ext/ext-camera-only/file_contexts b/camera-ext/ext-camera-only/file_contexts
+index 31d7ef4..4c93e38 100644
+--- a/camera-ext/ext-camera-only/file_contexts
++++ b/camera-ext/ext-camera-only/file_contexts
+@@ -1 +1,2 @@
+ /dev/media[0-9]+          u:object_r:video_device:s0
++/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.[0-9]-sample  u:object_r:hal_evs_default_exec:s0
+diff --git a/car/carservice_app.te b/car/carservice_app.te
+index e542443..f69eb06 100644
+--- a/car/carservice_app.te
++++ b/car/carservice_app.te
+@@ -1,6 +1,11 @@
+ allow carservice_app sysfs:dir r_dir_perms;
+ allow carservice_app sysfs_fs_f2fs:dir r_dir_perms;
+ allow carservice_app sysfs_fs_ext4_features:dir r_dir_perms;
++allow carservice_app system_data_file:dir search;
++allow carservice_app user_profile_root_file:dir search;
++allow carservice_app content_capture_service:service_manager find;
++allow carservice_app game_service:service_manager find;
++allow carservice_app media_communication_service:service_manager find;
+ 
+ # To allow carservice app to  access sys.usb.cfg
+ module_only(`carservice_app', `
+-- 
+2.17.1
+
