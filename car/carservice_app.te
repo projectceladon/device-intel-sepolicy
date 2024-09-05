@@ -9,5 +9,5 @@ allow carservice_app media_communication_service:service_manager find;
 
 # To allow carservice app to  access sys.usb.cfg
 module_only(`carservice_app', `
-  set_prop(carservice_app, exported_system_radio_prop)
+  set_prop(carservice_app, usb_control_prop)
 ')
