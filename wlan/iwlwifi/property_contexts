@@ -1,2 +1,3 @@
 vendor.wlan.driver.version u:object_r:vendor_wifi_version_prop:s0
 vendor.wlan.firmware.version u:object_r:vendor_wifi_version_prop:s0
+vendor.intel.wifi_iwl7000 u:object_r:vendor_intel_wifi_iwl7000_prop:s0
