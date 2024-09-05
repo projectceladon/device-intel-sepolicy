@@ -13,7 +13,7 @@
 /vendor/bin/hw/android.hardware.keymaster@3.0-service.optee       u:object_r:hal_keymaster_default_exec:s0
 
 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.software   u:object_r:hal_gatekeeper_default_exec:s0
-/vendor/bin/hw/android.hardware.gatekeeper-service.optee          u:object_r:hal_gatekeeper_default_exec:s0
+/vendor/bin/hw/android.hardware.gatekeeper@1.0-service.optee      u:object_r:hal_gatekeeper_default_exec:s0
 
 /vendor/bin/hw/android.hardware.security.keymint-service          u:object_r:hal_keymint_default_exec:s0
 /vendor/bin/hw/android.hardware.security.keymint-service.optee    u:object_r:hal_keymint_default_exec:s0
