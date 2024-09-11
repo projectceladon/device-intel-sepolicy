@@ -1,0 +1,22 @@
+# optee ipc device
+/dev/tee[0-9]*    u:object_r:tee_device:s0
+/dev/teepriv[0-9]*    u:object_r:tee_device:s0
+
+# optee supplicant service
+/vendor/bin/tee-supplicant    u:object_r:tee_exec:s0
+
+# optee secure storage using REE filesystem
+/mnt/vendor/persist(/.*)?                u:object_r:tee_data_file:s0
+
+# optee keymaster and gatekeeper treble service
+/vendor/bin/hw/android.hardware.keymaster@3.0-service             u:object_r:hal_keymaster_default_exec:s0
+/vendor/bin/hw/android.hardware.keymaster@3.0-service.optee       u:object_r:hal_keymaster_default_exec:s0
+
+/vendor/bin/hw/android.hardware.gatekeeper@1.0-service.software   u:object_r:hal_gatekeeper_default_exec:s0
+/vendor/bin/hw/android.hardware.gatekeeper-service.optee          u:object_r:hal_gatekeeper_default_exec:s0
+/vendor/bin/hw/android.hardware.gatekeeper-service.software       u:object_r:hal_gatekeeper_default_exec:s0
+
+/vendor/bin/hw/android.hardware.security.keymint-service          u:object_r:hal_keymint_default_exec:s0
+/vendor/bin/hw/android.hardware.security.keymint-service.optee    u:object_r:hal_keymint_default_exec:s0
+
+/dev/block/by-name/tee(_(a|b))? u:object_r:boot_block_device:s0
