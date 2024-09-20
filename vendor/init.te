@@ -1,1 +1,2 @@
 allow init tmpfs:lnk_file create;
+allow init vendor_data_file:dir mounton;
