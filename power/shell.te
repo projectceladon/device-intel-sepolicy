@@ -1,0 +1,1 @@
+allow shell android_pm_tune_exec:file getattr;
