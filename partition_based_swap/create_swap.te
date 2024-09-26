@@ -1,0 +1,18 @@
+type create_swap, domain;
+type create_swap_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(create_swap)
+
+allow create_swap vendor_file:file rx_file_perms;
+allow create_swap proc_meminfo:file r_file_perms;
+# allow the create_swap domain to set prop sys.low_ram
+set_prop(create_swap, vendor_mem_prop)
+
+not_full_treble(`
+  allow create_swap system_file:file rx_file_perms;
+  allow create_swap shell_exec:file rx_file_perms;
+')
+full_treble_only(`
+  allow create_swap vendor_shell_exec:file rx_file_perms;
+  allow create_swap vendor_toolbox_exec:file rx_file_perms;
+')
