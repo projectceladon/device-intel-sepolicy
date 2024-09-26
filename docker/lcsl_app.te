@@ -1,0 +1,10 @@
+type lcsl_app, domain, coredomain;
+type lcsl_app_tmpfs, file_type;
+
+app_domain(lcsl_app)
+net_domain(lcsl_app)
+bluetooth_domain(lcsl_app)
+
+permissive lcsl_app;
+
+allow lcsl_app docker_manager:fd use;
