@@ -1,0 +1,10 @@
+type lcs_app, domain, coredomain;
+type lcs_app_tmpfs, file_type;
+
+app_domain(lcs_app)
+net_domain(lcs_app)
+bluetooth_domain(lcs_app)
+
+permissive lcs_app;
+
+allow lcs_app docker_manager:fd use;

@@ -1,0 +1,10 @@
+type lcg_app, domain, coredomain;
+type lcg_app_tmpfs, file_type;
+
+app_domain(lcg_app)
+net_domain(lcg_app)
+bluetooth_domain(lcg_app)
+
+permissive lcg_app;
+
+allow lcg_app docker_manager:fd use;

@@ -1,2 +1,4 @@
 user=_app seinfo=platform name=com.intel.lic domain=lic_app type=app_data_file levelFrom=user
-
+user=_app seinfo=platform name=com.intel.linuxcloudgame domain=lcg_app type=app_data_file levelFrom=user
+user=_app seinfo=platform name=com.intel.lcs domain=lcs_app type=app_data_file levelFrom=user
+user=_app seinfo=platform name=com.intel.lcsl domain=lcsl_app type=app_data_file levelFrom=user
