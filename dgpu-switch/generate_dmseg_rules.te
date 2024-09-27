@@ -1,0 +1,29 @@
+
+
+#============= hal_evs_default ==============
+allow hal_evs_default self:netlink_kobject_uevent_socket read;
+
+#============= kernel ==============
+#allow kernel device:blk_file { create setattr };
+allow kernel device:chr_file { create setattr };
+allow kernel device:dir { add_name create write };
+allow kernel self:capability mknod;
+
+#============= logsvc ==============
+allow logsvc vendor_data_file:dir { add_name write };
+allow logsvc vendor_data_file:lnk_file create;
+
+#============= mediaprovider_app ==============
+#allow mediaprovider_app media_rw_data_file:fifo_file { getattr open read };
+
+#============= platform_app ==============
+allow platform_app proc:file { getattr };
+
+#============= shell ==============
+#allow shell kernel:system syslog_read;
+
+#============= system_app ==============
+allow system_app proc:file { getattr };
+
+#============= vendor_init ==============
+allow vendor_init vts_status_prop:file read;
