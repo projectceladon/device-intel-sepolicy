@@ -24,3 +24,19 @@ not_full_treble(`
   allow hal_camera_default surfaceflinger_service:service_manager find;
 ')
 allow hal_camera_default self:global_capability_class_set sys_nice;
+
+allow hal_camera_default self:socket create_socket_perms;
+allow hal_camera_default self:tcp_socket create_socket_perms;
+
+allow hal_camera_default default_prop:file { open read };
+allow hal_camera_default vndbinder_device:chr_file { ioctl map open read write };
+
+allow hal_camera_default self:socket create_socket_perms;
+allowxperm hal_camera_default self:socket ioctl unpriv_sock_ioctls;
+
+userdebug_or_eng(`
+    permissive hal_camera_default;
+    dontaudit hal_camera_default default_prop:file { open read getattr map };
+    dontaudit hal_camera_default port:tcp_socket { name_connect };
+    dontaudit hal_camera_default self:tcp_socket { create read write connect name_connect getopt setopt };
+')
