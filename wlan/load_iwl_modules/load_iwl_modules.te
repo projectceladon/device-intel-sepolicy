@@ -18,6 +18,7 @@ allow load_iwl_modules_script self:key write;
 allow load_iwl_modules_script kernel:key search;
 allow load_iwl_modules_script rootfs:file r_file_perms;
 allow load_iwl_modules_script vendor_file:file rx_file_perms;
+allow load_iwl_modules_script debugfs_wifi_tracing:dir search;
 
 not_full_treble(`
     allow load_iwl_modules_script shell_exec:file rx_file_perms;
