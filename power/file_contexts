@@ -2,3 +2,5 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@[0-9]+.?[0-9]*-service          u:object_r:hal_power_service_exec:s0
 # Power HAL helper
 (/system)?/vendor/bin/power_hal_helper u:object_r:power_hal_helper_exec:s0
+# android_power_tune
+(/system)?/vendor/bin/android_pm_tune.sh u:object_r:android_pm_tune_exec:s0

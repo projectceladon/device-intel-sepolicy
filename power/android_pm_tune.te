@@ -1,0 +1,37 @@
+# Rules for android_pm_tune script
+type android_pm_tune, domain;
+type android_pm_tune_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(android_pm_tune)
+
+allow android_pm_tune proc_cmdline:file r_file_perms;
+allow android_pm_tune proc:file rw_file_perms;
+allow android_pm_tune proc:file {getattr};
+allow android_pm_tune sysfs:dir r_dir_perms;
+allow android_pm_tune sysfs:file rw_file_perms;
+#allow android_pm_tune sysfs:file {getattr open write};
+allow android_pm_tune sysfs_net:dir r_dir_perms;
+allow android_pm_tune sysfs_net:file rw_file_perms;
+allow android_pm_tune sysfs_net:file {getattr};
+allow android_pm_tune sysfs_app_readable:file rw_file_perms;
+allow android_pm_tune sysfs_app_readable:dir r_dir_perms;
+allow android_pm_tune sysfs_app_readable:file {getattr};
+allow android_pm_tune sysfs_gfx:file {getattr};
+
+allow android_pm_tune dbc_sysfs:file {getattr};
+allow android_pm_tune dbc_sysfs:dir r_dir_perms;
+allow android_pm_tune dbc_sysfs:file rw_file_perms;
+
+allow android_pm_tune sysfs_virtio:file rw_file_perms;
+
+allow android_pm_tune vendor_file:file rx_file_perms;
+allow android_pm_tune proc_cpuinfo:file r_file_perms;
+allow android_pm_tune vendor_toolbox_exec:file execute_no_trans;
+
+not_full_treble(`
+  allow android_pm_tune system_file:file rx_file_perms;
+  allow android_pm_tune shell_exec:file rx_file_perms;
+')
+full_treble_only(`
+  allow android_pm_tune vendor_shell_exec:file rx_file_perms;
+  allow android_pm_tune vendor_toolbox_exec:file rx_file_perms;
+')
