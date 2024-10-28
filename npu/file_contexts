@@ -1,0 +1,2 @@
+# devices
+/dev/accel[0-9]*              u:object_r:npu_device:s0
