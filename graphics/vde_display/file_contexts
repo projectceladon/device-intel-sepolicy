@@ -1,0 +1,1 @@
+(/system)?/vendor/bin/vnc-display                    u:object_r:vde_display_exec:s0
