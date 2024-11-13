@@ -1,0 +1,2 @@
+#dgpu switch
+/vendor/bin/dGPU_switch.sh   u:object_r:dgpu-switch_exec:s0
