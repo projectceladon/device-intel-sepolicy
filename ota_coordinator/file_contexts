@@ -1,0 +1,6 @@
+#
+# ota_coordinator
+#
+
+/vendor/bin/ota_coordinator u:object_r:ota_coordinator_exec:s0
+/dev/socket/ota_socket      u:object_r:ota_socket:s0

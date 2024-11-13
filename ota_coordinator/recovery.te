@@ -1,0 +1,2 @@
+allow recovery serial_device:chr_file { read write open ioctl };
+

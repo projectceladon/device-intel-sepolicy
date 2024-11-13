@@ -1,0 +1,23 @@
+# 
+# ota_coordinator
+# 
+
+type ota_coordinator, domain;
+type ota_coordinator_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(ota_coordinator)
+hal_server_domain(ota_coordinator, hal_bootctl)
+
+allow ota_coordinator serial_device:chr_file { read write open ioctl };
+allow ota_coordinator sysfs:dir r_dir_perms;
+allow ota_coordinator block_device:dir search;
+allow ota_coordinator init:unix_stream_socket connectto;
+allow ota_coordinator misc_block_device:blk_file rw_file_perms;
+allow ota_coordinator property_socket:sock_file write;
+allow ota_coordinator tmpfs:file r_file_perms;
+typeattribute ota_coordinator socket_between_core_and_vendor_violators;
+
+set_prop(ota_coordinator, powerctl_prop)
+set_prop(ota_coordinator, vendor_intel_ota_prop)
+set_prop(vendor_init, vendor_intel_ota_prop)
+
