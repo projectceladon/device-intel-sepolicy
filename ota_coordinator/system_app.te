@@ -1,0 +1,4 @@
+allow system_app ota_socket:sock_file write;
+allow system_app ota_coordinator:unix_stream_socket connectto;
+get_prop(system_app, vendor_intel_ota_prop)
+

@@ -1,0 +1,3 @@
+persist.vendor.ota_coordinator.last_slot_suffix u:object_r:vendor_intel_ota_prop:s0
+vendor.ota_coordinator.factory_reset            u:object_r:vendor_intel_ota_prop:s0
+
