@@ -25,6 +25,11 @@ define(`target_only', `ifelse(eval(index(board_sepolicy_target_product, $1) >= 0
 # WARNING: <modname> cannot contain a dash, use underscores.
 define(`module_only', `ifelse(module_$1, `true', $2)')
 
+#####################################
+# module_not_disable(module_name, rules)
+# Only add rules if a module is not false.
+define(`module_not_disable', `ifelse(module_$1, `false', , $2)')
+
 # ignore_adb_debug(domain)
 # Some hal interface expose a forwarded port over adb
 # for debugging, ignore these. If you need to access
