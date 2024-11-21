@@ -1,0 +1,3 @@
+/system/bin/acrn-bkend-server             u:object_r:cast_server_exec:s0
+/dev/socket/dm_display_server/virt_disp_server          u:object_r:dm_disp_socket:s0
+/dev/socket/dm_display_server/virt_disp_client    	u:object_r:dm_client_socket:s0

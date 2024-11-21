@@ -1,0 +1,29 @@
+type cast_client_app, domain;
+
+permissive cast_client_app;
+
+app_domain(cast_client_app)
+net_domain(cast_client_app)
+
+#============= cast_client_app ==============
+allow cast_client_app cast_app_data_file:dir create_dir_perms;
+allow cast_client_app cast_app_data_file:file create_file_perms;
+allow cast_client_app socket_device:dir { add_name remove_name search write };
+allow cast_client_app dm_disp_socket:sock_file { write read open unlink create};
+allow cast_client_app dm_client_socket:sock_file { write read open unlink create};
+allow cast_client_app dm_client_socket:file unlink;
+allow cast_client_app sysfs:file { getattr open read };
+
+allow cast_client_app activity_service:service_manager find;
+allow cast_client_app activity_task_service:service_manager find;
+allow cast_client_app content_capture_service:service_manager find;
+allow cast_client_app game_service:service_manager find;
+allow cast_client_app gpu_service:service_manager find;
+allow cast_client_app netstats_service:service_manager find;
+allow cast_client_app surfaceflinger_service:service_manager find;
+allow cast_client_app sysfs_gpu:dir search;
+allow cast_client_app vendor_intel_render_selection_prop:file open;
+allow cast_client_app virtual_device_service:service_manager find;
+allow cast_client_app voiceinteraction_service:service_manager find;
+
+dontaudit cast_client_app default_prop:file *;
