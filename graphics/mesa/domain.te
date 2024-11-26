@@ -1,1 +1,2 @@
 allow domain sysfs_app_readable:dir search;
+get_prop(coredomain, vendor_graphics_mesa_prop)
