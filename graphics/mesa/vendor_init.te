@@ -4,3 +4,4 @@ dontaudit vendor_init debugfs_tracing_instances:dir write;
 allow vendor_init mediaserver:process setsched;
 allow vendor_init self:udp_socket create;
 dontaudit vendor_init coreu_data_file:dir create_dir_perms;
+set_prop(vendor_init, vendor_graphics_mesa_prop)
