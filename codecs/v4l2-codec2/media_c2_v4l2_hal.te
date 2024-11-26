@@ -1,0 +1,22 @@
+type media_c2_v4l2_hal, domain;
+
+type media_c2_v4l2_hal_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(media_c2_v4l2_hal)
+
+vndbinder_use(media_c2_v4l2_hal)
+hal_client_domain(media_c2_v4l2_hal, hal_codec2)
+hal_server_domain(media_c2_v4l2_hal, hal_codec2)
+
+allow media_c2_v4l2_hal hwservicemanager_prop:file { open read getattr map };
+
+allow media_c2_v4l2_hal hwservicemanager:binder call;
+allow media_c2_v4l2_hal tombstoned_crash_socket:sock_file write;
+allow media_c2_v4l2_hal hal_codec2_hwservice:hwservice_manager { find add };
+
+allow media_c2_v4l2_hal hidl_base_hwservice:hwservice_manager add;
+
+allow media_c2_v4l2_hal mediaserver:binder transfer;
+allow mediaserver media_c2_v4l2_hal:binder call;
+
+allow media_c2_v4l2_hal cgroup_bpf:dir search;
+allow media_c2_v4l2_hal video_device:chr_file { open read write ioctl };
