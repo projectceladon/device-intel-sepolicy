@@ -1,0 +1,22 @@
+type civ_applauncher, domain, vendor_executes_system_violators;
+type civ_applauncher_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(civ_applauncher)
+
+#============= civ_applauncher ==============
+allow civ_applauncher shell_exec:file rx_file_perms;
+allow civ_applauncher vendor_shell_exec:file execute_no_trans;
+
+allow civ_applauncher system_file:dir r_dir_perms;
+allow civ_applauncher system_file:file rx_file_perms;
+
+allow civ_applauncher self:{ socket vsock_socket tcp_socket } { create_socket_perms_no_ioctl listen accept };
+allow civ_applauncher proc_net:file r_file_perms;
+
+allow civ_applauncher activity_service:service_manager find;
+
+#============= binder ==============
+binder_use(civ_applauncher)
+binder_call(civ_applauncher, system_server)
+
+#============= system_server ==============
+allow system_server civ_applauncher:binder call;

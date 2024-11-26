@@ -1,0 +1,21 @@
+type civ_powerctl, domain, vendor_executes_system_violators;
+type civ_powerctl_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(civ_powerctl)
+
+#============= civ_powerctl ==============
+allow civ_powerctl self:{ socket vsock_socket tcp_socket } { create_socket_perms_no_ioctl listen accept };
+allow civ_powerctl proc_net:file r_file_perms;
+allow civ_powerctl shell_exec:file rx_file_perms;
+allow civ_powerctl system_file:file rx_file_perms;
+allow civ_powerctl vendor_shell_exec:file execute_no_trans;
+
+#============= prop ==============
+set_prop(civ_powerctl, powerctl_prop)
+
+#============= binder ==============
+binder_use(civ_powerctl)
+binder_call(civ_powerctl, system_server)
+
+#============= system_server ==============
+allow system_server civ_powerctl:binder call;
+
