@@ -1,4 +1,4 @@
-type cast_client_app, domain;
+type cast_client_app, domain, coredomain, socket_between_core_and_vendor_violators;
 
 app_domain(cast_client_app)
 net_domain(cast_client_app)
@@ -12,7 +12,6 @@ allow cast_client_app dm_disp_socket:file { write read open unlink create};
 allow cast_client_app dm_client_socket:sock_file { write read open unlink create};
 allow cast_client_app dm_client_socket:file { write read open unlink create};
 allow cast_client_app socket_device:sock_file create;
-allow cast_client_app sysfs:file { getattr open read };
 
 allow cast_client_app activity_service:service_manager find;
 allow cast_client_app activity_task_service:service_manager find;
