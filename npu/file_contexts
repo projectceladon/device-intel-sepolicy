@@ -1,2 +1,15 @@
 # devices
 /dev/accel[0-9]*              u:object_r:npu_device:s0
+/(vendor|system/vendor)/lib(64)?/libze_intel_vpu\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libze_loader\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libnpu_driver_compiler\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libopenvino\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libopenvino_intel_gpu_plugin\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libopenvino_intel_npu_plugin\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libopenvino_ir_frontend\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libopenvino_tensorflow_lite_frontend\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libtbb\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libc\+\+_shared\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libssl\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libcrypto\.so u:object_r:same_process_hal_file:s0
+
