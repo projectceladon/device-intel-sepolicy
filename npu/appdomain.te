@@ -1,4 +1,2 @@
 allow appdomain npu_device:dir r_dir_perms;
 allow appdomain npu_device:chr_file rw_file_perms;
-allow { untrusted_app } npu_device:chr_file rw_file_perms;
-allow appdomain sysfs_app_readable:dir r_dir_perms;
