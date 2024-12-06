@@ -1,2 +1,0 @@
-dontaudit dumpstate graphics_device:dir search;
-allow dumpstate sysfs_zram:dir r_dir_perms;

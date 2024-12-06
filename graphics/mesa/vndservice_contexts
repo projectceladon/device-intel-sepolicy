@@ -1,4 +1,2 @@
 hwc.info    u:object_r:hwc_info_service:s0
-android.hardware.intel.msync              u:object_r:msync_service:s0
-android.hardware.intel.coreu              u:object_r:coreu_service:s0
 gfxd                                      u:object_r:gfxd_service:s0
