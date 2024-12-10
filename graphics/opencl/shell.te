@@ -1,0 +1,4 @@
+userdebug_or_eng(`
+    set_prop(appdomain, vendor_opencl_lib_prop)
+')
+
