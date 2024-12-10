@@ -1,0 +1,10 @@
+type rpmb_dev_mock, domain;
+type rpmb_dev_mock_exec, vendor_file_type, exec_type, file_type;
+
+init_daemon_domain(rpmb_dev_mock)
+
+#allow rpmb_dev_mock rpmb_mock_data_file:file create_file_perms;
+#allow rpmb_dev_mock rpmb_mock_data_file:dir create_dir_perms;
+
+allow rpmb_dev_mock mnt_vendor_file:file create_file_perms;
+allow rpmb_dev_mock mnt_vendor_file:dir create_dir_perms;
