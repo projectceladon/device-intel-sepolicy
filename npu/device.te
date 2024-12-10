@@ -1,1 +1,1 @@
-type npu_device, dev_type;
+type npu_device, dev_type, mlstrustedobject;
