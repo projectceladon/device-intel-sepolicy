@@ -15,9 +15,14 @@ allow ota_coordinator init:unix_stream_socket connectto;
 allow ota_coordinator misc_block_device:blk_file rw_file_perms;
 allow ota_coordinator property_socket:sock_file write;
 allow ota_coordinator tmpfs:file r_file_perms;
+allow ota_coordinator vendor_data_file:file { read open };
 typeattribute ota_coordinator socket_between_core_and_vendor_violators;
 
 set_prop(ota_coordinator, powerctl_prop)
 set_prop(ota_coordinator, vendor_intel_ota_prop)
 set_prop(vendor_init, vendor_intel_ota_prop)
 
+recovery_only(
+  allow recovery vendor_data_file:dir r_dir_perms;
+  allow recovery vendor_data_file:file r_file_perms;
+)
