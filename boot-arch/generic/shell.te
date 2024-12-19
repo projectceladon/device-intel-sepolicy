@@ -1,0 +1,1 @@
+allow shell set_board_prop_exec:file getattr;

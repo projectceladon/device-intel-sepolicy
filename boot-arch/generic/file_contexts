@@ -22,3 +22,4 @@
 /dev/block/by-name/acpi(_(a|b))?		u:object_r:acpi_block_device:s0
 /dev/block/by-name/acpio(_(a|b))?		u:object_r:acpio_block_device:s0
 /dev/block/by-name/super 		u:object_r:super_block_device:s0
+(/system)?/vendor/bin/set_board_prop.sh u:object_r:set_board_prop_exec:s0
