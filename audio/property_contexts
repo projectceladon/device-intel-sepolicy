@@ -1,2 +1,4 @@
 ro.vendor.hdmi.audio    u:object_r:vendor_audio_default_prop:s0
 vendor.intel.enable.audio u:object_r:vendor_audio_default_prop:s0
+vendor.audio.board_type  u:object_r:vendor_audio_board_prop:s0
+vendor.audio.board_name  u:object_r:vendor_audio_board_prop:s0
