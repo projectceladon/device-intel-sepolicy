@@ -4,3 +4,4 @@ type logwrapper_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(logwrapper)
 
 allow logwrapper devpts:chr_file rw_file_perms;
+r_dir_file(logwrapper, sysfs_type)
