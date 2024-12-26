@@ -1,1 +1,3 @@
 (/system)?/vendor/bin/aafd u:object_r:aafd_exec:s0
+
+(/system)?/vendor/bin/auto_detection.sh u:object_r:auto_detection_exec:s0
