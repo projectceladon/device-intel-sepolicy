@@ -1,0 +1,3 @@
+module_only(`aafd', `
+   set_prop(auto_detection, vendor_thermal_prop)
+')
