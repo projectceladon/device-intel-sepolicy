@@ -1,2 +1,2 @@
 vendor_internal_prop(vendor_audio_default_prop)
-system_public_prop(vendor_audio_board_prop)
+vendor_public_prop(vendor_audio_board_prop)
