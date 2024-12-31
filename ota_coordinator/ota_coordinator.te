@@ -10,6 +10,9 @@ hal_server_domain(ota_coordinator, hal_bootctl)
 
 allow ota_coordinator serial_device:chr_file { read write open ioctl };
 allow ota_coordinator sysfs:dir r_dir_perms;
+allow ota_coordinator sysfs_gpu:file { read open getattr};
+allow ota_coordinator sysfs:file { read getattr open };
+allow ota_coordinator sysfs_app_readable:file { getattr open read };
 allow ota_coordinator block_device:dir search;
 allow ota_coordinator init:unix_stream_socket connectto;
 allow ota_coordinator misc_block_device:blk_file rw_file_perms;
