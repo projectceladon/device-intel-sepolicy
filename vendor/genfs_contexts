@@ -28,6 +28,8 @@ genfscon sysfs /devices/pnp0/00:03/wakeup u:object_r:sysfs_wakeup:s0
 
 genfscon sysfs /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/ACPI0013:00/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/SPT0001:00/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/pci0000:00/0000:00:0a.0/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/pci0000:00/0000:00:06.0/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/pci0000:00/0000:00:06.0/usb1/1-5/wakeup u:object_r:sysfs_wakeup:s0
@@ -46,7 +48,10 @@ genfscon sysfs /devices/pci0000:00/0000:00:06.0/usb1/1-7/1-7.2/wakeup u:object_r
 genfscon sysfs /devices/pci0000:00/0000:00:06.0/usb1/1-7/1-7.3/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/pci0000:00/0000:00:06.0/usb1/1-7/1-7.4/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/rtc_cmos/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/rtc_cmos/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/rtc_cmos/rtc/rtc0/alarmtimer.1.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/rtc_cmos/rtc/rtc0/alarmtimer.2.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/rtc_cmos/rtc/rtc0/alarmtimer.3.auto/wakeup u:object_r:sysfs_wakeup:s0
 
 genfscon proc  /sys/vm/swappiness        u:object_r:proc_swappiness:s0
 genfscon proc  /sys/vm/disk_based_swap   u:object_r:proc_disk_based_swap:s0
