@@ -1,0 +1,42 @@
+From c32272b8cf161c6ba526f2c8c91b8fff9af50e82 Mon Sep 17 00:00:00 2001
+From: rohith2xs <rohith2x.s@intel.com>
+Date: Fri, 17 Jan 2025 11:09:22 +0000
+Subject: [PATCH] add sysfs_net policy for the Ethernet
+
+added the sepolicy for the missing ethernet adapter
+in genfs_contexts for the available usb ports
+
+Tests:
+ Android boot success
+ wifi Connect success
+ Internet Access success
+ All testcase passing
+
+Tracked-On: OAM-127881
+Signed-off-by: rohith2xs <rohith2x.s@intel.com>
+---
+ ethernet/common/genfs_contexts | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/ethernet/common/genfs_contexts b/ethernet/common/genfs_contexts
+index 16d1e33..8895327 100644
+--- a/ethernet/common/genfs_contexts
++++ b/ethernet/common/genfs_contexts
+@@ -3,6 +3,14 @@ genfscon sysfs /devices/pci0000:00/0000:00:13.2/0000:03:00.0/net u:object_r:sysf
+ genfscon sysfs /devices/pci0000:00/0000:00:13.1/0000:02:00.0/net u:object_r:sysfs_net:s0
+ genfscon sysfs /devices/pci0000:00/0000:00:04.0/net u:object_r:sysfs_net:s0
+ genfscon sysfs /devices/pci0000:00/0000:00:07.0/net u:object_r:sysfs_net:s0
++genfscon sysfs /devices/pci0000:00/0000:00:07.0/usb1/1-3/1-3:2.0/net u:object_r:sysfs_net:s0
++genfscon sysfs /devices/pci0000:00/0000:00:07.0/usb1/1-4/1-4:2.0/net u:object_r:sysfs_net:s0
++genfscon sysfs /devices/pci0000:00/0000:00:07.0/usb1/1-6/1-6:2.0/net u:object_r:sysfs_net:s0
++genfscon sysfs /devices/pci0000:00/0000:00:07.0/usb1/1-7/1-7:2.0/net u:object_r:sysfs_net:s0
++genfscon sysfs /devices/pci0000:00/0000:00:07.0/usb1/1-8/1-8:2.0/net u:object_r:sysfs_net:s0
++genfscon sysfs /devices/pci0000:00/0000:00:07.0/usb2/2-1/2-1:1.0/net u:object_r:sysfs_net:s0
++genfscon sysfs /devices/pci0000:00/0000:00:07.0/usb2/2-2/2-2:1.0/net u:object_r:sysfs_net:s0
++genfscon sysfs /devices/pci0000:00/0000:00:07.0/usb2/2-4/2-4:1.0/net u:object_r:sysfs_net:s0
+ genfscon sysfs /devices/pci0000:00/0000:00:06.0/net u:object_r:sysfs_net:s0
+ genfscon sysfs /devices/pci0000:00/0000:00:06.0/usb1/1-7/1-7.4/1-7.4:1.0/net u:object_r:sysfs_net:s0
+ genfscon sysfs /devices/pci0000:00/0000:00:09.0/virtio2/net u:object_r:sysfs_net:s0
+-- 
+2.34.1
+
