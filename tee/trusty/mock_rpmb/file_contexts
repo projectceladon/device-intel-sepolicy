@@ -1,0 +1,3 @@
+/vendor/bin/rpmb_dev               u:object_r:rpmb_dev_mock_exec:s0
+/data/vendor/ss(/.*)?              u:object_r:rpmb_mock_data_file:s0
+
