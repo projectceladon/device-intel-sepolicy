@@ -25,6 +25,7 @@
 /(vendor|system/vendor)/lib(64)?/libmd\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/vulkan\.pastel\.so u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/dri(/.*)?     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgallium_dri\.so u:object_r:same_process_hal_file:s0
 
 #coreu /data/vendor permission
 /data/vendor/coreu(/.*)?       u:object_r:coreu_data_file:s0
