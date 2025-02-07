@@ -12,3 +12,7 @@ allow kernel kernel:capability sys_admin;
 # For loading /lib/modules/inet_diag.ko
 allow kernel rootfs:system module_load;
 allow kernel system_file:system module_load;
+
+# For loading /vendor/firmwares
+allow kernel vendor_file:dir r_dir_perms;
+allow kernel vendor_file:file r_file_perms;
