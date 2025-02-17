@@ -1,2 +1,9 @@
 allow recovery serial_device:chr_file { read write open ioctl };
+recovery_only(
+  allow recovery vendor_data_file:dir r_dir_perms;
+  allow recovery vendor_data_file:file r_file_perms;
+  r_dir_file(recovery, sysfs)
+  r_dir_file(recovery, sysfs_gpu)
+  r_dir_file(recovery, sysfs_app_readable)
+)
 
