@@ -1,0 +1,8 @@
+#============= set attestation ids ==============
+type set_attestation_ids, domain;
+type set_attestation_ids_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(set_attestation_ids);
+hal_server_domain(set_attestation_ids, hal_keymint);
+get_prop(set_attestation_ids, serialno_prop);
+get_prop(set_attestation_ids, build_attestation_prop);
+allow shell set_attestation_ids_exec:file { read open map getattr execute};
