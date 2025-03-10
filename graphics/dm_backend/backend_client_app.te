@@ -1,0 +1,21 @@
+type dm_backend_client_app, domain;
+
+app_domain(dm_backend_client_app)
+net_domain(dm_backend_client_app)
+
+#============= dm_backend_client_app ==============
+allow dm_backend_client_app dm_backend_app_data_file:dir create_dir_perms;
+allow dm_backend_client_app dm_backend_app_data_file:file create_file_perms;
+allow dm_backend_client_app dm_disp_socket:sock_file { write read open };
+
+allow dm_backend_client_app activity_service:service_manager find;
+allow dm_backend_client_app activity_task_service:service_manager find;
+allow dm_backend_client_app content_capture_service:service_manager find;
+allow dm_backend_client_app game_service:service_manager find;
+allow dm_backend_client_app gpu_service:service_manager find;
+allow dm_backend_client_app netstats_service:service_manager find;
+allow dm_backend_client_app surfaceflinger_service:service_manager find;
+allow dm_backend_client_app sysfs_gpu:dir search;
+allow dm_backend_client_app vendor_intel_render_selection_prop:file open;
+allow dm_backend_client_app virtual_device_service:service_manager find;
+allow dm_backend_client_app voiceinteraction_service:service_manager find;

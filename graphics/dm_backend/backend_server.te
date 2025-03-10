@@ -1,0 +1,7 @@
+type dm_backend_server, domain, mlstrustedsubject;
+type dm_backend_server_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(dm_backend_server)
+
+allow dm_backend_server socket_device:dir { add_name remove_name search write };
+allow dm_backend_server dm_disp_socket:sock_file { create write getattr unlink read open };
