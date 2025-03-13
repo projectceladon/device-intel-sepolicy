@@ -19,3 +19,16 @@ allow hal_drm_widevine gpu_device:chr_file rw_file_perms;
 allow hal_drm_widevine mediadrm_vendor_data_file:dir create_dir_perms;
 allow hal_drm_widevine mediadrm_vendor_data_file:file create_file_perms;
 allow hal_drm_widevine tmpfs:file { read write map };
+
+allow hal_drm_widevine property_data_file:file read;
+allow hal_drm_widevine property_contexts_file:file read;
+allow hal_drm_widevine vendor_graphics_mesa_prop:file read;
+
+allow hal_evs_default property_data_file:file read;
+allow hal_evs_default property_contexts_file:file read;
+allow hal_evs_default vendor_graphics_mesa_prop:file read;
+#allow hal_gatekeeper_default default_android_service:service_manager add;
+allow hal_drm_widevine sysfs:file write;
+
+#allow hal_evs_default vendor_graphics_mesa_prop:file open;
+#allow hal_evs_default vendor_intel_render_selection_prop:file read;
