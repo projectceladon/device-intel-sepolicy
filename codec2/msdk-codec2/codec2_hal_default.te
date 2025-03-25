@@ -55,3 +55,5 @@ allow codec2_hal_default hwservicemanager:binder call;
 allow codec2_hal_default tombstoned_crash_socket:sock_file write;
 allow codec2_hal_default sysfs_gpu:dir search;
 allow codec2_hal_default sysfs_gpu:file { getattr open read };
+
+set_prop(codec2_hal_default, vendor_c2_dump);
