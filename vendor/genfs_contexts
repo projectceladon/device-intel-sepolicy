@@ -6,6 +6,9 @@ genfscon sysfs /devices/pci0000:00/0000:00:05.0 u:object_r:sysfs_virtio:s0
 genfscon sysfs /devices/pci0000:00/0000:00:06.0/usb1 u:object_r:sysfs_android_usb:s0
 
 #SuspendSepolicy
+genfscon sysfs /devices/LNXSYSTM:00/LNXSLPBN:00/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/pci0000:00/0000:00:07.0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/pci0000:00/0000:00:07.0/usb1/1-8/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:02/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:03/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:0c/wakeup u:object_r:sysfs_wakeup:s0
