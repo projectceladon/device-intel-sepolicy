@@ -1,0 +1,3 @@
+/system/bin/dm-backend                    u:object_r:dm_backend_server_exec:s0
+/system/bin/acrn-bkend-server             u:object_r:dm_backend_server_exec:s0
+/dev/socket/dm_display_server		  u:object_r:dm_disp_socket:s0
