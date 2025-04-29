@@ -32,4 +32,3 @@ allow hdcpd tmpfs:dir w_dir_perms;
 
 #hwc.info
 allow hdcpd hwc_info_service:service_manager find;
-allow hal_drm_widevine hdcpd_data_file:dir search;
