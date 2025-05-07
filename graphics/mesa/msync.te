@@ -10,4 +10,4 @@ not_full_treble(`
 ')
 add_service(msync, msync_service)
 binder_call(msync, coreu)
-binder_call(msync, hdcpd)
+#binder_call(msync, hdcpd)
