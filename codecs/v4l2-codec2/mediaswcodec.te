@@ -1,0 +1,2 @@
+#============= mediaswcodec ==============
+allow mediaswcodec gpu_device:chr_file map;
