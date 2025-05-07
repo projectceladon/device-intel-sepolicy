@@ -6,4 +6,5 @@
 /sys/devices/pci0000:00/8086228A:00/.*/rfkill/rfkill[0-9]+/state        u:object_r:sysfs_bluetooth_writable:s0
 
 /vendor/bin/btcfg.sh u:object_r:btcfg_exec:s0
-/vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service\.vbt u:object_r:hal_bluetooth_vbt_exec:s0
+
+/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.[0-9]+-service.vbt      u:object_r:hal_bluetooth_vbt_exec:s0
