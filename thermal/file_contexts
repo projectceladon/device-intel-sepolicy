@@ -7,6 +7,15 @@
 /dev/acpi_thermal_rel       u:object_r:thermal_device:s0
 
 # thermal management
-/sys/devices/platform/coretemp.0(/.*)? u:object_r:sysfs_thermal_management:s0
 /sys/devices/virtual/thermal(/.*)?     u:object_r:sysfs_thermal_management:s0
 /sys/devices/virtual/powercap(/.*)?  u:object_r:sysfs_powercap:s0
+
+/sys/devices/platform(/.*)? u:object_r:sysfs_thermal_management:s0
+/sys/devices/platform/coretemp.[0-9](/.*)? u:object_r:sysfs_thermal_management:s0
+/sys/devices/platform/coretemp.[0-9]/hwmon/hwmon[0-9]/name u:object_r:sysfs_thermal_management:s0
+/sys/devices/platform/coretemp.[0-9]/hwmon/hwmon[0-9]/temp[0-9]_(input|label) u:object_r:sysfs_thermal_management:s0
+
+/sys/class/hwmon(/.*)? u:object_r:sysfs_thermal_management:s0
+/sys/class/hwmon/hwmon[0-9] u:object_r:sysfs_thermal_management:s0
+/sys/class/hwmon/hwmon[0-9](/.*)? u:object_r:sysfs_thermal_management:s0
+/sys/class/hwmon/hwmon[0-9]/temp[0-9]_(input|label) u:object_r:sysfs_thermal_management:s0
