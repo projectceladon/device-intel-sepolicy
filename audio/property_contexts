@@ -1,2 +1,7 @@
 ro.vendor.hdmi.audio    u:object_r:vendor_audio_default_prop:s0
 vendor.intel.enable.audio u:object_r:vendor_audio_default_prop:s0
+vendor.intel.audio.aidl.datamq.buffer_size_frames u:object_r:vendor_audio_default_prop:s0
+ro.hardware.audio.tinyalsa.period_count u:object_r:vendor_audio_default_prop:s0
+ro.hardware.audio.tinyalsa.period_size_multiplier u:object_r:vendor_audio_default_prop:s0
+ro.hardware.audio.tinyalsa.host_latency_ms u:object_r:vendor_audio_default_prop:s0
+ro.audio.usb.period_us u:object_r:vendor_audio_default_prop:s0
