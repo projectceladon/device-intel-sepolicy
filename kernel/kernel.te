@@ -12,3 +12,7 @@ allow kernel kernel:capability sys_admin;
 # For loading /lib/modules/inet_diag.ko
 allow kernel rootfs:system module_load;
 allow kernel system_file:system module_load;
+
+userdebug_or_eng(`
+  allow kernel unlabeled:file r_file_perms;
+')
