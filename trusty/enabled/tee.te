@@ -13,3 +13,5 @@ allow tee block_device:dir search;
 allow tee tee_device:blk_file rw_file_perms;
 allow tee gsi_metadata_file:dir search;
 allow tee metadata_file:dir search;
+set_prop(tee, vendor_trusty_storage_prop)
+

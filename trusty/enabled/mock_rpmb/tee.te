@@ -1,0 +1,7 @@
+allow tee socket_device:sock_file rw_file_perms;
+allow tee rpmb_mock_data_file:file create_file_perms;
+allow tee rpmb_mock_data_file:sock_file create_file_perms;
+allow tee rpmb_mock_data_file:dir create_dir_perms;
+allow tee rpmb_dev_mock:unix_stream_socket connectto;
+allow tee self:capability { setgid setuid };
+
